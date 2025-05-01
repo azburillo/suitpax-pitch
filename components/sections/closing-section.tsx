@@ -19,37 +19,32 @@ export default function ClosingSection() {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Image
-          src="/city-skyline-bg.jpeg"
-          alt="City skyline"
+          src="/gradient-background.jpg"
+          alt="Gradient background"
           fill
           className="object-cover object-center w-full h-full"
           priority
           sizes="100vw"
         />
-        {/* No overlay - city background shows through directly */}
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 space-y-6 px-4 max-w-4xl mx-auto text-center"
+        className="relative z-10 space-y-5 px-4 max-w-4xl mx-auto text-center"
       >
         <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
           <Image src="/suitpax-white-logo.png" alt="Suitpax" width={28} height={28} />
           <span className="font-serif italic text-white/80 text-xs">Thank you for your attention</span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-none text-white">
-          The Future of Business Travel is Already Here
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter leading-none text-white">
+          The future of business travel is already here
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-medium">
+        <p className="text-sm sm:text-base text-white/90 max-w-2xl mx-auto font-medium">
           Suitpax represents a once-in-a-decade opportunity to transform a trillion-dollar industry
-        </p>
-
-        <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto font-light">
-          Our proprietary AI-powered platform isn't just innovative—it's revolutionary
         </p>
 
         {/* CTA */}
@@ -87,7 +82,7 @@ export default function ClosingSection() {
         </div>
 
         {/* Final message */}
-        <div className="mt-8">
+        <div className="mt-6">
           <div className="flex items-center justify-center gap-1">
             <Rocket className="h-4 w-4 text-white/70" />
             <p className="text-sm font-medium text-white/70">Suitpax — Revolutionizing Business Travel with AI</p>

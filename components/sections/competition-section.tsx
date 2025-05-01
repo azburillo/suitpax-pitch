@@ -90,18 +90,18 @@ export default function CompetitionSection() {
   return (
     <motion.section
       id="competition"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/10 shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <div className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700 mb-3 sm:mb-4">
+      <div className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-serif italic text-white/80 mb-3 sm:mb-4">
         COMPETITION
       </div>
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-3 sm:mb-4">
+      <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-3 sm:mb-4 text-white">
         Competitive analysis
       </h2>
-      <p className="text-sm sm:text-base font-light text-gray-700 mb-6">
+      <p className="text-sm sm:text-base font-light text-white/70 mb-6">
         Suitpax offers a comprehensive solution that combines the best of travel and finance platforms, with an advanced
         AI layer that no competitor can match.
       </p>
@@ -109,83 +109,83 @@ export default function CompetitionSection() {
       <div className="overflow-x-auto">
         <table className="w-full min-w-[800px] border-collapse">
           <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="p-2 sm:p-3 text-xs sm:text-sm font-medium">Features</th>
-              <th className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-emerald-950">Suitpax</th>
+            <tr className="bg-white/5 text-left">
+              <th className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Features</th>
+              <th className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Suitpax</th>
               {competitors.map((competitor, index) => (
-                <th key={index} className="p-2 sm:p-3 text-xs sm:text-sm font-medium">
+                <th key={index} className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white/80">
                   {competitor.name}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-200">
-              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium">Advanced AI agents</td>
-              <td className="p-2 sm:p-3 text-xs sm:text-sm text-emerald-950">
+            <tr className="border-b border-white/10">
+              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Advanced AI agents</td>
+              <td className="p-2 sm:p-3 text-xs sm:text-sm text-white">
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-emerald-950 mr-1" weight="fill" />
+                  <CheckCircle className="h-4 w-4 text-white mr-1" weight="fill" />
                   <span className="font-medium">Leader</span>
                 </div>
               </td>
               {competitors.map((competitor, index) => (
-                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm">
-                  {competitor.features.ai === "No" ? <X className="h-4 w-4 text-gray-400" /> : competitor.features.ai}
+                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm text-white/70">
+                  {competitor.features.ai === "No" ? <X className="h-4 w-4 text-white/40" /> : competitor.features.ai}
                 </td>
               ))}
             </tr>
-            <tr className="border-b border-gray-200">
-              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium">Fintech integration</td>
-              <td className="p-2 sm:p-3 text-xs sm:text-sm text-emerald-950">
+            <tr className="border-b border-white/10">
+              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Fintech integration</td>
+              <td className="p-2 sm:p-3 text-xs sm:text-sm text-white">
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-emerald-950 mr-1" weight="fill" />
+                  <CheckCircle className="h-4 w-4 text-white mr-1" weight="fill" />
                   <span className="font-medium">Complete</span>
                 </div>
               </td>
               {competitors.map((competitor, index) => (
-                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm">
+                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm text-white/70">
                   {competitor.features.integration}
                 </td>
               ))}
             </tr>
-            <tr className="border-b border-gray-200">
-              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium">Expense management</td>
-              <td className="p-2 sm:p-3 text-xs sm:text-sm text-emerald-950">
+            <tr className="border-b border-white/10">
+              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Expense management</td>
+              <td className="p-2 sm:p-3 text-xs sm:text-sm text-white">
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-emerald-950 mr-1" weight="fill" />
+                  <CheckCircle className="h-4 w-4 text-white mr-1" weight="fill" />
                   <span className="font-medium">Automated</span>
                 </div>
               </td>
               {competitors.map((competitor, index) => (
-                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm">
+                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm text-white/70">
                   {competitor.features.expense}
                 </td>
               ))}
             </tr>
-            <tr className="border-b border-gray-200">
-              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium">Customization</td>
-              <td className="p-2 sm:p-3 text-xs sm:text-sm text-emerald-950">
+            <tr className="border-b border-white/10">
+              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Customization</td>
+              <td className="p-2 sm:p-3 text-xs sm:text-sm text-white">
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-emerald-950 mr-1" weight="fill" />
+                  <CheckCircle className="h-4 w-4 text-white mr-1" weight="fill" />
                   <span className="font-medium">Total</span>
                 </div>
               </td>
               {competitors.map((competitor, index) => (
-                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm">
+                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm text-white/70">
                   {competitor.features.customization}
                 </td>
               ))}
             </tr>
             <tr>
-              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium">Price</td>
-              <td className="p-2 sm:p-3 text-xs sm:text-sm text-emerald-950">
+              <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-white">Price</td>
+              <td className="p-2 sm:p-3 text-xs sm:text-sm text-white">
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-emerald-950 mr-1" weight="fill" />
+                  <CheckCircle className="h-4 w-4 text-white mr-1" weight="fill" />
                   <span className="font-medium">From $49/month</span>
                 </div>
               </td>
               {competitors.map((competitor, index) => (
-                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm">
+                <td key={index} className="p-2 sm:p-3 text-xs sm:text-sm text-white/70">
                   {competitor.features.pricing}
                 </td>
               ))}
@@ -194,26 +194,26 @@ export default function CompetitionSection() {
         </table>
       </div>
 
-      <div className="mt-6 bg-gray-100 p-3 rounded-xl">
-        <h3 className="text-base font-medium mb-2">Key competitive advantages</h3>
+      <div className="mt-6 bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10">
+        <h3 className="text-base font-medium mb-2 text-white">Key competitive advantages</h3>
         <div className="grid md:grid-cols-3 gap-3">
-          <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-sm">
-            <p className="text-sm font-medium mb-1 text-emerald-950">Proprietary technology</p>
-            <p className="text-xs font-light">
+          <div className="bg-black/50 p-3 rounded-xl border border-white/10 shadow-sm">
+            <p className="text-sm font-medium mb-1 text-white">Proprietary technology</p>
+            <p className="text-xs font-light text-white/70">
               AI agents specifically trained for corporate travel with predictive and optimization capabilities that no
               competitor offers.
             </p>
           </div>
-          <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-sm">
-            <p className="text-sm font-medium mb-1 text-emerald-950">Disruptive pricing model</p>
-            <p className="text-xs font-light">
+          <div className="bg-black/50 p-3 rounded-xl border border-white/10 shadow-sm">
+            <p className="text-sm font-medium mb-1 text-white">Disruptive pricing model</p>
+            <p className="text-xs font-light text-white/70">
               Up to 70% more affordable than traditional competitors, with flexible plans that adapt to the size and
               needs of each company.
             </p>
           </div>
-          <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-sm">
-            <p className="text-sm font-medium mb-1 text-emerald-950">Unified experience</p>
-            <p className="text-xs font-light">
+          <div className="bg-black/50 p-3 rounded-xl border border-white/10 shadow-sm">
+            <p className="text-sm font-medium mb-1 text-white">Unified experience</p>
+            <p className="text-xs font-light text-white/70">
               The only platform that fully integrates travel, finance, and traveler experience into a coherent and
               frictionless solution.
             </p>
