@@ -7,61 +7,61 @@ export default function InvestorROISection() {
   return (
     <motion.section
       id="investor-roi"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/10 shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.7 }}
     >
-      <div className="inline-flex items-center rounded-xl bg-emerald-950 text-white px-2.5 py-0.5 text-[10px] font-medium mb-3 sm:mb-4">
+      <div className="inline-flex items-center rounded-xl bg-white/10 text-white px-2.5 py-0.5 text-[10px] font-medium mb-3 sm:mb-4">
         PARTNERSHIP VALUE
       </div>
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-3 sm:mb-4">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-3 sm:mb-4 text-white">
         Why partner with Suitpax
       </h2>
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div>
-          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm mb-4">
+          <div className="bg-black p-4 rounded-xl border border-gray-800 shadow-sm mb-4">
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-10 w-10 rounded-xl bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-                <ChartLine className="h-5 w-5 text-emerald-950" weight="fill" />
+              <div className="h-10 w-10 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <ChartLine className="h-5 w-5 text-gray-300" weight="fill" />
               </div>
-              <h3 className="text-lg font-medium">
+              <h3 className="text-lg font-medium text-white">
                 Financial projection
                 <br />& return
               </h3>
             </div>
-            <div className="bg-gray-50 p-3 rounded-xl mb-3">
-              <p className="text-sm font-medium mb-2">Projected growth</p>
+            <div className="bg-gray-900 p-3 rounded-xl mb-3">
+              <p className="text-sm font-medium mb-2 text-white">Projected growth</p>
               <div className="h-[180px] relative">
                 {/* Gráfico simplificado de crecimiento */}
                 <svg className="w-full h-full" viewBox="0 0 400 180" fill="none">
                   {/* Ejes */}
-                  <line x1="50" y1="150" x2="350" y2="150" stroke="#d1d5db" strokeWidth="2" />
-                  <line x1="50" y1="30" x2="50" y2="150" stroke="#d1d5db" strokeWidth="2" />
+                  <line x1="50" y1="150" x2="350" y2="150" stroke="#4b5563" strokeWidth="2" />
+                  <line x1="50" y1="30" x2="50" y2="150" stroke="#4b5563" strokeWidth="2" />
 
                   {/* Etiquetas eje X */}
-                  <text x="50" y="165" fontSize="10" fill="#4b5563" textAnchor="middle">
+                  <text x="50" y="165" fontSize="10" fill="#9ca3af" textAnchor="middle">
                     2025
                   </text>
-                  <text x="125" y="165" fontSize="10" fill="#4b5563" textAnchor="middle">
+                  <text x="125" y="165" fontSize="10" fill="#9ca3af" textAnchor="middle">
                     2026
                   </text>
-                  <text x="200" y="165" fontSize="10" fill="#4b5563" textAnchor="middle">
+                  <text x="200" y="165" fontSize="10" fill="#9ca3af" textAnchor="middle">
                     2027
                   </text>
-                  <text x="275" y="165" fontSize="10" fill="#4b5563" textAnchor="middle">
+                  <text x="275" y="165" fontSize="10" fill="#9ca3af" textAnchor="middle">
                     2028
                   </text>
-                  <text x="350" y="165" fontSize="10" fill="#4b5563" textAnchor="middle">
+                  <text x="350" y="165" fontSize="10" fill="#9ca3af" textAnchor="middle">
                     2029
                   </text>
 
                   {/* Barras de ingresos */}
-                  <rect x="65" y="130" width="20" height="20" fill="#065f46" />
-                  <rect x="140" y="100" width="20" height="50" fill="#065f46" />
-                  <rect x="215" y="60" width="20" height="90" fill="#065f46" />
-                  <rect x="290" y="30" width="20" height="120" fill="#065f46" />
+                  <rect x="65" y="130" width="20" height="20" fill="#6b7280" />
+                  <rect x="140" y="100" width="20" height="50" fill="#6b7280" />
+                  <rect x="215" y="60" width="20" height="90" fill="#6b7280" />
+                  <rect x="290" y="30" width="20" height="120" fill="#6b7280" />
 
                   {/* Línea de valoración */}
                   <path
@@ -77,13 +77,13 @@ export default function InvestorROISection() {
                   <circle cx="300" cy="10" r="4" fill="#ef4444" />
 
                   {/* Leyenda */}
-                  <rect x="50" y="10" width="10" height="10" fill="#065f46" />
-                  <text x="65" y="18" fontSize="10" fill="#4b5563">
+                  <rect x="50" y="10" width="10" height="10" fill="#6b7280" />
+                  <text x="65" y="18" fontSize="10" fill="#9ca3af">
                     Revenue
                   </text>
                   <line x1="120" y1="15" x2="140" y2="15" stroke="#ef4444" strokeWidth="2" strokeDasharray="5,5" />
                   <circle cx="130" cy="15" r="3" fill="#ef4444" />
-                  <text x="145" y="18" fontSize="10" fill="#4b5563">
+                  <text x="145" y="18" fontSize="10" fill="#9ca3af">
                     Valuation
                   </text>
                 </svg>
@@ -91,30 +91,30 @@ export default function InvestorROISection() {
             </div>
 
             <div className="grid grid-cols-4 gap-2 mb-3">
-              <div className="bg-gray-50 p-2 rounded-lg text-center">
-                <p className="text-xs font-medium">2025</p>
-                <p className="text-sm font-medium text-emerald-950">€2.5M</p>
+              <div className="bg-gray-900 p-2 rounded-lg text-center">
+                <p className="text-xs font-medium text-white">2025</p>
+                <p className="text-sm font-medium text-gray-300">€2.5M</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
                 <p className="text-xs font-medium text-red-500">€15M</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
-              <div className="bg-gray-50 p-2 rounded-lg text-center">
-                <p className="text-xs font-medium">2026</p>
-                <p className="text-sm font-medium text-emerald-950">€8M</p>
+              <div className="bg-gray-900 p-2 rounded-lg text-center">
+                <p className="text-xs font-medium text-white">2026</p>
+                <p className="text-sm font-medium text-gray-300">€8M</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
                 <p className="text-xs font-medium text-red-500">€60M</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
-              <div className="bg-gray-50 p-2 rounded-lg text-center">
-                <p className="text-xs font-medium">2027</p>
-                <p className="text-sm font-medium text-emerald-950">€25M</p>
+              <div className="bg-gray-900 p-2 rounded-lg text-center">
+                <p className="text-xs font-medium text-white">2027</p>
+                <p className="text-sm font-medium text-gray-300">€25M</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
                 <p className="text-xs font-medium text-red-500">€250M</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
-              <div className="bg-gray-50 p-2 rounded-lg text-center">
-                <p className="text-xs font-medium">2029</p>
-                <p className="text-sm font-medium text-emerald-950">€100M+</p>
+              <div className="bg-gray-900 p-2 rounded-lg text-center">
+                <p className="text-xs font-medium text-white">2029</p>
+                <p className="text-sm font-medium text-gray-300">€100M+</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
                 <p className="text-xs font-medium text-red-500">€1B+</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
@@ -123,13 +123,13 @@ export default function InvestorROISection() {
 
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
+                <div className="mt-1 rounded-full bg-gray-800 p-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="bi bi-arrow-up"
+                    className="bi bi-arrow-up text-gray-300"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -138,19 +138,19 @@ export default function InvestorROISection() {
                     />
                   </svg>
                 </div>
-                <p className="text-sm font-light">
-                  <span className="font-medium">Projected ROI for strategic partners:</span> 25-30x in 5 years, based on
-                  industry valuation multiples
+                <p className="text-sm font-light text-gray-400">
+                  <span className="font-medium text-white">Projected ROI for strategic partners:</span> 25-30x in 5
+                  years, based on industry valuation multiples
                 </p>
               </div>
               <div className="flex items-start gap-2">
-                <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
+                <div className="mt-1 rounded-full bg-gray-800 p-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    className="bi bi-arrow-up"
+                    className="bi bi-arrow-up text-gray-300"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -159,31 +159,31 @@ export default function InvestorROISection() {
                     />
                   </svg>
                 </div>
-                <p className="text-sm font-light">
-                  <span className="font-medium">Valuation multiples:</span> 7-10x ARR, consistent with current
-                  valuations in the TravelTech/SaaS sector
+                <p className="text-sm font-light text-gray-400">
+                  <span className="font-medium text-white">Valuation multiples:</span> 7-10x ARR, consistent with
+                  current valuations in the TravelTech/SaaS sector
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+          <div className="bg-black p-4 rounded-xl border border-gray-800 shadow-sm">
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-10 w-10 rounded-xl bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-                <CurrencyDollar className="h-5 w-5 text-emerald-950" weight="fill" />
+              <div className="h-10 w-10 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0">
+                <CurrencyDollar className="h-5 w-5 text-gray-300" weight="fill" />
               </div>
-              <h3 className="text-lg font-medium">Comparison with industry successes</h3>
+              <h3 className="text-lg font-medium text-white">Comparison with industry successes</h3>
             </div>
             <div className="space-y-3">
-              <div className="bg-gray-50 p-3 rounded-xl">
+              <div className="bg-gray-900 p-3 rounded-xl">
                 <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
-                      className="bi bi-trophy-fill"
+                      className="bi bi-trophy-fill text-gray-300"
                       viewBox="0 0 16 16"
                     >
                       <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.078-.046 1.617C11.789 3.236 10.432 3 8 3c-1.432 0-2.789.236-3.454 2.117A.5.5 0 0 1 6.5 6h-1a.5.5 0 0 1-.5-.5c0-1.916.875-3.057 2.107-3.476C5.124 1.079 5 1.618 5 .5a.5.5 0 0 1 .5-.5z" />
@@ -193,18 +193,18 @@ export default function InvestorROISection() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Navan (formerly TripActions)</p>
+                    <p className="text-sm font-medium text-white">Navan (formerly TripActions)</p>
                     <div className="flex items-center gap-2 mt-1">
                       <div>
-                        <p className="text-xs font-medium">Initial valuation</p>
-                        <p className="text-xs font-light">$14M (2016)</p>
+                        <p className="text-xs font-medium text-gray-300">Initial valuation</p>
+                        <p className="text-xs font-light text-gray-400">$14M (2016)</p>
                       </div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-arrow-up"
+                        className="bi bi-arrow-up text-gray-300"
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -213,26 +213,26 @@ export default function InvestorROISection() {
                         />
                       </svg>
                       <div>
-                        <p className="text-xs font-medium">Current valuation</p>
-                        <p className="text-xs font-light">$9.2B (2025)</p>
+                        <p className="text-xs font-medium text-gray-300">Current valuation</p>
+                        <p className="text-xs font-light text-gray-400">$9.2B (2025)</p>
                       </div>
                     </div>
-                    <p className="text-xs font-light mt-1">
-                      <span className="font-medium">ROI for seed investors:</span> ~40x in 6 years
+                    <p className="text-xs font-light mt-1 text-gray-400">
+                      <span className="font-medium text-white">ROI for seed investors:</span> ~40x in 6 years
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-3 rounded-xl">
+              <div className="bg-gray-900 p-3 rounded-xl">
                 <div className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 rounded-lg bg-gray-800 flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
-                      className="bi bi-trophy-fill"
+                      className="bi bi-trophy-fill text-gray-300"
                       viewBox="0 0 16 16"
                     >
                       <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.078-.046 1.617C11.789 3.236 10.432 3 8 3c-1.432 0-2.789.236-3.454 2.117A.5.5 0 0 1 6.5 6h-1a.5.5 0 0 1-.5-.5c0-1.916.875-3.057 2.107-3.476C5.124 1.079 5 1.618 5 .5a.5.5 0 0 1 .5-.5z" />
@@ -242,18 +242,18 @@ export default function InvestorROISection() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-medium">TravelPerk</p>
+                    <p className="text-sm font-medium text-white">TravelPerk</p>
                     <div className="flex items-center gap-2 mt-1">
                       <div>
-                        <p className="text-xs font-medium">Initial valuation</p>
-                        <p className="text-xs font-light">€8M (2015)</p>
+                        <p className="text-xs font-medium text-gray-300">Initial valuation</p>
+                        <p className="text-xs font-light text-gray-400">€8M (2015)</p>
                       </div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
                         fill="currentColor"
-                        className="bi bi-arrow-up"
+                        className="bi bi-arrow-up text-gray-300"
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -262,12 +262,12 @@ export default function InvestorROISection() {
                         />
                       </svg>
                       <div>
-                        <p className="text-xs font-medium">Current valuation</p>
-                        <p className="text-xs font-light">€1.3B (2025)</p>
+                        <p className="text-xs font-medium text-gray-300">Current valuation</p>
+                        <p className="text-xs font-light text-gray-400">€1.3B (2025)</p>
                       </div>
                     </div>
-                    <p className="text-xs font-light mt-1">
-                      <span className="font-medium">ROI for seed investors:</span> ~25x in 7 years
+                    <p className="text-xs font-light mt-1 text-gray-400">
+                      <span className="font-medium text-white">ROI for seed investors:</span> ~25x in 7 years
                     </p>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ export default function InvestorROISection() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-emerald-950 text-white p-6 rounded-xl">
+          <div className="bg-black text-white p-6 rounded-xl">
             <h3 className="text-2xl font-bold mb-4 text-center">Current Valuation</h3>
             <div className="flex justify-center items-center">
               <div className="text-center">
@@ -298,54 +298,54 @@ export default function InvestorROISection() {
             <p className="text-sm text-center mt-6">Strategic partners welcome</p>
           </div>
 
-          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-            <h3 className="text-lg font-medium mb-3">Strategic partner benefits</h3>
+          <div className="bg-black p-4 rounded-xl border border-gray-800 shadow-sm">
+            <h3 className="text-lg font-medium mb-3 text-white">Strategic partner benefits</h3>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
-                <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                  <Rocket className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <div className="mt-1 rounded-full bg-gray-800 p-1">
+                  <Rocket className="h-3.5 w-3.5 text-gray-300" weight="fill" />
                 </div>
-                <p className="text-sm font-medium">Preferential terms</p>
+                <p className="text-sm font-medium text-white">Preferential terms</p>
               </li>
               <li className="flex items-start gap-2">
-                <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                  <Rocket className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <div className="mt-1 rounded-full bg-gray-800 p-1">
+                  <Rocket className="h-3.5 w-3.5 text-gray-300" weight="fill" />
                 </div>
-                <p className="text-sm font-medium">Strategic participation</p>
+                <p className="text-sm font-medium text-white">Strategic participation</p>
               </li>
               <li className="flex items-start gap-2">
-                <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                  <Rocket className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <div className="mt-1 rounded-full bg-gray-800 p-1">
+                  <Rocket className="h-3.5 w-3.5 text-gray-300" weight="fill" />
                 </div>
-                <p className="text-sm font-medium">Early liquidity options</p>
+                <p className="text-sm font-medium text-white">Early liquidity options</p>
               </li>
               <li className="flex items-start gap-2">
-                <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                  <Rocket className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <div className="mt-1 rounded-full bg-gray-800 p-1">
+                  <Rocket className="h-3.5 w-3.5 text-gray-300" weight="fill" />
                 </div>
-                <p className="text-sm font-medium">Exposure to disruptive technology</p>
+                <p className="text-sm font-medium text-white">Exposure to disruptive technology</p>
               </li>
             </ul>
           </div>
 
-          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-            <h3 className="text-lg font-medium mb-3">Partner criteria</h3>
+          <div className="bg-black p-4 rounded-xl border border-gray-800 shadow-sm">
+            <h3 className="text-lg font-medium mb-3 text-white">Partner criteria</h3>
             <div className="space-y-3">
-              <div className="bg-gray-50 p-3 rounded-lg">
-                <p className="text-sm font-medium mb-1">Strategic value</p>
-                <p className="text-xs font-light">
+              <div className="bg-gray-900 p-3 rounded-lg">
+                <p className="text-sm font-medium mb-1 text-white">Strategic value</p>
+                <p className="text-xs font-light text-gray-400">
                   Partners who bring industry connections, market access, or technical expertise beyond capital
                 </p>
               </div>
-              <div className="bg-gray-50 p-3 rounded-lg">
-                <p className="text-sm font-medium mb-1">Long-term vision</p>
-                <p className="text-xs font-light">
+              <div className="bg-gray-900 p-3 rounded-lg">
+                <p className="text-sm font-medium mb-1 text-white">Long-term vision</p>
+                <p className="text-xs font-light text-gray-400">
                   Alignment with our mission to transform corporate travel with AI technology
                 </p>
               </div>
-              <div className="bg-gray-50 p-3 rounded-lg">
-                <p className="text-sm font-medium mb-1">Selective process</p>
-                <p className="text-xs font-light">
+              <div className="bg-gray-900 p-3 rounded-lg">
+                <p className="text-sm font-medium mb-1 text-white">Selective process</p>
+                <p className="text-xs font-light text-gray-400">
                   Limited partnership slots available - by invitation or referral only
                 </p>
               </div>

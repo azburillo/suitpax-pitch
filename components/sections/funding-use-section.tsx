@@ -7,7 +7,7 @@ export default function FundingUseSection() {
   return (
     <motion.section
       id="funding-use"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-white backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.6 }}
@@ -33,7 +33,7 @@ export default function FundingUseSection() {
             </div>
             <div>
               <p className="text-sm font-medium mb-1">Target round</p>
-              <p className="text-xl font-medium tracking-tighter text-emerald-950">€3.5M</p>
+              <p className="text-xl font-medium tracking-tighter text-emerald-950">€1.8M</p>
               <p className="text-xs font-light text-gray-700">Seed for 24 months runway</p>
             </div>
             <div>

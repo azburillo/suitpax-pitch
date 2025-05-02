@@ -20,7 +20,7 @@ export default function SolutionSection() {
   return (
     <motion.section
       id="solution"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-white backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
@@ -98,7 +98,7 @@ export default function SolutionSection() {
         </div>
       </div>
 
-      <div className="bg-gray-100 p-4 rounded-xl">
+      <div className="bg-gray-200 p-4 rounded-xl">
         <h3 className="text-base font-medium tracking-tighter mb-2">Benefits of centralization (2024)</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 xs:gap-3">
           <div className="flex flex-col items-center text-center p-1 xs:p-2">

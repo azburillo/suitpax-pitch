@@ -6,6 +6,8 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Analytics } from "@vercel/analytics/react"
 import { Suspense } from "react"
+// Import the ContentProtection component
+import ContentProtection from "@/components/content-protection"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      {/* Add the ContentProtection component inside the body tag, right after the opening tag */}
       <body className={`${inter.className} min-h-screen bg-gray-100 overflow-x-hidden`}>
+        <ContentProtection />
         <Navigation />
         <Suspense>
           <main className="pt-24 sm:pt-28 md:pt-32 lg:pt-36">{children}</main>

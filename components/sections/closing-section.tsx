@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Rocket } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -58,12 +58,11 @@ export default function ClosingSection() {
             onHoverEnd={() => setHovered(false)}
           >
             <Image src="/suitpax-white-logo.png" alt="Suitpax" width={28} height={28} />
-            <span className="text-white/90">Join Our Investment Round</span>
+            <span className="text-white/90 normal-case">Join our investment round</span>
             <ArrowRight
               className={`h-4 w-4 text-white/70 transition-transform duration-300 ${hovered ? "translate-x-1" : ""}`}
             />
           </motion.a>
-          <p className="text-xs text-white/60 mt-2">Limited opportunity - Only 7 spots remaining</p>
         </div>
 
         {/* LinkedIn sharing badge */}
@@ -83,9 +82,9 @@ export default function ClosingSection() {
 
         {/* Final message */}
         <div className="mt-6">
-          <div className="flex items-center justify-center gap-1">
-            <Rocket className="h-4 w-4 text-white/70" />
-            <p className="text-sm font-medium text-white/70">Suitpax — Revolutionizing Business Travel with AI</p>
+          <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
+            <Image src="/ai-agents/agent5.png" alt="AI Agent" width={24} height={24} className="rounded-xl" />
+            <span className="font-serif italic text-white/80 text-xs">See you at the end of Q2</span>
           </div>
         </div>
       </motion.div>

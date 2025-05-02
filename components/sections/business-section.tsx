@@ -7,7 +7,7 @@ export default function BusinessSection() {
   return (
     <motion.section
       id="business"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-white backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
@@ -22,7 +22,7 @@ export default function BusinessSection() {
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2">
-            <div className="rounded-lg bg-gray-100 p-3">
+            <div className="rounded-lg bg-gray-200 p-3">
               <p className="text-base sm:text-lg font-medium tracking-tighter">Basic</p>
               <p className="text-xs font-light text-gray-500 mb-1">$15/user/month</p>
               <ul className="text-xs space-y-1">
@@ -36,7 +36,7 @@ export default function BusinessSection() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg bg-gray-100 p-3">
+            <div className="rounded-lg bg-gray-200 p-3">
               <p className="text-base sm:text-lg font-medium tracking-tighter">Pro</p>
               <p className="text-xs font-light text-gray-500 mb-1">$29/user/month</p>
               <ul className="text-xs space-y-1">
@@ -50,7 +50,7 @@ export default function BusinessSection() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg bg-gray-100 p-3">
+            <div className="rounded-lg bg-gray-200 p-3">
               <p className="text-base sm:text-lg font-medium tracking-tighter">Enterprise</p>
               <p className="text-xs font-light text-gray-500 mb-1">Custom</p>
               <ul className="text-xs space-y-1">
@@ -101,7 +101,7 @@ export default function BusinessSection() {
             </div>
           </div>
 
-          <div className="bg-gray-100 p-3 rounded-xl">
+          <div className="bg-gray-200 p-3 rounded-xl">
             <h3 className="text-base font-medium tracking-tighter mb-2">Projections 2024-2026</h3>
             <div className="space-y-2">
               <div className="flex justify-between items-center">

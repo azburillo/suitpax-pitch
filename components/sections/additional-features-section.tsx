@@ -61,7 +61,7 @@ export default function AdditionalFeaturesSection() {
   return (
     <section
       id="additional-features"
-      className="w-full bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="w-full bg-white backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex items-center justify-center mb-4">

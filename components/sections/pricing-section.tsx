@@ -71,7 +71,7 @@ export default function PricingSection() {
   return (
     <motion.section
       id="pricing"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-white backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
@@ -140,7 +140,7 @@ export default function PricingSection() {
         ))}
       </div>
 
-      <div className="bg-gray-100 p-4 rounded-xl">
+      <div className="bg-gray-200 p-4 rounded-xl">
         <h3 className="text-lg font-medium mb-3">Price comparison with competitors</h3>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[600px] border-collapse">

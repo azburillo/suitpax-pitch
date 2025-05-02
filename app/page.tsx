@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import HeroTitle from "@/components/hero-title"
 import DashProductSection from "@/components/sections/dash-product-section"
-import VisionSection from "@/components/sections/vision-section"
 import ProblemSolutionSection from "@/components/sections/problem-solution-section"
 import FOMOSection from "@/components/sections/fomo-section"
 import MarketSection from "@/components/sections/market-section"
@@ -36,6 +35,9 @@ import CompetitiveAdvantageSection from "@/components/sections/competitive-advan
 import InvestmentSection from "@/components/sections/investment-section"
 import ClosingSection from "@/components/sections/closing-section"
 import PasswordProtection from "@/components/password-protection"
+import ApiIntegrationsSection from "@/components/sections/api-integrations-section"
+import InvestorROICalculator from "@/components/sections/investor-roi-calculator"
+import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadmap"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -48,11 +50,16 @@ export default function Home() {
       setIsUnlocked(true)
     }
     setIsLoading(false)
+
+    // Ensure the page starts at the top when loaded
+    window.scrollTo(0, 0)
   }, [])
 
   const handleUnlock = () => {
     localStorage.setItem("suitpax_deck_unlocked", "true")
     setIsUnlocked(true)
+    // Ensure the page starts at the top when unlocked
+    window.scrollTo(0, 0)
   }
 
   if (isLoading) {
@@ -64,7 +71,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-100">
+    <main className="min-h-screen bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8 space-y-6">
         {/* Opening & Executive Summary */}
         <HeroTitle />
@@ -72,7 +79,7 @@ export default function Home() {
         <ExecutiveSummarySection />
 
         {/* Problem & Market */}
-        <VisionSection />
+        <Vision2031Section />
         <ProblemSolutionSection />
         <FOMOSection />
         <MarketSection />
@@ -84,6 +91,7 @@ export default function Home() {
         <SolutionSection />
         <AIAgentsSection />
         <ProductsSection />
+        <ApiIntegrationsSection />
         <AdditionalFeaturesSection />
         <CompetitiveAdvantageSection />
 
@@ -102,8 +110,8 @@ export default function Home() {
         {/* Growth Strategy */}
         <GoToMarketSection />
         <GlobalExpansionSection />
+        <MarketExpansionRoadmap />
         <RoadmapSection />
-        <Vision2031Section />
 
         {/* Team & Vision */}
         <TeamSection />
@@ -114,6 +122,7 @@ export default function Home() {
         <FundingUseSection />
         <InvestmentSection />
         <InvestorROISection />
+        <InvestorROICalculator />
 
         {/* Closing */}
         <ClosingSection />
