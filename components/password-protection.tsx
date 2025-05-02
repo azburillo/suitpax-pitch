@@ -4,9 +4,10 @@ import type React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
-import { Eye, EyeOff, CheckCircle2, ArrowRight } from "lucide-react"
+import { Eye, EyeOff, ArrowRight } from "lucide-react"
 
 export default function PasswordProtection({ onUnlock }: { onUnlock: () => void }) {
+  const [company, setCompany] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
@@ -51,40 +52,74 @@ export default function PasswordProtection({ onUnlock }: { onUnlock: () => void 
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         </div>
 
-        <div className="relative z-10 flex justify-center mb-6">
+        <div className="relative z-10 flex justify-center mb-4">
           <Image src="/suitpax-white-logo.png" alt="Suitpax Logo" width={120} height={30} className="h-7 w-auto" />
         </div>
 
-        <div className="relative z-10 mb-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-2.5 py-1 rounded-xl border border-white/10 mb-4">
-            <span className="font-serif italic text-white/80 text-xs">Investor Access</span>
+        <div className="relative z-10 mb-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-2.5 py-1 rounded-xl border border-white/10 mb-3">
+            <span className="font-serif italic text-white/80 text-xs">Our mission</span>
           </div>
-          <h2 className="text-2xl font-medium tracking-tighter leading-none text-white mb-3 truncate">
-            Welcome to the VC portal
+          <h2 className="text-xl font-medium tracking-tighter leading-none text-white mb-2 truncate">
+            Transforming business travel
           </h2>
-          <p className="text-sm text-white/70 max-w-md mx-auto">
-            Enter your credentials to access our investment opportunity
-          </p>
         </div>
 
+        {/* AI Agent Input Interface */}
         <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
-          <div className="relative flex items-center">
-            <input
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={`w-full py-2.5 pl-4 pr-10 bg-black/30 backdrop-blur-md border ${
-                error ? "border-red-500 animate-shake" : "border-white/20"
-              } rounded-xl focus:ring-1 focus:ring-white/30 focus:border-transparent outline-none transition text-white text-sm`}
-              placeholder="Enter password"
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-2 flex items-center justify-center"
-            >
-              {showPassword ? <EyeOff className="w-4 h-4 text-white/60" /> : <Eye className="w-4 h-4 text-white/60" />}
-            </button>
+          <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-xl p-4">
+            <div className="flex items-center space-x-3 mb-4 relative">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden border border-white/20 flex-shrink-0">
+                <Image
+                  src="/ai-agent-emma.jpg"
+                  alt="AI Assistant Zia"
+                  width={56}
+                  height={56}
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <p className="text-white text-sm font-medium">Zia from Suitpax</p>
+                <p className="text-white/60 text-xs">AI Agent</p>
+              </div>
+            </div>
+
+            <p className="text-white/90 text-sm mb-3">
+              Hello, I'm Zia, your Suitpax AI verification assistant. What company are you from?
+            </p>
+
+            <div className="space-y-3">
+              <input
+                type="text"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="w-full py-2.5 pl-4 pr-4 bg-black/30 backdrop-blur-md border border-white/20 rounded-xl focus:ring-1 focus:ring-white/30 focus:border-transparent outline-none transition text-white text-sm"
+                placeholder="Enter your company name"
+              />
+
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={`w-full py-2.5 pl-4 pr-10 bg-black/30 backdrop-blur-md border ${
+                    error ? "border-red-500 animate-shake" : "border-white/20"
+                  } rounded-xl focus:ring-1 focus:ring-white/30 focus:border-transparent outline-none transition text-white text-sm`}
+                  placeholder="Enter access code"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center justify-center"
+                >
+                  {showPassword ? (
+                    <EyeOff className="w-4 h-4 text-white/60" />
+                  ) : (
+                    <Eye className="w-4 h-4 text-white/60" />
+                  )}
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="flex items-start">
@@ -113,31 +148,8 @@ export default function PasswordProtection({ onUnlock }: { onUnlock: () => void 
           </button>
         </form>
 
-        {/* Video element in rounded-xl format */}
-        <div className="relative z-10 mt-6 flex justify-center">
-          <div className="relative overflow-hidden rounded-xl border border-white/10 shadow-md w-full max-w-xs mx-auto">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-auto object-cover"
-              style={{ maxHeight: "120px" }}
-            >
-              <source src="/videos/ai-agent-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-white" />
-                <p className="text-xs text-white/90 font-light">Secure access powered by SuitPax AI</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Technology by text inside the card */}
-        <div className="relative z-10 mt-4 flex items-center justify-center gap-1.5 text-white/40">
+        <div className="relative z-10 mt-6 flex items-center justify-center gap-1.5 text-white/40">
           <span className="text-[10px] font-light">Technology by</span>
           <Image src="/suitpax-white-logo.png" alt="Suitpax" width={50} height={13} className="h-2.5 w-auto" />
         </div>
