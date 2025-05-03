@@ -4,7 +4,8 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { CurrencyEuro, ChartLineUp, Calculator, TrendUp, ArrowsOutLineHorizontal } from "@phosphor-icons/react"
+import { ChartLineUp, Calculator, TrendUp, ArrowsOutLineHorizontal } from "@phosphor-icons/react"
+import { EuroIcon } from "lucide-react"
 import Image from "next/image"
 
 export default function InvestorROICalculator() {
@@ -118,7 +119,7 @@ export default function InvestorROICalculator() {
 
           <div className="relative w-full max-w-md mt-3">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-              <CurrencyEuro className="h-5 w-5 text-white/50" weight="fill" />
+              <EuroIcon className="h-5 w-5 text-white/50" />
             </div>
             <input
               type="text"

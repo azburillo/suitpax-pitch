@@ -68,7 +68,7 @@
     "@phosphor-icons/react": "latest",
     "@vercel/analytics": "latest",
     "cobe": "latest",
-    "simple-icons": "latest"
+    "react-icons": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

@@ -9,10 +9,9 @@ import {
   SiAmericanairlines,
   SiSouthwestairlines,
   SiDelta,
-  SiAirfrance,
   SiQatarairways,
   SiEmirates,
-} from "simple-icons/icons"
+} from "react-icons/si"
 
 // Helper component to render SimpleIcons
 const SimpleIcon = ({ icon, title }: { icon: any; title: string }) => {
