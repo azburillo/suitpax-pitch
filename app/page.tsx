@@ -44,14 +44,17 @@ export default function Home() {
 
   // Check if we're in the browser and if the user has already unlocked the deck
   useEffect(() => {
-    const unlocked = localStorage.getItem("suitpax_deck_unlocked")
-    if (unlocked === "true") {
-      setIsUnlocked(true)
+    if (typeof window !== "undefined") {
+      const unlocked = localStorage.getItem("suitpax_deck_unlocked")
+      if (unlocked === "true") {
+        setIsUnlocked(true)
+      }
+      setIsLoading(false)
     }
-    setIsLoading(false)
-
     // Ensure the page starts at the top when loaded
-    window.scrollTo(0, 0)
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0)
+    }
   }, [])
 
   const handleUnlock = () => {
