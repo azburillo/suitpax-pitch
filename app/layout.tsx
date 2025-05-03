@@ -12,7 +12,7 @@ import ContentProtection from "@/components/content-protection"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Suitpax - Next-Gen AI TravelTech",
+  title: "Suitpax - Pitch Deck",
   description: "Unified and centralized platform for corporate travel management with AI",
     generator: 'v0.dev'
 }
