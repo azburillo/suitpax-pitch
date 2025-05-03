@@ -52,8 +52,8 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-sm font-medium text-white">Our Solution</h3>
           </div>
           <p className="text-xs font-light text-white/70">
-            Anthropic-powered AI platform that reduces travel costs by 27% and booking time by 85% while ensuring 100%
-            policy compliance.
+            Suitpax AI platform that reduces travel costs by 27% and booking time by 85% while ensuring 100% policy
+            compliance.
           </p>
           <div className="mt-2 flex gap-1">
             <div className="flex-1 text-center p-1 bg-white/5 rounded-lg border border-white/10">
@@ -109,7 +109,8 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-xs font-medium text-white">Team</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
-            Founded by ex-Booking.com and Amadeus executives with 45+ years combined experience in travel tech
+            Founded by Alberto Zurano (ex-Aena) and Alexis Sanz (ex-Factorial) with 5+ years entrepreneurial experience
+            in travel tech
           </p>
         </div>
 
