@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Rocket, Target, ShieldCheck, Globe2, ChartBar, Globe, Users } from "@phosphor-icons/react"
+import { Rocket, Target, ShieldCheck, Handshake, ChartBar, Globe, Users } from "@phosphor-icons/react"
 import Image from "next/image"
 
 export default function ExecutiveSummarySection() {
@@ -52,8 +52,8 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-sm font-medium text-white">Our Solution</h3>
           </div>
           <p className="text-xs font-light text-white/70">
-            Suitpax AI platform that reduces travel costs by 27% and booking time by 85% while ensuring 100% policy
-            compliance.
+            Anthropic-powered AI platform that reduces travel costs by 27% and booking time by 85% while ensuring 100%
+            policy compliance.
           </p>
           <div className="mt-2 flex gap-1">
             <div className="flex-1 text-center p-1 bg-white/5 rounded-lg border border-white/10">
@@ -109,8 +109,7 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-xs font-medium text-white">Team</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
-            Founded by Alberto Zurano (ex-Aena) and Alexis Sanz (ex-Factorial) with 5+ years entrepreneurial experience
-            in travel tech
+            Founded by ex-Booking.com and Amadeus executives with 45+ years combined experience in travel tech
           </p>
         </div>
 
@@ -136,11 +135,11 @@ export default function ExecutiveSummarySection() {
 
         <div className="bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10">
           <div className="flex items-center gap-2 mb-1">
-            <Globe2 className="h-4 w-4 text-white" weight="fill" />
-            <h3 className="text-xs font-medium text-white">Global Expansion</h3>
+            <Handshake className="h-4 w-4 text-white" weight="fill" />
+            <h3 className="text-xs font-medium text-white">Exit Strategy</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
-            Phased rollout across all continents by 2026, starting with Europe, North America, and Asia-Pacific markets
+            IPO target by 2031 with €3.2B valuation or strategic acquisition by major travel tech player
           </p>
         </div>
       </div>

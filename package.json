@@ -67,8 +67,8 @@
     "framer-motion": "latest",
     "@phosphor-icons/react": "latest",
     "@vercel/analytics": "latest",
-    "cobe": "latest",
-    "simple-icons": "latest"
+    "react-icons": "latest",
+    "cobe": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
