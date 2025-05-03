@@ -6,7 +6,6 @@ import DashProductSection from "@/components/sections/dash-product-section"
 import ProblemSolutionSection from "@/components/sections/problem-solution-section"
 import FOMOSection from "@/components/sections/fomo-section"
 import MarketSection from "@/components/sections/market-section"
-import MarketVoicesSection from "@/components/sections/market-voices-section"
 import CompetitionSection from "@/components/sections/competition-section"
 import SolutionSection from "@/components/sections/solution-section"
 import AIAgentsSection from "@/components/sections/ai-agents-section"
@@ -83,7 +82,6 @@ export default function Home() {
         <ProblemSolutionSection />
         <FOMOSection />
         <MarketSection />
-        <MarketVoicesSection />
         <MarketInterestSection />
         <CompetitionSection />
 
