@@ -26,7 +26,6 @@ import TeamVisionSection from "@/components/sections/team-vision-section"
 import MoonshotSection from "@/components/sections/moonshot-section"
 import FundingUseSection from "@/components/sections/funding-use-section"
 import InvestorROISection from "@/components/sections/investor-roi-section"
-import Vision2031Section from "@/components/sections/vision-2031-section"
 import AdditionalFeaturesSection from "@/components/sections/additional-features-section"
 import MarketInterestSection from "@/components/sections/market-interest-section"
 import ExecutiveSummarySection from "@/components/sections/executive-summary-section"
@@ -37,6 +36,7 @@ import PasswordProtection from "@/components/password-protection"
 import ApiIntegrationsSection from "@/components/sections/api-integrations-section"
 import InvestorROICalculator from "@/components/sections/investor-roi-calculator"
 import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadmap"
+import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -78,7 +78,7 @@ export default function Home() {
         <ExecutiveSummarySection />
 
         {/* Problem & Market */}
-        <Vision2031Section />
+        <CompetitiveResponseStrategy />
         <ProblemSolutionSection />
         <FOMOSection />
         <MarketSection />

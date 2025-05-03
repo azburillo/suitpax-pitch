@@ -36,6 +36,11 @@ const agentImages = [
   "/ai-agents/agent27.png",
   "/ai-agents/agent28.png",
   "/ai-agents/agent29.png",
+  "/ai-agents/agent30.png",
+  "/ai-agents/agent31.png",
+  "/ai-agents/agent32.png",
+  "/ai-agents/agent33.png",
+  "/ai-agents/agent34.png",
 ]
 
 // Agent types with descriptions
@@ -69,6 +74,11 @@ const agentData = [
   { type: "Compliance Officer", description: "Ensures travel complies with international regulations" },
   { type: "Tech Support", description: "Resolves technical issues during business travel" },
   { type: "Feedback Analyzer", description: "Collects and analyzes traveler feedback to improve services" },
+  { type: "International Logistics Specialist", description: "Coordinates complex multi-country travel arrangements" },
+  { type: "Executive Travel Concierge", description: "Provides white-glove service for executive travel needs" },
+  { type: "Sustainability Travel Advisor", description: "Optimizes travel for minimal environmental impact" },
+  { type: "Risk Management Expert", description: "Assesses and mitigates travel risks in real-time" },
+  { type: "Corporate Retreat Planner", description: "Organizes team-building and corporate retreat experiences" },
 ]
 
 export default function AIAgentsInteractiveShowcase() {
@@ -235,11 +245,9 @@ export default function AIAgentsInteractiveShowcase() {
 
       {/* Info text */}
       <div className="mt-6 text-center">
-        <p className="text-sm font-medium text-emerald-950">
-          {gridView ? "29 AI Agents with unique specializations" : "Click on any agent to view details"}
-        </p>
+        <p className="text-sm font-medium text-emerald-950">The Future of Business Travel Assistance</p>
         <p className="text-xs font-light text-gray-500 mt-1">
-          Each agent is trained on specific business travel needs and company policies
+          Each agent adapts to your company's specific requirements and travel policies
         </p>
       </div>
     </div>
