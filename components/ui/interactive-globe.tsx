@@ -39,7 +39,7 @@ export default function InteractiveGlobe({
 
   const globeConfig = {
     size: 280,
-    scale: 1.2,
+    scale: 1.8, // Increased from 1.2 to zoom in more
     globeColor: "#ffffff",
     markerColor: "#374151",
     glowColor: "#e5e7eb",
@@ -72,7 +72,7 @@ export default function InteractiveGlobe({
         width: width * 2,
         height: height * 2,
         phi: 0,
-        theta: 0.3,
+        theta: -0.2, // Changed from 0.3 to -0.2 to show the "half orange" view
         dark: 0,
         diffuse: globeConfig.diffuse,
         mapSamples: 16000,
@@ -81,7 +81,7 @@ export default function InteractiveGlobe({
         markerColor: hexToRgb(globeConfig.markerColor),
         glowColor: hexToRgb(globeConfig.glowColor),
         scale: globeConfig.scale,
-        offset: [0, 0],
+        offset: [0, 0.1], // Added slight vertical offset to center the view
         markers: markers.map((marker) => ({
           location: marker.location,
           size: marker.size,

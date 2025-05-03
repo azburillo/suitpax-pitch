@@ -18,6 +18,25 @@ const agents = [
   { id: 10, name: "Local Guide Agent", image: "/ai-agents/agent10.png" },
   { id: 30, name: "Travel Analytics Agent", image: "/ai-agents/agent30.png" },
   { id: 31, name: "Executive Travel Agent", image: "/ai-agents/agent31.png" },
+  {
+    id: "agent32",
+    name: "Alex",
+    role: "International Logistics Specialist",
+    description: "Coordinates complex multi-country itineraries with seamless connections and contingency planning.",
+  },
+  {
+    id: "agent33",
+    name: "Sophia",
+    role: "Executive Travel Concierge",
+    description:
+      "Provides white-glove service for C-suite executives with premium accommodations and priority arrangements.",
+  },
+  {
+    id: "agent34",
+    name: "Zara",
+    role: "Sustainability Travel Advisor",
+    description: "Recommends eco-friendly travel options and carbon offset programs aligned with corporate ESG goals.",
+  },
 ]
 
 // Agent types for better organization - expanded with new specializations
