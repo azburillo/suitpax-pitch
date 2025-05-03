@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Rocket, Target, ShieldCheck, Globe2, ChartBar, Globe, Users } from "@phosphor-icons/react"
+import { Rocket, Target, ShieldCheck, GlobeHemisphereWest, ChartBar, Globe, Users } from "@phosphor-icons/react"
 import Image from "next/image"
 
 export default function ExecutiveSummarySection() {
@@ -136,7 +136,7 @@ export default function ExecutiveSummarySection() {
 
         <div className="bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10">
           <div className="flex items-center gap-2 mb-1">
-            <Globe2 className="h-4 w-4 text-white" weight="fill" />
+            <GlobeHemisphereWest className="h-4 w-4 text-white" weight="fill" />
             <h3 className="text-xs font-medium text-white">Global Expansion</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
