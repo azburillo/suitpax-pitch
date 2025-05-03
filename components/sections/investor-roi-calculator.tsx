@@ -64,42 +64,42 @@ export default function InvestorROICalculator() {
   return (
     <motion.section
       id="roi-calculator"
-      className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-lg my-8"
+      className="bg-white p-4 sm:p-6 md:p-8 rounded-3xl border border-gray-200 shadow-lg my-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center mb-8">
-        <div className="inline-flex items-center rounded-xl bg-gray-200 text-gray-700 px-3 py-1 text-xs font-medium mb-3">
+      <div className="flex flex-col items-center mb-6 sm:mb-8">
+        <div className="inline-flex items-center rounded-full bg-gray-200 text-gray-700 px-3 py-1 text-xs sm:text-sm font-medium mb-3">
           INVESTOR TOOLS
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter text-black text-center mb-2">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-black text-center mb-2 sm:mb-3">
           Try our calculator with superpowers
         </h2>
 
-        <div className="flex items-center gap-2 mt-2 bg-gray-200 rounded-full px-4 py-2">
-          <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
+        <div className="flex items-center gap-2 mt-2 bg-gray-200 rounded-full px-3 py-1.5 sm:px-4 sm:py-2">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden flex-shrink-0">
             <Image src="/ai-agents/agent5.png" alt="AI Agent" width={32} height={32} className="object-cover" />
           </div>
-          <p className="text-sm text-gray-700">"Enjoy watching your potential returns grow over time!"</p>
+          <p className="text-xs sm:text-sm text-gray-700">"Enjoy watching your potential returns grow over time!"</p>
         </div>
       </div>
 
-      <div className="mb-10">
-        <div className="flex flex-col items-center justify-center text-gray-800 text-xl sm:text-2xl mb-4">
+      <div className="mb-8 sm:mb-10">
+        <div className="flex flex-col items-center justify-center text-gray-800 text-lg sm:text-xl md:text-2xl mb-4">
           <div className="flex items-center justify-center gap-4 w-full">
             <span className="font-medium">How much would you like to invest?</span>
           </div>
 
           <div className="relative w-full max-w-md mt-4">
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-              <CurrencyDollar className="h-6 w-6 text-gray-400" />
+            <div className="absolute inset-y-0 left-3 sm:left-4 flex items-center pointer-events-none">
+              <CurrencyDollar className="h-5 w-5 sm:h-6 sm:w-6 text-gray-400" />
             </div>
             <input
               type="text"
               value={investment.toLocaleString()}
               onChange={handleInputChange}
-              className="w-full bg-gray-50 border border-gray-200 text-black text-center text-3xl sm:text-4xl py-4 px-12 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent"
+              className="w-full bg-gray-50 border border-gray-200 text-black text-center text-2xl sm:text-3xl md:text-4xl py-3 sm:py-4 px-10 sm:px-12 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent"
               aria-label="Investment amount"
             />
           </div>
@@ -135,12 +135,12 @@ export default function InvestorROICalculator() {
             {[1, 3, 5].map((year) => (
               <div key={year} className="relative">
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-800">Year {year}</span>
-                  <span className="text-sm font-medium text-gray-800">
+                  <span className="text-xs sm:text-sm font-medium text-gray-800">Year {year}</span>
+                  <span className="text-xs sm:text-sm font-medium text-gray-800">
                     {formatCurrency(calculateROI(investment, year))}
                   </span>
                 </div>
-                <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-2 sm:h-2.5 bg-gray-200 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full"
                     style={{ width: `${Math.min((calculateROI(investment, year) / (investment * 40)) * 100, 100)}%` }}
@@ -149,19 +149,23 @@ export default function InvestorROICalculator() {
                 <div className="absolute -left-1.5 top-1/2 transform -translate-y-1/2 w-3 h-3 rounded-full border-2 border-white flex items-center justify-center bg-gray-400">
                   <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
                 </div>
-                <div className="mt-1 text-xs text-gray-500 font-medium">
+                <div className="mt-1 text-[10px] sm:text-xs text-gray-500 font-medium">
                   {Math.round((calculateROI(investment, year) / investment) * 100) / 100}x return
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 p-4 bg-gray-200 rounded-lg">
+          <div className="mt-6 p-3 sm:p-4 bg-gray-200 rounded-xl">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm font-medium text-gray-800">Exit Valuation (Year 5)</span>
-              <span className="text-lg font-medium text-black">{formatCurrency(calculateROI(investment, 5))}</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-800">Exit Valuation (Year 5)</span>
+              <span className="text-base sm:text-lg font-medium text-black">
+                {formatCurrency(calculateROI(investment, 5))}
+              </span>
             </div>
-            <div className="text-sm text-gray-600">Based on projected company valuation of €1B+ by 2029</div>
+            <div className="text-[10px] sm:text-sm text-gray-600">
+              Based on projected company valuation of €1B+ by 2029
+            </div>
           </div>
         </div>
 
@@ -171,22 +175,22 @@ export default function InvestorROICalculator() {
             Industry Benchmark Comparison
           </h3>
 
-          <div className="space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             {benchmarks.map((benchmark) => (
               <div key={benchmark.name} className="relative">
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-800">{benchmark.name}</span>
-                  <span className="text-sm font-medium text-gray-800">
+                  <span className="text-xs sm:text-sm font-medium text-gray-800">{benchmark.name}</span>
+                  <span className="text-xs sm:text-sm font-medium text-gray-800">
                     {formatCurrency(investment * benchmark.multiplier)}
                   </span>
                 </div>
-                <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-2 sm:h-2.5 bg-gray-200 rounded-full overflow-hidden">
                   <div
                     className={`h-full ${benchmark.color} rounded-full`}
                     style={{ width: `${Math.min((benchmark.multiplier / 40) * 100, 100)}%` }}
                   ></div>
                 </div>
-                <div className="mt-1 text-xs text-gray-500 font-medium">
+                <div className="mt-1 text-[10px] sm:text-xs text-gray-500 font-medium">
                   {benchmark.multiplier}x return over 5 years
                 </div>
               </div>
@@ -208,8 +212,8 @@ export default function InvestorROICalculator() {
         </div>
       </div>
 
-      <div className="mt-8 text-center">
-        <p className="text-sm text-gray-500 max-w-2xl mx-auto">
+      <div className="mt-6 sm:mt-8 text-center">
+        <p className="text-[10px] sm:text-sm text-gray-500 max-w-2xl mx-auto">
           This calculator provides estimated returns based on our growth projections. Actual results may vary. Contact
           our investor relations team for detailed financial models.
         </p>
