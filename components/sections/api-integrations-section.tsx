@@ -9,9 +9,11 @@ import {
   SiAmericanairlines,
   SiSouthwestairlines,
   SiDelta,
+  SiAirfrance,
   SiQatarairways,
   SiEmirates,
-} from "react-icons/si"
+  SiAircanada,
+} from "simple-icons/icons"
 
 // Helper component to render SimpleIcons
 const SimpleIcon = ({ icon, title }: { icon: any; title: string }) => {
@@ -130,6 +132,7 @@ export default function ApiIntegrationsSection() {
               <SimpleIcon icon={SiAirfrance} title="Air France" />
               <SimpleIcon icon={SiQatarairways} title="Qatar Airways" />
               <SimpleIcon icon={SiEmirates} title="Emirates" />
+              <SimpleIcon icon={SiAircanada} title="Air Canada" />
             </div>
             <p className="text-xs text-gray-500 mt-3 text-center">And 390+ more airlines worldwide</p>
           </div>
