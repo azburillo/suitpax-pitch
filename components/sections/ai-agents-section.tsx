@@ -84,6 +84,14 @@ export default function AIAgentsSection() {
       {/* AI Agents Grid */}
       <AIAgentsShowcase />
 
+      <div className="mt-8 text-center">
+        <h3 className="text-lg md:text-xl font-medium text-emerald-950">The Future of Business Travel Assistance</h3>
+        <p className="text-sm md:text-base font-light text-gray-600 mt-2 max-w-2xl mx-auto">
+          Each agent is powered by our proprietary AI technology, delivering personalized solutions that adapt to your
+          company's unique travel requirements.
+        </p>
+      </div>
+
       {/* Features */}
       <div className="grid md:grid-cols-4 gap-4 mt-8">
         <div className="bg-gray-100 p-4 rounded-xl">
