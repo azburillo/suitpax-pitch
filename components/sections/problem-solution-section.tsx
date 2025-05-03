@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Warning, CheckCircle, Clock, CreditCard, FileSearch, User, X } from "@phosphor-icons/react"
+import { Warning, CheckCircle, Clock, CreditCard, FileSearch, User, X, Rocket } from "@phosphor-icons/react"
 
 export default function ProblemSolutionSection() {
   return (
@@ -181,7 +181,10 @@ export default function ProblemSolutionSection() {
 
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm">
-            <p className="text-sm font-medium tracking-tighter mb-2 text-red-400">Before Suitpax</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-sm font-medium tracking-tighter text-red-400">Before Suitpax</p>
+              <p className="text-xs font-light text-red-400/80 bg-red-400/10 px-2 py-0.5 rounded-full">6+ hours</p>
+            </div>
             <div className="space-y-3">
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
@@ -258,76 +261,80 @@ export default function ProblemSolutionSection() {
           </div>
 
           <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm">
-            <p className="text-sm font-medium tracking-tighter mb-2 text-white">With Suitpax</p>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-sm font-medium tracking-tighter text-white">With Suitpax</p>
+              <p className="text-xs font-light text-emerald-400/80 bg-emerald-400/10 px-2 py-0.5 rounded-full">
+                Just 1 hour
+              </p>
+            </div>
+
+            <div className="mb-3 bg-black/40 p-2 rounded-lg border border-white/5">
+              <div className="flex items-center gap-2 mb-1">
+                <Rocket className="h-4 w-4 text-emerald-400" weight="fill" />
+                <p className="text-xs font-medium text-emerald-400">Suitpax AI handles everything</p>
+              </div>
+              <p className="text-xs font-light text-white/70 pl-6">
+                Our AI processes all requests, optimizes bookings, and manages changes automatically
+              </p>
+            </div>
+
             <div className="space-y-3">
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <Clock className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-white">8:30 AM</p>
-                  <p className="text-xs font-light text-white/70">
-                    Maria reviews the Suitpax dashboard with all requests already processed by AI
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2">
-                <div className="mt-0.5 flex-shrink-0">
-                  <CheckCircle className="h-4 w-4 text-white" />
+                  <Clock className="h-4 w-4 text-emerald-400" />
                 </div>
                 <div>
                   <p className="text-xs font-medium text-white">9:00 AM</p>
                   <p className="text-xs font-light text-white/70">
-                    Approves AI recommendations that comply with all policies with one click
+                    Maria opens the Suitpax dashboard and sees all 15 travel requests already processed by AI
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <FileSearch className="h-4 w-4 text-white" />
+                  <CheckCircle className="h-4 w-4 text-emerald-400" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-white">10:15 AM</p>
+                  <p className="text-xs font-medium text-white">9:15 AM</p>
                   <p className="text-xs font-light text-white/70">
-                    Reviews predictive analysis showing $12,500 savings opportunities this quarter
+                    With one click, Maria approves all AI-recommended bookings that comply with company policies
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <User className="h-4 w-4 text-white" />
+                  <FileSearch className="h-4 w-4 text-emerald-400" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-white">1:30 PM</p>
+                  <p className="text-xs font-medium text-white">9:30 AM</p>
                   <p className="text-xs font-light text-white/70">
-                    Dedicates time to a strategic session with the CFO on travel expense optimization
+                    Suitpax AI automatically generates reports showing $12,500 in savings this quarter
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <CreditCard className="h-4 w-4 text-white" />
+                  <User className="h-4 w-4 text-emerald-400" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-white">3:00 PM</p>
+                  <p className="text-xs font-medium text-white">9:45 AM</p>
                   <p className="text-xs font-light text-white/70">
-                    Last-minute changes are automatically managed by AI agents
+                    Maria reviews the strategic insights provided by Suitpax AI for future travel optimization
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2 bg-emerald-400/5 p-2 rounded-lg">
                 <div className="mt-0.5 flex-shrink-0">
-                  <CheckCircle className="h-4 w-4 text-white" />
+                  <Rocket className="h-4 w-4 text-emerald-400" weight="fill" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-white">4:30 PM</p>
+                  <p className="text-xs font-medium text-white">10:00 AM</p>
                   <p className="text-xs font-light text-white/70">
-                    Automatic reports sent to finance with direct integration into accounting systems
+                    All done! Maria can now focus on strategic tasks while Suitpax AI handles any changes or issues
                   </p>
                 </div>
               </div>
