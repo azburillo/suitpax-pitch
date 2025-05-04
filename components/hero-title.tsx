@@ -31,13 +31,13 @@ export default function HeroTitle() {
           <span className="font-serif italic text-white/80 text-xs">Open-world of business travel</span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-none text-white">
-          The next gen of traveltech
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter leading-none text-white">
+          The next-gen of traveltech
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-medium">
+        <p className="text-sm sm:text-base md:text-lg tracking-tighter text-white/90 max-w-2xl mx-auto font-medium">
           AI-powered business travel platform with superpowers
         </p>
-        <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto font-light">
+        <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light">
           Transforming business travel with intelligent automation and personalized experiences
         </p>
 
