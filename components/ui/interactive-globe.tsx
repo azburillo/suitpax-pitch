@@ -19,11 +19,28 @@ interface InteractiveGlobeProps {
   onRegionClick?: (region: string) => void
 }
 
+// Improved hexToRgb function with error handling
 const hexToRgb = (hex: string): [number, number, number] => {
-  const r = Number.parseInt(hex.slice(1, 3), 16) / 255
-  const g = Number.parseInt(hex.slice(3, 5), 16) / 255
-  const b = Number.parseInt(hex.slice(5, 7), 16) / 255
-  return [r, g, b]
+  try {
+    // Default color if conversion fails
+    if (!hex || typeof hex !== "string" || !hex.startsWith("#") || hex.length < 7) {
+      return [0.3, 0.3, 0.3] // Default gray color
+    }
+
+    const r = Number.parseInt(hex.slice(1, 3), 16) / 255
+    const g = Number.parseInt(hex.slice(3, 5), 16) / 255
+    const b = Number.parseInt(hex.slice(5, 7), 16) / 255
+
+    // Check if any value is NaN
+    if (isNaN(r) || isNaN(g) || isNaN(b)) {
+      return [0.3, 0.3, 0.3] // Default gray color
+    }
+
+    return [r, g, b]
+  } catch (error) {
+    console.error("Error converting hex to RGB:", error)
+    return [0.3, 0.3, 0.3] // Default gray color
+  }
 }
 
 export default function InteractiveGlobe({
@@ -36,10 +53,11 @@ export default function InteractiveGlobe({
   const pointerInteracting = useRef<number | null>(null)
   const pointerInteractionMovement = useRef(0)
   const [{ width, height }, setSize] = useState({ width: 0, height: 0 })
+  const [isCanvasReady, setIsCanvasReady] = useState(false)
 
   const globeConfig = {
-    size: 280,
-    scale: 1.8, // Increased from 1.2 to zoom in more
+    size: 400,
+    scale: 1.8,
     globeColor: "#ffffff",
     markerColor: "#374151",
     glowColor: "#e5e7eb",
@@ -51,12 +69,19 @@ export default function InteractiveGlobe({
   useEffect(() => {
     const onResize = () => {
       if (canvasRef.current) {
-        const { width, height } = canvasRef.current.getBoundingClientRect()
-        setSize({ width, height })
+        const rect = canvasRef.current.getBoundingClientRect()
+        setSize({
+          width: rect.width || 1, // Ensure non-zero values
+          height: rect.height || 1,
+        })
+        setIsCanvasReady(true)
       }
     }
+
+    // Initial size calculation
+    setTimeout(onResize, 100) // Small delay to ensure DOM is ready
+
     window.addEventListener("resize", onResize)
-    onResize()
     return () => {
       window.removeEventListener("resize", onResize)
     }
@@ -66,44 +91,56 @@ export default function InteractiveGlobe({
     let phi = 0
     let globe: ReturnType<typeof createGlobe> | null = null
 
-    if (canvasRef.current && width && height) {
-      globe = createGlobe(canvasRef.current, {
-        devicePixelRatio: 2,
-        width: width * 2,
-        height: height * 2,
-        phi: 0,
-        theta: -0.2, // Changed from 0.3 to -0.2 to show the "half orange" view
-        dark: 0,
-        diffuse: globeConfig.diffuse,
-        mapSamples: 16000,
-        mapBrightness: globeConfig.mapBrightness,
-        baseColor: hexToRgb(globeConfig.globeColor),
-        markerColor: hexToRgb(globeConfig.markerColor),
-        glowColor: hexToRgb(globeConfig.glowColor),
-        scale: globeConfig.scale,
-        offset: [0, 0.1], // Added slight vertical offset to center the view
-        markers: markers.map((marker) => ({
-          location: marker.location,
-          size: marker.size,
-          color: marker.color,
-        })),
-        onRender: (state) => {
-          if (!pointerInteracting.current) {
-            phi += globeConfig.rotationSpeed
-          }
-          state.phi = phi + pointerInteractionMovement.current
-          state.width = width * 2
-          state.height = height * 2
-        },
-      })
+    // Only initialize globe when canvas is ready and has dimensions
+    if (canvasRef.current && isCanvasReady && width > 0 && height > 0) {
+      try {
+        // Prepare safe marker data
+        const safeMarkers = markers.map((marker) => ({
+          location: marker.location || [0, 0],
+          size: marker.size || 0.1,
+          color: marker.color || undefined,
+        }))
+
+        globe = createGlobe(canvasRef.current, {
+          devicePixelRatio: 2,
+          width: width * 2,
+          height: height * 2,
+          phi: 0,
+          theta: -0.2,
+          dark: 0,
+          diffuse: globeConfig.diffuse,
+          mapSamples: 16000,
+          mapBrightness: globeConfig.mapBrightness,
+          baseColor: hexToRgb(globeConfig.globeColor),
+          markerColor: hexToRgb(globeConfig.markerColor),
+          glowColor: hexToRgb(globeConfig.glowColor),
+          scale: globeConfig.scale,
+          offset: [0, 0.1],
+          markers: safeMarkers,
+          onRender: (state) => {
+            if (!pointerInteracting.current) {
+              phi += globeConfig.rotationSpeed
+            }
+            state.phi = phi + pointerInteractionMovement.current
+            state.width = width * 2
+            state.height = height * 2
+          },
+        })
+      } catch (error) {
+        console.error("Error initializing globe:", error)
+      }
     }
 
     return () => {
       if (globe) {
-        globe.destroy()
+        try {
+          globe.destroy()
+        } catch (error) {
+          console.error("Error destroying globe:", error)
+        }
       }
     }
-  }, [width, height, markers])
+  }, [width, height, markers, isCanvasReady])
 
   const visibleMarkers = useMemo(() => {
     return markers.filter((marker) => activeRegion === "all" || marker.region === activeRegion)
@@ -114,16 +151,21 @@ export default function InteractiveGlobe({
       <div
         className="relative"
         style={{
-          width: globeConfig.size,
-          height: globeConfig.size,
+          width: "100%",
+          height: "400px", // Reduced height to ensure it renders properly
           maxWidth: "100%",
-          aspectRatio: "1",
           margin: "0 auto",
         }}
       >
         <canvas
           ref={canvasRef}
-          style={{ width: "100%", height: "100%", contain: "layout paint size", opacity: 0.9 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            contain: "layout paint size",
+            opacity: 0.9,
+            display: "block", // Ensure it's a block element
+          }}
           onPointerDown={(e) => {
             pointerInteracting.current = e.clientX - pointerInteractionMovement.current
             if (canvasRef.current) {
@@ -157,27 +199,29 @@ export default function InteractiveGlobe({
         />
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full p-2 flex flex-wrap justify-center items-center gap-1">
-        <motion.div
-          className="flex flex-wrap gap-1 justify-center"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {visibleMarkers.map((marker, index) => (
-            <motion.div
-              key={index}
-              className={`text-xs font-medium px-1.5 py-0.5 rounded-md bg-gray-100 border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2, delay: index * 0.05 }}
-              onClick={() => onRegionClick && onRegionClick(marker.region)}
-            >
-              {marker.name}
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      {visibleMarkers.length > 0 && (
+        <div className="absolute bottom-0 left-0 w-full p-2 flex flex-wrap justify-center items-center gap-1">
+          <motion.div
+            className="flex flex-wrap gap-1 justify-center"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {visibleMarkers.map((marker, index) => (
+              <motion.div
+                key={index}
+                className={`text-xs font-medium px-1.5 py-0.5 rounded-md bg-gray-100 border border-gray-200 cursor-pointer hover:bg-gray-200 transition-colors`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
+                onClick={() => onRegionClick && onRegionClick(marker.region)}
+              >
+                {marker.name}
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      )}
     </div>
   )
 }

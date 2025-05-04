@@ -16,8 +16,8 @@ export default function InvestorROICalculator() {
   const [valuation, setValuation] = useState(13333333)
   const [years, setYears] = useState(5)
 
-  // Available equity options
-  const equityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  // Available equity options - updated to max 10%
+  const equityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   // Update equity percentage based on investment amount
   useEffect(() => {
@@ -31,10 +31,8 @@ export default function InvestorROICalculator() {
       setEquityPercentage(7)
     } else if (investment <= 1400000) {
       setEquityPercentage(9)
-    } else if (investment <= 1600000) {
-      setEquityPercentage(10)
     } else {
-      setEquityPercentage(12)
+      setEquityPercentage(10)
     }
 
     setSelectedEquity(equityPercentage)
@@ -52,9 +50,10 @@ export default function InvestorROICalculator() {
     updateValuation(investment, equity)
   }
 
-  // Calculate ROI based on investment amount and years
-  const calculateROI = (amount: number, years: number) => {
-    const multipliers = {
+  // Calculate ROI based on investment amount, years and equity percentage
+  const calculateROI = (amount: number, years: number, equity: number) => {
+    // Base multipliers adjusted by equity percentage
+    const baseMultipliers = {
       1: 1.8,
       2: 4.5,
       3: 9.2,
@@ -63,9 +62,27 @@ export default function InvestorROICalculator() {
       6: 38,
     }
 
+    // Adjust multiplier based on equity percentage
+    // Higher equity gets slightly better returns (incentive for larger investment)
+    const equityFactor = 1 + (equity - 1) * 0.05
+
     // @ts-ignore - TypeScript doesn't know we're checking for valid keys
-    const multiplier = multipliers[years] || multipliers[5]
-    return amount * multiplier
+    const baseMultiplier = baseMultipliers[years] || baseMultipliers[5]
+    const adjustedMultiplier = baseMultiplier * equityFactor
+
+    return amount * adjustedMultiplier
+  }
+
+  // Calculate multiple based on equity percentage
+  const calculateMultiple = (years: number, equity: number) => {
+    // Base multiples for 5 years
+    const baseMultiple = 25
+
+    // Adjust multiple based on equity percentage
+    // Higher equity gets slightly better multiple (incentive for larger investment)
+    const equityFactor = 1 + (equity - 1) * 0.05
+
+    return baseMultiple * equityFactor
   }
 
   // Format currency
@@ -104,6 +121,11 @@ export default function InvestorROICalculator() {
   // Calculate company ownership
   const calculateOwnership = (amount: number, percentage: number) => {
     return (amount / (amount / (percentage / 100))) * 100
+  }
+
+  // Get the current multiple based on selected equity
+  const getCurrentMultiple = () => {
+    return calculateMultiple(5, selectedEquity).toFixed(1)
   }
 
   // Industry benchmarks
@@ -207,11 +229,13 @@ export default function InvestorROICalculator() {
           </div>
           <div className="bg-black/30 p-3 rounded-lg border border-white/10">
             <p className="text-xs text-white/60 mb-1">5-Year Return</p>
-            <p className="text-lg font-medium text-white">{formatCurrency(calculateROI(investment, 5))}</p>
+            <p className="text-lg font-medium text-white">
+              {formatCurrency(calculateROI(investment, 5, selectedEquity))}
+            </p>
           </div>
           <div className="bg-black/30 p-3 rounded-lg border border-white/10">
             <p className="text-xs text-white/60 mb-1">Multiple</p>
-            <p className="text-lg font-medium text-white">25x</p>
+            <p className="text-lg font-medium text-white">{getCurrentMultiple()}x</p>
           </div>
         </div>
       </div>
@@ -231,20 +255,22 @@ export default function InvestorROICalculator() {
                 <div className="flex justify-between mb-2">
                   <span className="text-xs font-medium text-white/80">Year {year}</span>
                   <span className="text-xs font-medium text-white/80">
-                    {formatCurrency(calculateROI(investment, year))}
+                    {formatCurrency(calculateROI(investment, year, selectedEquity))}
                   </span>
                 </div>
                 <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-white/40 to-white/80 rounded-full"
-                    style={{ width: `${Math.min((calculateROI(investment, year) / (investment * 40)) * 100, 100)}%` }}
+                    style={{
+                      width: `${Math.min((calculateROI(investment, year, selectedEquity) / (investment * 40)) * 100, 100)}%`,
+                    }}
                   ></div>
                 </div>
                 <div className="absolute -left-1 top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full border border-white flex items-center justify-center bg-black">
                   <div className="w-1 h-1 rounded-full bg-white"></div>
                 </div>
                 <div className="mt-1 text-[10px] text-white/50 font-medium">
-                  {Math.round((calculateROI(investment, year) / investment) * 10) / 10}x return
+                  {Math.round((calculateROI(investment, year, selectedEquity) / investment) * 10) / 10}x return
                 </div>
               </div>
             ))}
@@ -253,7 +279,9 @@ export default function InvestorROICalculator() {
           <div className="mt-5 p-3 bg-white/5 rounded-xl border border-white/10">
             <div className="flex justify-between items-center mb-1">
               <span className="text-xs font-medium text-white/80">Exit Valuation (Year 5)</span>
-              <span className="text-sm font-medium text-white">{formatCurrency(calculateROI(investment, 5))}</span>
+              <span className="text-sm font-medium text-white">
+                {formatCurrency(calculateROI(investment, 5, selectedEquity))}
+              </span>
             </div>
             <div className="text-[10px] text-white/50">Based on projected company valuation of €1B+ by 2029</div>
           </div>
@@ -301,7 +329,7 @@ export default function InvestorROICalculator() {
                 <span className="text-white/40 mt-0.5">•</span>
                 <span>
                   At {formatPercentage(selectedEquity)} equity, your stake would be worth{" "}
-                  {formatCurrency(calculateROI(investment, 5))} in 5 years
+                  {formatCurrency(calculateROI(investment, 5, selectedEquity))} in 5 years
                 </span>
               </p>
               <p className="flex items-start gap-1.5">

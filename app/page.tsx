@@ -26,7 +26,6 @@ import MoonshotSection from "@/components/sections/moonshot-section"
 import FundingUseSection from "@/components/sections/funding-use-section"
 import InvestorROISection from "@/components/sections/investor-roi-section"
 import AdditionalFeaturesSection from "@/components/sections/additional-features-section"
-import MarketInterestSection from "@/components/sections/market-interest-section"
 import ExecutiveSummarySection from "@/components/sections/executive-summary-section"
 import CompetitiveAdvantageSection from "@/components/sections/competitive-advantage-section"
 import InvestmentSection from "@/components/sections/investment-section"
@@ -38,11 +37,11 @@ import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadm
 import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
 import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
 import CrisisManagementSection from "@/components/sections/crisis-management-section"
-import Footer from "@/components/footer"
 import CustomerSuccessSection from "@/components/sections/customer-success-section"
 import IntegrationEcosystemSection from "@/components/sections/integration-ecosystem-section"
 import ProductPreviewSection from "@/components/sections/product-preview-section"
 import FoundersOpenLetter from "@/components/sections/founders-open-letter"
+import GlobalPresenceSection from "@/components/sections/global-presence-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -78,19 +77,45 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8 space-y-6">
-        {/* Opening & Executive Summary */}
+        {/* ===== HERO & INTRODUCTION COMPONENTS =====
+         * Similar style: Modern, bold, high-impact visuals
+         * HeroTitle: Large text, brand colors, main value proposition
+         * GlobalPresenceSection: Interactive 3D globe, dark theme with glowing elements
+         * DashProductSection: Product showcase with screenshots, modern UI
+         * ExecutiveSummarySection: Clean layout, concise text blocks
+         */}
         <HeroTitle />
+        <GlobalPresenceSection />
         <DashProductSection />
         <ExecutiveSummarySection />
 
-        {/* Problem & Market */}
+        {/* ===== PROBLEM & MARKET ANALYSIS COMPONENTS =====
+         * Similar style: Data-driven, analytical presentation
+         * CompetitiveResponseStrategy: Strategic positioning charts
+         * ProblemSolutionSection: Problem statements with solution mapping
+         * MarketSection: Market size visualizations, TAM/SAM/SOM breakdown
+         * CompetitionSection: Competitor comparison tables/matrices
+         */}
         <CompetitiveResponseStrategy />
         <ProblemSolutionSection />
         <MarketSection />
-        <MarketInterestSection />
         <CompetitionSection />
 
-        {/* Solution & Product */}
+        {/* ===== PRODUCT & FEATURES COMPONENTS =====
+         * Similar style: Product-focused, visual demonstrations
+         * SolutionSection: Solution overview with benefits
+         * AIAgentsSection: AI capabilities showcase, modern tech feel
+         * ProductsSection: Product lineup with features
+         * ProductPreviewSection: Visual product demonstrations
+         * ApiIntegrationsSection: Technical integration diagrams
+         * IntegrationEcosystemSection: Partner/integration ecosystem
+         * AdditionalFeaturesSection: Feature highlights with icons
+         * CompetitiveAdvantageSection: Advantage comparisons
+         *
+         * Different style: SustainabilityImpactSection & CrisisManagementSection
+         * These have a more corporate/governance focus compared to the
+         * product-centric components above
+         */}
         <SolutionSection />
         <AIAgentsSection />
         <ProductsSection />
@@ -102,12 +127,25 @@ export default function Home() {
         <SustainabilityImpactSection />
         <CrisisManagementSection />
 
-        {/* Technology */}
+        {/* ===== TECHNOLOGY COMPONENTS =====
+         * Similar style: Technical, architecture-focused
+         * TechnologySection: Tech overview with architecture diagrams
+         * TechStackSection: Technology stack visualization
+         * SecurityComplianceSection: Security features and compliance
+         */}
         <TechnologySection />
         <TechStackSection />
         <SecurityComplianceSection />
 
-        {/* Business & Traction */}
+        {/* ===== BUSINESS & TRACTION COMPONENTS =====
+         * Similar style: Business metrics, growth charts
+         * TractionSection: Growth metrics, user acquisition
+         * CustomerSuccessSection: Customer testimonials, case studies
+         * NetworkEffectSection: Network effect visualization
+         * UnitEconomicsSection: Financial metrics, unit economics
+         * BusinessSection: Business model overview
+         * BusinessDefensibilitySection: Moat strategy, defensibility
+         */}
         <TractionSection />
         <CustomerSuccessSection />
         <NetworkEffectSection />
@@ -115,27 +153,56 @@ export default function Home() {
         <BusinessSection />
         <BusinessDefensibilitySection />
 
-        {/* Growth Strategy */}
+        {/* ===== GROWTH STRATEGY COMPONENTS =====
+         * Similar style: Forward-looking, strategic planning
+         * GoToMarketSection: GTM strategy visualization
+         * GlobalExpansionSection: Global expansion plans
+         * MarketExpansionRoadmap: Market expansion timeline
+         * RoadmapSection: Product/company roadmap
+         */}
         <GoToMarketSection />
         <GlobalExpansionSection />
         <MarketExpansionRoadmap />
         <RoadmapSection />
 
-        {/* Team & Vision */}
-        <TeamSection />
+        {/* ===== TEAM & VISION COMPONENTS =====
+         * Different styles within this group:
+         * TeamSection: Professional, corporate style with team structure
+         * FoundersOpenLetter: Personal, narrative style with founder stories
+         * TeamVisionSection: Visionary, aspirational style
+         * MoonshotSection: Bold, ambitious future vision
+         *
+         * Consider unifying the visual language between these components
+         * while maintaining their distinct content approaches
+         */}
+        <div className="space-y-6">
+          <TeamSection />
+          <FoundersOpenLetter />
+        </div>
         <TeamVisionSection />
         <MoonshotSection />
 
-        {/* Investment */}
+        {/* ===== INVESTMENT COMPONENTS =====
+         * Similar style: Financial, ROI-focused
+         * FundingUseSection: Use of funds breakdown
+         * InvestmentSection: Investment opportunity overview
+         * InvestorROISection: ROI projections
+         * InvestorROICalculator: Interactive ROI calculator
+         *
+         * These components share a financial focus but
+         * InvestorROICalculator has a more interactive style
+         * that could be extended to the other investment components
+         */}
         <FundingUseSection />
         <InvestmentSection />
         <InvestorROISection />
         <InvestorROICalculator />
 
-        {/* Closing */}
+        {/* ===== CLOSING COMPONENT =====
+         * Unique style: Call-to-action focused
+         * ClosingSection: Final pitch, contact information
+         */}
         <ClosingSection />
-        <FoundersOpenLetter />
-        <Footer />
       </div>
     </main>
   )
