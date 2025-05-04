@@ -29,7 +29,7 @@ export default function TeamSection() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             <div className="w-24 h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
               <Image
-                src="/placeholder.svg?key=tstnr"
+                src="/alberto-zurano.webp"
                 alt="Alberto Zurano"
                 width={96}
                 height={96}
@@ -74,7 +74,7 @@ export default function TeamSection() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             <div className="w-24 h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
               <Image
-                src="/placeholder.svg?key=hy6e8"
+                src="/alexis-sanz.jpeg"
                 alt="Alexis Sanz"
                 width={96}
                 height={96}
@@ -121,7 +121,7 @@ export default function TeamSection() {
           <div className="flex -space-x-4 rtl:space-x-reverse">
             <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 border-2 border-white">
               <Image
-                src="/placeholder.svg?key=tstnr"
+                src="/alberto-zurano.webp"
                 alt="Alberto Zurano"
                 width={48}
                 height={48}
@@ -130,7 +130,7 @@ export default function TeamSection() {
             </div>
             <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 border-2 border-white">
               <Image
-                src="/placeholder.svg?key=hy6e8"
+                src="/alexis-sanz.jpeg"
                 alt="Alexis Sanz"
                 width={48}
                 height={48}

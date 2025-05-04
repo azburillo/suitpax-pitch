@@ -42,6 +42,7 @@ import Footer from "@/components/footer"
 import CustomerSuccessSection from "@/components/sections/customer-success-section"
 import IntegrationEcosystemSection from "@/components/sections/integration-ecosystem-section"
 import ProductPreviewSection from "@/components/sections/product-preview-section"
+import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -133,6 +134,7 @@ export default function Home() {
 
         {/* Closing */}
         <ClosingSection />
+        <FoundersOpenLetter />
         <Footer />
       </div>
     </main>
