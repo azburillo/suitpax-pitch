@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ShieldAlert, Lifebuoy, Users } from "@phosphor-icons/react"
+import { Shield, Lifebuoy, Users, Globe, Warning } from "@phosphor-icons/react"
 
 export default function CrisisManagementSection() {
   return (
@@ -23,7 +23,7 @@ export default function CrisisManagementSection() {
         <div className="space-y-4">
           <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
             <h3 className="text-lg font-medium mb-3 flex items-center">
-              <ShieldAlert className="h-5 w-5 text-emerald-950 mr-2" weight="fill" />
+              <Shield className="h-5 w-5 text-emerald-950 mr-2" weight="fill" />
               Risk assessment and monitoring
             </h3>
             <div className="space-y-3">
@@ -37,7 +37,7 @@ export default function CrisisManagementSection() {
               </div>
               <div className="flex items-start gap-2">
                 <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                  <ShieldAlert className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                  <Shield className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
                 </div>
                 <p className="text-sm font-light">
                   <span className="font-medium">Automated risk scoring</span> for destinations and travel plans
@@ -82,7 +82,7 @@ export default function CrisisManagementSection() {
               </div>
               <div className="flex items-start gap-2">
                 <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                  <ShieldAlert className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                  <Shield className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
                 </div>
                 <p className="text-sm font-light">
                   <span className="font-medium">Evacuation and repatriation</span> services in crisis situations
