@@ -37,6 +37,8 @@ import ApiIntegrationsSection from "@/components/sections/api-integrations-secti
 import InvestorROICalculator from "@/components/sections/investor-roi-calculator"
 import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadmap"
 import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
+import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
+import CrisisManagementSection from "@/components/sections/crisis-management-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -92,6 +94,8 @@ export default function Home() {
         <ApiIntegrationsSection />
         <AdditionalFeaturesSection />
         <CompetitiveAdvantageSection />
+        <SustainabilityImpactSection />
+        <CrisisManagementSection />
 
         {/* Technology */}
         <TechnologySection />

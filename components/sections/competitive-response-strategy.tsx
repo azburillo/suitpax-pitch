@@ -35,7 +35,7 @@ export default function CompetitiveResponseStrategy() {
             <h3 className="text-sm font-medium text-white">Defensive Moats</h3>
           </div>
           <p className="text-xs font-light text-white/70">
-            Our proprietary AI models are trained on 5+ years of corporate travel data, creating a significant barrier
+            Our proprietary AI models are trained on 1.5+ years of corporate travel data, creating a significant barrier
             to entry for competitors.
           </p>
           <div className="mt-2 flex gap-1">
