@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Globe, Plane, MapPin } from "lucide-react"
+import { Plane, MapPin } from "lucide-react"
 import Image from "next/image"
 import createGlobe from "cobe"
 import { useRef } from "react"
@@ -67,9 +67,9 @@ export default function GlobalPresenceSection() {
   // Globe configuration
   const globeConfig = {
     scale: 1.2,
-    globeColor: "#1a1a2e",
-    markerColor: "#4cc9f0",
-    glowColor: "#4361ee",
+    globeColor: "#000000",
+    markerColor: "#ffffff",
+    glowColor: "#ffffff",
     rotationSpeed: 0.005,
     mapBrightness: 6,
     diffuse: 1.2,
@@ -162,34 +162,29 @@ export default function GlobalPresenceSection() {
   ]
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-black to-blue-950 text-white rounded-2xl my-12">
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent"></div>
-
-      {/* Header */}
-      <div className="relative z-10 pt-12 pb-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-center gap-3 mb-4"
-        >
-          <Globe className="w-6 h-6 text-blue-400" />
-          <h2 className="text-3xl font-bold tracking-tight">Global Business Travel Network</h2>
-        </motion.div>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl mx-auto text-blue-200 text-lg"
-        >
-          Connecting business travelers to 180+ countries and 10,000+ destinations worldwide
-        </motion.p>
+    <motion.section
+      id="global-presence"
+      className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/10 shadow-lg my-8"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <div className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-serif italic text-white/80">
+          GLOBAL NETWORK
+        </div>
+        <div className="h-6 w-6">
+          <Image src="/suitpax-white-logo.png" alt="Suitpax" width={24} height={24} className="object-contain" />
+        </div>
       </div>
 
+      <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-4 sm:mb-6 text-white">
+        Global Business Travel Network
+      </h2>
+
       {/* Globe Container */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-between px-4 md:px-12 pb-12">
-        {/* Globe */}
-        <div className="relative w-full lg:w-3/5 h-[500px] md:h-[600px]">
+      <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm mb-6">
+        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
           <canvas
             ref={canvasRef}
             style={{
@@ -229,103 +224,69 @@ export default function GlobalPresenceSection() {
               }
             }}
           />
-
-          {/* Floating badges */}
-          <div className="absolute inset-0 pointer-events-none">
-            {filteredAirports.map((airport, index) => (
-              <motion.div
-                key={airport.name}
-                className="absolute"
-                style={{
-                  left: `${30 + Math.random() * 60}%`,
-                  top: `${20 + Math.random() * 60}%`,
-                }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <div
-                  className="flex items-center gap-1 bg-blue-900/60 backdrop-blur-sm px-2 py-1 rounded-full border border-blue-500/30 shadow-lg"
-                  onMouseEnter={() => setHighlightedAirport(airport.name)}
-                  onMouseLeave={() => setHighlightedAirport(null)}
-                >
-                  <Plane className="w-3 h-3 text-blue-300" />
-                  <span className="text-xs font-medium text-blue-100">{airport.name}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Stats and Filters */}
-        <div className="w-full lg:w-2/5 space-y-8 mt-6 lg:mt-0">
-          {/* Region filters */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-semibold flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-blue-400" />
-              <span>Explore Regions</span>
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {regions.map((region) => (
-                <button
-                  key={region.id}
-                  onClick={() => setActiveRegion(region.id)}
-                  className={`px-3 py-1.5 text-sm rounded-full transition-all ${
-                    activeRegion === region.id
-                      ? "bg-blue-600 text-white"
-                      : "bg-blue-900/40 text-blue-200 hover:bg-blue-800"
-                  }`}
-                >
-                  {region.name}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
-          >
-            <div className="bg-blue-900/30 backdrop-blur-sm p-4 rounded-xl border border-blue-800/50">
-              <div className="text-3xl font-bold text-blue-300">180+</div>
-              <div className="text-sm text-blue-200">Countries</div>
-            </div>
-            <div className="bg-blue-900/30 backdrop-blur-sm p-4 rounded-xl border border-blue-800/50">
-              <div className="text-3xl font-bold text-blue-300">10,000+</div>
-              <div className="text-sm text-blue-200">Destinations</div>
-            </div>
-            <div className="bg-blue-900/30 backdrop-blur-sm p-4 rounded-xl border border-blue-800/50">
-              <div className="text-3xl font-bold text-blue-300">24/7</div>
-              <div className="text-sm text-blue-200">Support</div>
-            </div>
-            <div className="bg-blue-900/30 backdrop-blur-sm p-4 rounded-xl border border-blue-800/50">
-              <div className="text-3xl font-bold text-blue-300">500+</div>
-              <div className="text-sm text-blue-200">Airlines</div>
-            </div>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex justify-center"
-          >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 rounded-full text-white font-medium shadow-lg hover:from-blue-500 hover:to-blue-400 transition-all cursor-pointer">
-              <Image src="/suitpax-white-logo.png" alt="Suitpax" width={24} height={24} />
-              <span>Explore Our Network</span>
-            </div>
-          </motion.div>
         </div>
       </div>
-    </section>
+
+      {/* Region filters */}
+      <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm mb-6">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="rounded-full bg-white/10 p-1.5">
+            <MapPin className="h-4 w-4 text-white" />
+          </div>
+          <h3 className="text-sm font-medium text-white">Explore Regions</h3>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {regions.map((region) => (
+            <button
+              key={region.id}
+              onClick={() => setActiveRegion(region.id)}
+              className={`px-3 py-1.5 text-sm rounded-full transition-all ${
+                activeRegion === region.id
+                  ? "bg-white text-black"
+                  : "bg-black/30 text-white/70 border border-white/10 hover:bg-white/10"
+              }`}
+            >
+              {region.name}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Stats in grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
+          <p className="text-xs text-white/60 mb-1">Countries</p>
+          <p className="text-lg font-medium text-white">180+</p>
+        </div>
+        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
+          <p className="text-xs text-white/60 mb-1">Destinations</p>
+          <p className="text-lg font-medium text-white">10,000+</p>
+        </div>
+        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
+          <p className="text-xs text-white/60 mb-1">Support</p>
+          <p className="text-lg font-medium text-white">24/7</p>
+        </div>
+        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
+          <p className="text-xs text-white/60 mb-1">Airlines</p>
+          <p className="text-lg font-medium text-white">500+</p>
+        </div>
+      </div>
+
+      {/* City badges at the bottom */}
+      <div className="mt-6 flex flex-wrap justify-center gap-2">
+        {filteredAirports.map((airport) => (
+          <div
+            key={airport.name}
+            className="flex items-center gap-1 bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/10 shadow-sm"
+            onMouseEnter={() => setHighlightedAirport(airport.name)}
+            onMouseLeave={() => setHighlightedAirport(null)}
+          >
+            <Plane className="w-3 h-3 text-white/70" />
+            <span className="text-xs font-medium text-white/80">{airport.name}</span>
+            <span className="text-[10px] text-white/50">({airport.city})</span>
+          </div>
+        ))}
+      </div>
+    </motion.section>
   )
 }
