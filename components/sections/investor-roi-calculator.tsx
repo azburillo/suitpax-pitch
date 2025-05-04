@@ -12,21 +12,45 @@ export default function InvestorROICalculator() {
   const [investment, setInvestment] = useState(1200000)
   const [sliderValue, setSliderValue] = useState(60)
   const [equityPercentage, setEquityPercentage] = useState(9)
+  const [selectedEquity, setSelectedEquity] = useState(9)
   const [valuation, setValuation] = useState(13333333)
   const [years, setYears] = useState(5)
 
+  // Available equity options
+  const equityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
   // Update equity percentage based on investment amount
   useEffect(() => {
-    if (investment <= 1200000) {
+    if (investment <= 600000) {
+      setEquityPercentage(1)
+    } else if (investment <= 800000) {
+      setEquityPercentage(3)
+    } else if (investment <= 1000000) {
+      setEquityPercentage(5)
+    } else if (investment <= 1200000) {
+      setEquityPercentage(7)
+    } else if (investment <= 1400000) {
       setEquityPercentage(9)
-      setValuation(1200000 / 0.09)
+    } else if (investment <= 1600000) {
+      setEquityPercentage(10)
     } else {
-      // Scale equity percentage between 9% and 12% based on investment
-      const percentage = 9 + ((investment - 1200000) / 600000) * 3
-      setEquityPercentage(Math.min(12, percentage))
-      setValuation(investment / (percentage / 100))
+      setEquityPercentage(12)
     }
-  }, [investment])
+
+    setSelectedEquity(equityPercentage)
+    updateValuation(investment, equityPercentage)
+  }, [investment, equityPercentage])
+
+  // Update valuation when equity changes
+  const updateValuation = (amount: number, equity: number) => {
+    setValuation(amount / (equity / 100))
+  }
+
+  // Handle equity selection
+  const handleEquityChange = (equity: number) => {
+    setSelectedEquity(equity)
+    updateValuation(investment, equity)
+  }
 
   // Calculate ROI based on investment amount and years
   const calculateROI = (amount: number, years: number) => {
@@ -149,10 +173,33 @@ export default function InvestorROICalculator() {
           </div>
         </div>
 
+        {/* Equity Selection */}
+        <div className="mt-6 mb-4">
+          <p className="text-sm text-white/80 mb-2">Select Equity Percentage:</p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {equityOptions.map((equity) => (
+              <button
+                key={equity}
+                onClick={() => handleEquityChange(equity)}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                  selectedEquity === equity
+                    ? "bg-white text-black"
+                    : "bg-black/30 text-white/70 border border-white/10 hover:bg-white/10"
+                }`}
+              >
+                {equity}%
+              </button>
+            ))}
+          </div>
+          <p className="text-xs text-white/50 mt-2 text-center">
+            Recommended: {equityPercentage}% for €{(investment / 1000000).toFixed(1)}M investment
+          </p>
+        </div>
+
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
           <div className="bg-black/30 p-3 rounded-lg border border-white/10">
             <p className="text-xs text-white/60 mb-1">Equity</p>
-            <p className="text-lg font-medium text-white">{formatPercentage(equityPercentage)}</p>
+            <p className="text-lg font-medium text-white">{formatPercentage(selectedEquity)}</p>
           </div>
           <div className="bg-black/30 p-3 rounded-lg border border-white/10">
             <p className="text-xs text-white/60 mb-1">Valuation</p>
@@ -253,7 +300,7 @@ export default function InvestorROICalculator() {
               <p className="flex items-start gap-1.5">
                 <span className="text-white/40 mt-0.5">•</span>
                 <span>
-                  At {formatPercentage(equityPercentage)} equity, your stake would be worth{" "}
+                  At {formatPercentage(selectedEquity)} equity, your stake would be worth{" "}
                   {formatCurrency(calculateROI(investment, 5))} in 5 years
                 </span>
               </p>

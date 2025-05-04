@@ -39,6 +39,10 @@ import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadm
 import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
 import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
 import CrisisManagementSection from "@/components/sections/crisis-management-section"
+import Footer from "@/components/footer"
+import CustomerSuccessSection from "@/components/sections/customer-success-section"
+import IntegrationEcosystemSection from "@/components/sections/integration-ecosystem-section"
+import ProductPreviewSection from "@/components/sections/product-preview-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -91,7 +95,9 @@ export default function Home() {
         <SolutionSection />
         <AIAgentsSection />
         <ProductsSection />
+        <ProductPreviewSection />
         <ApiIntegrationsSection />
+        <IntegrationEcosystemSection />
         <AdditionalFeaturesSection />
         <CompetitiveAdvantageSection />
         <SustainabilityImpactSection />
@@ -104,6 +110,7 @@ export default function Home() {
 
         {/* Business & Traction */}
         <TractionSection />
+        <CustomerSuccessSection />
         <NetworkEffectSection />
         <UnitEconomicsSection />
         <BusinessSection />
@@ -128,6 +135,7 @@ export default function Home() {
 
         {/* Closing */}
         <ClosingSection />
+        <Footer />
       </div>
     </main>
   )

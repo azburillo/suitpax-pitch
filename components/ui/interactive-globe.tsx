@@ -38,8 +38,8 @@ export default function InteractiveGlobe({
   const [{ width, height }, setSize] = useState({ width: 0, height: 0 })
 
   const globeConfig = {
-    size: 280,
-    scale: 1.8, // Increased from 1.2 to zoom in more
+    size: window.innerWidth < 768 ? Math.min(window.innerWidth * 0.8, 400) : 500, // Increased from 280 to 500, responsive
+    scale: 1.8,
     globeColor: "#ffffff",
     markerColor: "#374151",
     glowColor: "#e5e7eb",
@@ -49,16 +49,18 @@ export default function InteractiveGlobe({
   }
 
   useEffect(() => {
-    const onResize = () => {
+    const handleResize = () => {
       if (canvasRef.current) {
         const { width, height } = canvasRef.current.getBoundingClientRect()
         setSize({ width, height })
       }
     }
-    window.addEventListener("resize", onResize)
-    onResize()
+
+    window.addEventListener("resize", handleResize)
+    handleResize()
+
     return () => {
-      window.removeEventListener("resize", onResize)
+      window.removeEventListener("resize", handleResize)
     }
   }, [])
 
@@ -114,16 +116,20 @@ export default function InteractiveGlobe({
       <div
         className="relative"
         style={{
-          width: globeConfig.size,
-          height: globeConfig.size,
+          width: "100%",
+          height: "500px", // Increased height
           maxWidth: "100%",
-          aspectRatio: "1",
           margin: "0 auto",
         }}
       >
         <canvas
           ref={canvasRef}
-          style={{ width: "100%", height: "100%", contain: "layout paint size", opacity: 0.9 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            contain: "layout paint size",
+            opacity: 0.9,
+          }}
           onPointerDown={(e) => {
             pointerInteracting.current = e.clientX - pointerInteractionMovement.current
             if (canvasRef.current) {
