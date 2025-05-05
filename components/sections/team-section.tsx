@@ -186,8 +186,8 @@ export default function TeamSection() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
             <div className="relative w-24 h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 group">
               <Image
-                src="/software-engineer-headshot.png"
-                alt="Lukas Hartridge"
+                src=
+                alt=
                 width={96}
                 height={96}
                 className="w-full h-full object-cover transition-opacity group-hover:opacity-90"
@@ -209,7 +209,7 @@ export default function TeamSection() {
                 <div className="flex items-center gap-1">
                   <span className="text-xs font-light text-gray-600">ex-Cloudbeds</span>
                   <span className="text-[10px] text-gray-400">|</span>
-                  <span className="text-xs font-light text-gray-600">Travel Tech</span>
+                  <span className="text-xs font-light text-gray-600">Traveltech</span>
                 </div>
               </div>
 
