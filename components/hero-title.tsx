@@ -54,7 +54,7 @@ export default function HeroTitle() {
           </div>
         </motion.div>
 
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter leading-none text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-none text-white">
           The next-gen of traveltech revolution
         </h1>
         <p className="text-sm sm:text-base md:text-lg tracking-tighter text-white/90 max-w-2xl mx-auto font-medium">
@@ -63,38 +63,6 @@ export default function HeroTitle() {
         <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light">
           Transforming business travel with intelligent automation and personalized experiences
         </p>
-
-        {/* Founder mini card */}
-        {/*
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="absolute top-8 right-8 md:top-12 md:right-12 max-w-[200px] bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
-        >
-          <div className="p-3 space-y-2">
-            <div className="flex items-start gap-3">
-              <div className="relative w-14 h-14 rounded-lg overflow-hidden border-2 border-white/20">
-                <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
-              </div>
-              <div className="text-left">
-                <div className="flex items-center gap-1">
-                  <LightbulbIcon className="w-4 h-4 text-yellow-400" />
-                  <p className="text-xs font-medium text-white">Eureka moment</p>
-                </div>
-                <p className="text-[10px] text-white/70 mt-0.5">Where it all began</p>
-              </div>
-            </div>
-            <p className="text-xs text-white/90 text-left">
-              "When I was 7, I planned my first trip. Now I'm solving the biggest problems in traveltech."
-            </p>
-            <div className="flex items-center gap-1">
-              <div className="h-1 w-1 rounded-full bg-green-400"></div>
-              <p className="text-[10px] text-green-400">Alberto Zurano, Founder</p>
-            </div>
-          </div>
-        </motion.div>
-        */}
 
         {/* MiniChat centered below subtitle */}
         <div className="flex justify-center mt-8">

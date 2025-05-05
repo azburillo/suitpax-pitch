@@ -1,32 +1,157 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
-import { Plane, TrendingUp, Globe, Briefcase } from "lucide-react"
+import { Plane, TrendingUp, Globe, Briefcase, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import createGlobe from "cobe"
-import { useRef } from "react"
 
-// Airport data with coordinates
+// Airport data with coordinates and extended information
 const airports = [
-  { name: "JFK", city: "New York", location: [40.6413, -73.7781], region: "north-america" },
-  { name: "LHR", city: "London", location: [51.47, -0.4543], region: "europe" },
-  { name: "CDG", city: "Paris", location: [49.0097, 2.5479], region: "europe" },
-  { name: "MAD", city: "Madrid", location: [40.4983, -3.5676], region: "europe" },
-  { name: "BCN", city: "Barcelona", location: [41.2974, 2.0833], region: "europe" },
-  { name: "FRA", city: "Frankfurt", location: [50.0379, 8.5622], region: "europe" },
-  { name: "HND", city: "Tokyo", location: [35.5494, 139.7798], region: "asia" },
-  { name: "SIN", city: "Singapore", location: [1.3644, 103.9915], region: "asia" },
-  { name: "SYD", city: "Sydney", location: [-33.9399, 151.1753], region: "oceania" },
-  { name: "DXB", city: "Dubai", location: [25.2532, 55.3657], region: "middle-east" },
-  { name: "GRU", city: "São Paulo", location: [-23.4356, -46.4731], region: "south-america" },
-  { name: "JNB", city: "Johannesburg", location: [-26.1367, 28.2411], region: "africa" },
-  { name: "LAX", city: "Los Angeles", location: [33.9416, -118.4085], region: "north-america" },
-  { name: "ORD", city: "Chicago", location: [41.9742, -87.9073], region: "north-america" },
-  { name: "PEK", city: "Beijing", location: [40.0799, 116.6031], region: "asia" },
-  { name: "DEL", city: "Delhi", location: [28.5562, 77.1], region: "asia" },
-  { name: "IST", city: "Istanbul", location: [41.2608, 28.7519], region: "europe" },
-  { name: "AMS", city: "Amsterdam", location: [52.3105, 4.7683], region: "europe" },
+  {
+    name: "JFK",
+    city: "New York",
+    country: "USA",
+    location: [40.6413, -73.7781],
+    region: "north-america",
+    image: "/nyc-skyline.png",
+  },
+  {
+    name: "LHR",
+    city: "London",
+    country: "UK",
+    location: [51.47, -0.4543],
+    region: "europe",
+    image: "/placeholder.svg?key=bfi4v",
+  },
+  {
+    name: "CDG",
+    city: "Paris",
+    country: "France",
+    location: [49.0097, 2.5479],
+    region: "europe",
+    image: "/paris-eiffel-tower.png",
+  },
+  {
+    name: "MAD",
+    city: "Madrid",
+    country: "Spain",
+    location: [40.4983, -3.5676],
+    region: "europe",
+    image: "/placeholder.svg?key=nna60",
+  },
+  {
+    name: "BCN",
+    city: "Barcelona",
+    country: "Spain",
+    location: [41.2974, 2.0833],
+    region: "europe",
+    image: "/barcelona-sagrada-familia.png",
+  },
+  {
+    name: "FRA",
+    city: "Frankfurt",
+    country: "Germany",
+    location: [50.0379, 8.5622],
+    region: "europe",
+    image: "/placeholder.svg?key=z90tv",
+  },
+  {
+    name: "HND",
+    city: "Tokyo",
+    country: "Japan",
+    location: [35.5494, 139.7798],
+    region: "asia",
+    image: "/tokyo-skyline.png",
+  },
+  {
+    name: "SIN",
+    city: "Singapore",
+    country: "Singapore",
+    location: [1.3644, 103.9915],
+    region: "asia",
+    image: "/singapore-marina-bay.png",
+  },
+  {
+    name: "SYD",
+    city: "Sydney",
+    country: "Australia",
+    location: [-33.9399, 151.1753],
+    region: "oceania",
+    image: "/sydney-opera-house.png",
+  },
+  {
+    name: "DXB",
+    city: "Dubai",
+    country: "UAE",
+    location: [25.2532, 55.3657],
+    region: "middle-east",
+    image: "/placeholder.svg?key=1abqt",
+  },
+  {
+    name: "GRU",
+    city: "São Paulo",
+    country: "Brazil",
+    location: [-23.4356, -46.4731],
+    region: "south-america",
+    image: "/placeholder.svg?key=otljb",
+  },
+  {
+    name: "JNB",
+    city: "Johannesburg",
+    country: "South Africa",
+    location: [-26.1367, 28.2411],
+    region: "africa",
+    image: "/placeholder.svg?height=400&width=600&query=johannesburg skyline",
+  },
+  {
+    name: "LAX",
+    city: "Los Angeles",
+    country: "USA",
+    location: [33.9416, -118.4085],
+    region: "north-america",
+    image: "/placeholder.svg?height=400&width=600&query=los angeles skyline",
+  },
+  {
+    name: "ORD",
+    city: "Chicago",
+    country: "USA",
+    location: [41.9742, -87.9073],
+    region: "north-america",
+    image: "/placeholder.svg?height=400&width=600&query=chicago skyline",
+  },
+  {
+    name: "PEK",
+    city: "Beijing",
+    country: "China",
+    location: [40.0799, 116.6031],
+    region: "asia",
+    image: "/placeholder.svg?height=400&width=600&query=beijing forbidden city",
+  },
+  {
+    name: "DEL",
+    city: "Delhi",
+    country: "India",
+    location: [28.5562, 77.1],
+    region: "asia",
+    image: "/placeholder.svg?height=400&width=600&query=delhi india gate",
+  },
+  {
+    name: "IST",
+    city: "Istanbul",
+    country: "Turkey",
+    location: [41.2608, 28.7519],
+    region: "europe",
+    image: "/placeholder.svg?height=400&width=600&query=istanbul blue mosque",
+  },
+  {
+    name: "AMS",
+    city: "Amsterdam",
+    country: "Netherlands",
+    location: [52.3105, 4.7683],
+    region: "europe",
+    image: "/placeholder.svg?height=400&width=600&query=amsterdam canals",
+  },
 ]
 
 // Hex to RGB conversion for globe colors
@@ -51,6 +176,93 @@ const hexToRgb = (hex: string): [number, number, number] => {
   }
 }
 
+// City Carousel Component
+const CityCarousel = ({ airports, activeRegion }: { airports: typeof airports; activeRegion: string }) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const filteredAirports =
+    activeRegion === "all" ? airports : airports.filter((airport) => airport.region === activeRegion)
+
+  const currentAirport = filteredAirports[currentIndex % filteredAirports.length]
+
+  useEffect(() => {
+    // Reset index when region changes
+    setCurrentIndex(0)
+  }, [activeRegion])
+
+  useEffect(() => {
+    // Auto-advance carousel
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % filteredAirports.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [filteredAirports.length, activeRegion])
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % filteredAirports.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + filteredAirports.length) % filteredAirports.length)
+  }
+
+  if (!currentAirport) return null
+
+  return (
+    <motion.div
+      className="bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="flex flex-col sm:flex-row">
+        <div className="relative w-full sm:w-1/2 h-40 sm:h-auto">
+          <Image
+            src={currentAirport.image || "/placeholder.svg"}
+            alt={`${currentAirport.city}, ${currentAirport.country}`}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+          <div className="absolute top-2 left-2 bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1">
+            <div className="flex items-center gap-1">
+              <Plane className="h-3 w-3 text-white/80" />
+              <span className="text-xs font-bold text-white">{currentAirport.name}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-3 sm:p-4 flex-1">
+          <div className="flex justify-between items-start">
+            <div>
+              <h3 className="text-lg font-medium text-white">{currentAirport.city}</h3>
+              <p className="text-xs text-white/70">{currentAirport.country}</p>
+            </div>
+            <div className="flex gap-1">
+              <button onClick={prevSlide} className="p-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                <ChevronLeft className="h-4 w-4 text-white/80" />
+              </button>
+              <button onClick={nextSlide} className="p-1 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                <ChevronRight className="h-4 w-4 text-white/80" />
+              </button>
+            </div>
+          </div>
+
+          <p className="text-sm text-white/90 mt-2">
+            "Connecting business travelers to {currentAirport.city}'s vibrant economy and culture with our AI-powered
+            travel solutions."
+          </p>
+
+          <div className="flex items-center gap-1 mt-2">
+            <div className="h-1 w-1 rounded-full bg-white/40"></div>
+            <p className="text-[10px] text-gray-300">SuitPax Global Network</p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function GlobalPresenceSection() {
   const [activeRegion, setActiveRegion] = useState("all")
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -59,6 +271,7 @@ export default function GlobalPresenceSection() {
   const [{ width, height }, setSize] = useState({ width: 0, height: 0 })
   const [isCanvasReady, setIsCanvasReady] = useState(false)
   const [highlightedAirport, setHighlightedAirport] = useState<string | null>(null)
+  const [isGlobeRotating, setIsGlobeRotating] = useState(true)
 
   // Filter airports based on active region
   const filteredAirports =
@@ -66,7 +279,7 @@ export default function GlobalPresenceSection() {
 
   // Globe configuration
   const globeConfig = {
-    scale: 1.7, // Aumentado para que el globo sea más grande
+    scale: 1.8, // Increased scale for bigger globe
     globeColor: "#4a4a4a", // Gray color for the globe
     markerColor: "#ffffff",
     glowColor: "#ffffff",
@@ -105,7 +318,7 @@ export default function GlobalPresenceSection() {
         // Convert airports to markers
         const markers = filteredAirports.map((airport) => ({
           location: airport.location,
-          size: highlightedAirport === airport.name ? 0.1 : 0.05,
+          size: highlightedAirport === airport.name ? 0.12 : 0.06, // Increased marker size
         }))
 
         globe = createGlobe(canvasRef.current, {
@@ -125,7 +338,7 @@ export default function GlobalPresenceSection() {
           offset: [0, 0],
           markers,
           onRender: (state) => {
-            if (!pointerInteracting.current) {
+            if (isGlobeRotating && !pointerInteracting.current) {
               phi += globeConfig.rotationSpeed
             }
             state.phi = phi + pointerInteractionMovement.current
@@ -147,7 +360,7 @@ export default function GlobalPresenceSection() {
         }
       }
     }
-  }, [width, height, filteredAirports, highlightedAirport, isCanvasReady])
+  }, [width, height, filteredAirports, highlightedAirport, isCanvasReady, isGlobeRotating])
 
   // Region filters
   const regions = [
@@ -178,9 +391,9 @@ export default function GlobalPresenceSection() {
         </div>
       </div>
 
-      {/* Enhanced title section */}
+      {/* Enhanced title section with larger text */}
       <div className="mb-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter text-white mb-2 text-center font-serif italic">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter text-white mb-2 text-center font-serif italic">
           Revolutionizing Global Business Travel Across Continents
         </h2>
         <p className="text-base md:text-lg font-medium text-white/80 mb-2">
@@ -192,112 +405,161 @@ export default function GlobalPresenceSection() {
         </p>
       </div>
 
-      {/* Globe Container - Ahora ocupa más espacio */}
-      <div className="backdrop-blur-md p-2 sm:p-3 rounded-md mb-6 overflow-hidden">
-        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-md overflow-hidden">
-          <canvas
-            ref={canvasRef}
-            style={{
-              width: "100%",
-              height: "100%",
-              contain: "layout paint size",
-              cursor: "grab",
-            }}
-            onPointerDown={(e) => {
-              pointerInteracting.current = e.clientX - pointerInteractionMovement.current
-              if (canvasRef.current) {
-                canvasRef.current.style.cursor = "grabbing"
-              }
-            }}
-            onPointerUp={() => {
-              pointerInteracting.current = null
-              if (canvasRef.current) {
-                canvasRef.current.style.cursor = "grab"
-              }
-            }}
-            onPointerOut={() => {
-              pointerInteracting.current = null
-              if (canvasRef.current) {
-                canvasRef.current.style.cursor = "grab"
-              }
-            }}
-            onMouseMove={(e) => {
-              if (pointerInteracting.current !== null) {
-                const delta = e.clientX - pointerInteracting.current
-                pointerInteractionMovement.current = delta / 100
-              }
-            }}
-            onTouchMove={(e) => {
-              if (pointerInteracting.current !== null && e.touches[0] && canvasRef.current) {
-                const delta = e.touches[0].clientX - pointerInteracting.current
-                pointerInteractionMovement.current = delta / 100
-              }
-            }}
-          />
-        </div>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {/* Globe Container - Taller and with more interaction */}
+        <div className="md:col-span-2 backdrop-blur-md p-2 sm:p-3 rounded-md overflow-hidden">
+          <div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[750px] rounded-md overflow-hidden">
+            <canvas
+              ref={canvasRef}
+              style={{
+                width: "100%",
+                height: "100%",
+                contain: "layout paint size",
+                cursor: "grab",
+              }}
+              onPointerDown={(e) => {
+                pointerInteracting.current = e.clientX - pointerInteractionMovement.current
+                if (canvasRef.current) {
+                  canvasRef.current.style.cursor = "grabbing"
+                }
+                setIsGlobeRotating(false)
+              }}
+              onPointerUp={() => {
+                pointerInteracting.current = null
+                if (canvasRef.current) {
+                  canvasRef.current.style.cursor = "grab"
+                }
+                setIsGlobeRotating(true)
+              }}
+              onPointerOut={() => {
+                pointerInteracting.current = null
+                if (canvasRef.current) {
+                  canvasRef.current.style.cursor = "grab"
+                }
+                setIsGlobeRotating(true)
+              }}
+              onMouseMove={(e) => {
+                if (pointerInteracting.current !== null) {
+                  const delta = e.clientX - pointerInteracting.current
+                  pointerInteractionMovement.current = delta / 100
+                }
+              }}
+              onTouchMove={(e) => {
+                if (pointerInteracting.current !== null && e.touches[0] && canvasRef.current) {
+                  const delta = e.touches[0].clientX - pointerInteracting.current
+                  pointerInteractionMovement.current = delta / 100
+                }
+              }}
+            />
 
-      {/* Contenido secundario en grid para mejor organización */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-4">
-        {/* Stats in single card */}
-        <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm">
-          <div className="grid grid-cols-2 gap-2">
-            <div>
-              <p className="text-xs text-white/60 mb-1">Countries</p>
-              <p className="text-lg font-medium text-white">150+</p>
-            </div>
-            <div>
-              <p className="text-xs text-white/60 mb-1">Destinations</p>
-              <p className="text-lg font-medium text-white">10,000+</p>
-            </div>
-            <div>
-              <p className="text-xs text-white/60 mb-1">Market Size</p>
-              <p className="text-lg font-medium text-white">$1.4T</p>
-            </div>
-            <div>
-              <p className="text-xs text-white/60 mb-1">Growth Rate</p>
-              <p className="text-lg font-medium text-white">34%</p>
+            {/* Interactive controls overlay */}
+            <div className="absolute bottom-4 right-4 bg-black/30 backdrop-blur-md rounded-lg p-2 flex gap-2">
+              <button
+                onClick={() => setIsGlobeRotating(!isGlobeRotating)}
+                className={`p-1.5 rounded-md transition-colors ${isGlobeRotating ? "bg-white/20" : "bg-white/5"}`}
+                title={isGlobeRotating ? "Pause rotation" : "Resume rotation"}
+              >
+                {isGlobeRotating ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white/80"
+                  >
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-white/80"
+                  >
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Market opportunity highlights - Condensed */}
-        <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm col-span-1 sm:col-span-2">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="rounded-full bg-white/10 p-1.5">
-                  <TrendingUp className="h-4 w-4 text-white" />
-                </div>
-                <h3 className="text-sm font-medium text-white">Booming Tourism</h3>
-              </div>
-              <p className="text-xs text-white/70">Tourism sector growing at 34% annually post-pandemic.</p>
-            </div>
+        {/* City Carousel - Similar to Hero Title card */}
+        <div className="md:col-span-1">
+          <CityCarousel airports={airports} activeRegion={activeRegion} />
 
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="rounded-full bg-white/10 p-1.5">
-                  <Globe className="h-4 w-4 text-white" />
-                </div>
-                <h3 className="text-sm font-medium text-white">Untapped TravelTech</h3>
+          {/* Stats card */}
+          <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm mt-4">
+            <div className="grid grid-cols-2 gap-2">
+              <div>
+                <p className="text-xs text-white/60 mb-1">Countries</p>
+                <p className="text-lg font-medium text-white">150+</p>
               </div>
-              <p className="text-xs text-white/70">TravelTech remains largely untapped with outdated systems.</p>
-            </div>
-
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="rounded-full bg-white/10 p-1.5">
-                  <Briefcase className="h-4 w-4 text-white" />
-                </div>
-                <h3 className="text-sm font-medium text-white">Business Travel</h3>
+              <div>
+                <p className="text-xs text-white/60 mb-1">Destinations</p>
+                <p className="text-lg font-medium text-white">10,000+</p>
               </div>
-              <p className="text-xs text-white/70">$1.4T market seeking efficient, cost-effective solutions.</p>
+              <div>
+                <p className="text-xs text-white/60 mb-1">Market Size</p>
+                <p className="text-lg font-medium text-white">$1.4T</p>
+              </div>
+              <div>
+                <p className="text-xs text-white/60 mb-1">Growth Rate</p>
+                <p className="text-lg font-medium text-white">34%</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Region filters - Más compacto */}
+      {/* Market opportunity highlights */}
+      <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-full bg-white/10 p-1.5">
+                <TrendingUp className="h-4 w-4 text-white" />
+              </div>
+              <h3 className="text-sm font-medium text-white">Booming Tourism</h3>
+            </div>
+            <p className="text-xs text-white/70">Tourism sector growing at 34% annually post-pandemic.</p>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-full bg-white/10 p-1.5">
+                <Globe className="h-4 w-4 text-white" />
+              </div>
+              <h3 className="text-sm font-medium text-white">Untapped TravelTech</h3>
+            </div>
+            <p className="text-xs text-white/70">TravelTech remains largely untapped with outdated systems.</p>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-full bg-white/10 p-1.5">
+                <Briefcase className="h-4 w-4 text-white" />
+              </div>
+              <h3 className="text-sm font-medium text-white">Business Travel</h3>
+            </div>
+            <p className="text-xs text-white/70">$1.4T market seeking efficient, cost-effective solutions.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Region filters */}
       <div className="bg-black/50 backdrop-blur-md p-2 rounded-xl border border-white/10 shadow-sm mb-4">
         <div className="flex flex-wrap gap-2 justify-center">
           {regions.map((region) => (
@@ -316,26 +578,9 @@ export default function GlobalPresenceSection() {
         </div>
       </div>
 
-      {/* City badges at the bottom - more impactful - limited to 3 lines */}
-      <div className="relative mt-4 mb-2">
-        <div className="max-h-[90px] overflow-hidden flex flex-wrap justify-center gap-1.5">
-          {filteredAirports.map((airport) => (
-            <div
-              key={airport.name}
-              className="flex items-center gap-1 bg-white/5 hover:bg-white/10 backdrop-blur-sm px-1.5 py-0.5 rounded-md border border-white/5 shadow-sm transition-all"
-              onMouseEnter={() => setHighlightedAirport(airport.name)}
-              onMouseLeave={() => setHighlightedAirport(null)}
-            >
-              <Plane className="w-2 h-2 text-white/70" />
-              <span className="text-[9px] font-medium text-white/80">{airport.name}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Future growth caption */}
-        <div className="mt-3 text-center">
-          <p className="text-xs text-white/50 italic">Projected global expansion 2025-2031</p>
-        </div>
+      {/* Future growth caption */}
+      <div className="text-center mt-4">
+        <p className="text-xs text-white/50 italic">Projected global expansion 2025-2031</p>
       </div>
     </motion.section>
   )

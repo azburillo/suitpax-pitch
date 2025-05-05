@@ -44,6 +44,7 @@ import GlobalPresenceSection from "@/components/sections/global-presence-section
 import FutureHeadlinesSection from "@/components/sections/future-headlines-section"
 import AirlinePartnersSection from "@/components/sections/airline-partners-section"
 import CommunitySection from "@/components/sections/community-section"
+import InvestorFAQSection from "@/components/sections/investor-faq-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -184,6 +185,7 @@ export default function Home() {
          * InvestmentSection: Investment opportunity overview
          * InvestorROISection: ROI projections
          * InvestorROICalculator: Interactive ROI calculator
+         * InvestorFAQSection: Addressing investor questions
          *
          * These components share a financial focus but
          * InvestorROICalculator has a more interactive style
@@ -193,6 +195,7 @@ export default function Home() {
         <InvestmentSection />
         <InvestorROISection />
         <InvestorROICalculator />
+        <InvestorFAQSection />
         <FutureHeadlinesSection />
 
         {/* ===== CLOSING COMPONENT =====
