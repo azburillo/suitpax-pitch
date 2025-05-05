@@ -96,7 +96,8 @@ export default function LoginCard({ onUnlock }: LoginCardProps) {
           </div>
 
           <p className="text-white/90 text-sm sm:text-base mb-3 sm:mb-5">
-            Hello, I'm Zia, the Suitpax AI-Agent. What company are you from?</p>
+            Hello, I'm Zia, your Suitpax AI verification Agent. What company are you from?
+          </p>
 
           <div className="space-y-3 sm:space-y-4">
             <input
