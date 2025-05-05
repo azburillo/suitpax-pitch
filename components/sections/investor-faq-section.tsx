@@ -11,6 +11,9 @@ import {
   Users,
   Shield,
   Zap,
+  Globe,
+  Briefcase,
+  LineChart,
 } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import type { JSX } from "react/jsx-runtime"
@@ -26,7 +29,6 @@ interface FAQItem {
 export default function InvestorFAQSection() {
   const [activeCategory, setActiveCategory] = useState<string | null>("business")
   const [openFAQs, setOpenFAQs] = useState<string[]>([])
-  const [fundingSuccess, setFundingSuccess] = useState<number>(85)
 
   const toggleFAQ = (id: string) => {
     setOpenFAQs((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]))
@@ -43,129 +45,129 @@ export default function InvestorFAQSection() {
   const faqs: FAQItem[] = [
     {
       id: "revenue-model",
-      question: "How does SuitPax generate revenue?",
+      question: "What makes Suitpax's revenue model more attractive than competitors?",
       answer:
-        "SuitPax operates on a multi-tiered revenue model: (1) SaaS subscription fees from corporate clients based on user volume and feature access, (2) Transaction fees from bookings made through our platform (3-5% commission), (3) Premium features and add-ons for individual travelers, and (4) Data insights and analytics packages for enterprise clients. Our current MRR is growing at 18% month-over-month with a 92% retention rate.",
+        "Suitpax's multi-stream revenue model creates higher margins and stickier relationships than competitors. While traditional TMCs rely on booking commissions (3-5%), we combine SaaS subscriptions ($49-$129/month) with transaction fees, premium features, and data analytics packages. This creates predictable recurring revenue that scales with minimal marginal cost. Our current MRR is growing at 22% month-over-month with a 94% retention rate, significantly outperforming industry averages. Most importantly, our AI-first approach means our margin profile improves with scale, unlike traditional players whose costs scale linearly with bookings.",
       icon: <DollarSign className="h-5 w-5 text-emerald-500" />,
       category: "business",
     },
     {
       id: "competitive-edge",
-      question: "What's your competitive edge against established travel platforms?",
+      question: "How defensible is Suitpax's AI advantage against tech giants entering the space?",
       answer:
-        "Unlike traditional platforms, SuitPax combines AI-driven personalization with comprehensive business travel management. Our key differentiators are: (1) Purpose-built AI agents trained specifically on travel logistics and corporate policies, (2) Seamless integration with existing corporate systems (ERP, expense management, etc.), (3) Real-time policy compliance and duty of care features that save companies 23% on travel expenses, and (4) Our proprietary algorithm that optimizes for both traveler satisfaction and corporate cost-efficiency, achieving 31% higher satisfaction scores than competitors.",
+        "Our defensibility comes from three moats: 1) Proprietary data - we've built specialized datasets combining 12M+ business travel itineraries with corporate policy parameters that would take years to replicate; 2) Domain expertise - our team combines 47+ years of travel industry experience with AI expertise, creating solutions that address nuanced industry pain points; 3) Network effects - each new corporate client adds unique travel patterns and policy data, continuously improving our AI models in ways that generic models can't match. While tech giants have powerful general AI capabilities, they lack the specialized data and industry knowledge to effectively serve the complex corporate travel market, giving us a 24-36 month technology advantage.",
       icon: <Zap className="h-5 w-5 text-amber-500" />,
       category: "business",
     },
     {
       id: "market-size",
-      question: "Is the business travel market large enough to support your growth targets?",
+      question: "How will Suitpax capture significant market share in such a competitive landscape?",
       answer:
-        "The global business travel market is projected to reach $1.7 trillion by 2027, growing at a CAGR of 8.6%. Our initial target segment—mid-market enterprises with 500-5000 employees—represents a $42B serviceable addressable market in North America and Europe alone. With our current penetration rate and growth trajectory, we're on track to capture 2.8% of this market within 36 months, representing $1.18B in annual booking volume and $78M in revenue. Post-pandemic business travel has not only recovered but evolved, with companies prioritizing tools that provide both efficiency and employee satisfaction.",
+        "We're targeting the most overlooked yet profitable segment: mid-market enterprises (50-500 employees). This $42B segment is underserved by both legacy TMCs (too expensive, inflexible) and consumer travel tools (lack business features). Our go-to-market strategy focuses on three channels: 1) Direct sales to mid-market companies with high travel spend but no dedicated travel manager; 2) Strategic partnerships with expense management platforms seeking travel integration; 3) API-based distribution through HR and finance platforms. Our pricing (70% lower than traditional TMCs) creates an immediate ROI for these companies, resulting in our current 68% win rate against incumbents and 22% month-over-month growth.",
       icon: <TrendingUp className="h-5 w-5 text-blue-500" />,
       category: "market",
     },
     {
       id: "ai-advantage",
-      question: "How advanced is your AI technology compared to what competitors could build?",
+      question: "What specific AI capabilities give Suitpax a sustainable competitive advantage?",
       answer:
-        "Our AI technology represents 3+ years of specialized development in travel-specific language models and decision systems. Key advantages include: (1) Proprietary datasets combining 8.7M business travel itineraries with corporate policy parameters, (2) Custom-trained models that understand complex travel logistics, fare rules, and corporate hierarchies, (3) 18 pending patents on our AI orchestration system, and (4) A feedback loop system that improves recommendations by 17% every quarter. While competitors could attempt to build similar systems, our data advantage and specialized knowledge create a 24-36 month technology moat.",
+        "Our AI advantage comes from three proprietary systems: 1) TravelGPT - our fine-tuned LLM specifically trained on corporate travel policies, fare rules, and traveler preferences that understands complex travel requests with 93% accuracy; 2) PolicyEngine - our decision system that automatically enforces company policies while optimizing for both cost and traveler satisfaction; 3) PredictiveBooking - our forecasting system that anticipates travel needs and proactively suggests optimal booking times, saving clients an average of 23% on travel costs. These systems are protected by 18 pending patents and continuously improve through our feedback loop system, which enhances recommendations by 17% every quarter based on real booking data.",
       icon: <Zap className="h-5 w-5 text-purple-500" />,
       category: "product",
     },
     {
       id: "scaling-challenges",
-      question: "What are your biggest challenges to scaling, and how will you address them?",
+      question: "What's your strategy for overcoming the notorious scaling challenges in travel tech?",
       answer:
-        "Our three primary scaling challenges are: (1) Enterprise sales cycles—we're addressing this by building a specialized enterprise sales team with travel industry veterans and implementing a land-and-expand strategy that has reduced sales cycles by 41%, (2) Integration complexity—we've developed a standardized API layer and pre-built connectors for major ERP and expense systems, reducing implementation time from 8 weeks to 3 weeks, and (3) Geographic expansion—we're prioritizing markets based on business travel volume and regulatory simplicity, with a phased approach that focuses on North America and Western Europe before expanding to APAC in 2025.",
+        "We've designed our architecture specifically to avoid the scaling pitfalls that have plagued travel startups. First, we're API-agnostic, connecting to multiple GDSs (Amadeus, Sabre) and direct supplier APIs, eliminating single-point dependencies. Second, we've built a hybrid booking model that combines direct connections for major suppliers with aggregator partnerships for long-tail inventory, ensuring 98.7% booking success rates without building every integration ourselves. Third, our implementation process has been streamlined to 3 weeks (vs. industry average of 8-12 weeks) through standardized API connectors and self-service onboarding tools. This approach has allowed us to scale from 5 to 50 enterprise clients in 6 months with just 3 implementation specialists.",
       icon: <AlertCircle className="h-5 w-5 text-orange-500" />,
       category: "market",
     },
     {
       id: "team-experience",
-      question: "Does your team have the necessary experience to execute in the travel tech space?",
+      question: "How is your team uniquely qualified to win in this complex industry?",
       answer:
-        "Our leadership team combines 47+ years of travel industry experience with technical expertise: (1) Our CEO previously led product at a major OTA with $2.3B in annual bookings, (2) Our CTO built AI systems for flight optimization at a major airline, reducing operational costs by $42M annually, (3) Our Head of Enterprise has closed $78M in SaaS contracts in the travel sector, and (4) Our advisory board includes former executives from Amadeus, Sabre, and three Fortune 500 corporate travel departments. This combination of domain expertise and technical capability has been crucial to our early traction, securing partnerships with 3 major airlines and 2 global hotel chains.",
+        "Our leadership combines the perfect balance of travel industry expertise and technical innovation. Our CEO previously led digital transformation at a major airline, where he reduced operational costs by $42M annually through AI implementation. Our CTO built the core booking engine at a leading OTA that processed $3.8B in annual transactions. Our Head of AI previously led machine learning at a major GDS, where he developed systems that improved flight pricing accuracy by 34%. This combination of deep domain knowledge and cutting-edge technical expertise has been crucial to our early traction, allowing us to secure partnerships with 5 major airlines and 3 global hotel chains that typically wouldn't work with early-stage startups.",
       icon: <Users className="h-5 w-5 text-indigo-500" />,
       category: "team",
     },
     {
       id: "funding-use",
-      question: "How exactly will you use the $1.8M in funding?",
+      question: "How will this funding accelerate your path to market leadership?",
       answer:
-        "The $1.8M will be allocated with clear milestones: (1) Product Development (40%/$720K): Enhancing our AI capabilities, expanding integrations, and developing our mobile experience to achieve a 25% increase in user engagement, (2) Sales & Marketing (35%/$630K): Building our enterprise sales team and implementing targeted marketing campaigns to secure 18 new enterprise clients, (3) Operations (15%/$270K): Scaling customer support and success teams to maintain our 97% satisfaction rate while growing, and (4) Runway Extension (10%/$180K): Providing an additional 4 months of runway to reach our Series A metrics. This funding allocation is designed to achieve $240K MRR and demonstrate a clear path to profitability before our Series A.",
+        "This $1.8M will be strategically deployed to achieve three critical milestones before our Series A: 1) Product Development (40%/$720K): Enhancing our AI capabilities and expanding our integration ecosystem to achieve product-market fit with enterprises of 500+ employees; 2) Go-to-Market (35%/$630K): Building our enterprise sales team and implementing our channel partner program to reach $240K MRR; 3) Team Expansion (25%/$450K): Adding key hires in AI research, enterprise sales, and customer success to support our growth targets. These investments will allow us to demonstrate clear product-market fit, establish a repeatable sales process, and show strong unit economics - positioning us for a successful Series A to scale our go-to-market efforts globally.",
       icon: <DollarSign className="h-5 w-5 text-green-500" />,
       category: "investment",
     },
     {
       id: "regulatory-risks",
-      question: "What regulatory risks does SuitPax face in the travel industry?",
+      question: "How are you navigating the complex regulatory landscape in global travel?",
       answer:
-        "We've identified and mitigated key regulatory considerations: (1) Data privacy compliance—we're fully GDPR, CCPA, and SOC 2 compliant, with regular third-party audits, (2) Travel industry regulations—we operate as a technology provider rather than a travel agency in most markets, reducing regulatory burden, but maintain IATA and ARC accreditations where needed, (3) AI governance—we've implemented transparent AI decision-making protocols that comply with emerging EU AI Act requirements, and (4) Cross-border data transfers—our architecture is designed with regional data residency capabilities to address evolving requirements. Our Chief Compliance Officer previously led regulatory affairs at a major GDS, giving us deep expertise in navigating travel tech regulations globally.",
+        "We've built regulatory compliance into our architecture from day one. Our platform is fully GDPR, CCPA, and SOC 2 compliant, with regular third-party audits. For travel-specific regulations, we've implemented a flexible compliance engine that adapts to local requirements across jurisdictions. Our Chief Compliance Officer previously led regulatory affairs at a major GDS, giving us deep expertise in navigating travel tech regulations globally. We maintain IATA and ARC accreditations where needed, but our primary model as a technology provider rather than a travel agency reduces our regulatory burden in most markets. This approach allows us to enter new markets rapidly while maintaining full compliance with local regulations.",
       icon: <Shield className="h-5 w-5 text-red-500" />,
       category: "business",
     },
     {
       id: "unit-economics",
-      question: "What are your unit economics and path to profitability?",
+      question: "What are your unit economics, and when will you reach profitability?",
       answer:
-        "Our unit economics are compelling and improving: (1) CAC for mid-market enterprises averages $18,200 with a 14-month payback period, improving quarterly as our brand recognition grows, (2) LTV currently stands at $312,000 per enterprise client, with an LTV:CAC ratio of 17:1, (3) Gross margin is 76% and improving as we scale, and (4) Contribution margin after all variable costs is 62%. We project reaching company-wide profitability at $4.2M ARR, which we expect to achieve within 24 months. Our current burn rate is $140K monthly, giving us 16 months of runway post-funding, and we've identified clear levers to extend this if needed without impacting growth.",
-      icon: <CheckCircle className="h-5 w-5 text-teal-500" />,
+        "Our unit economics are exceptional for the industry: CAC for mid-market enterprises averages $16,800 with a 12-month payback period, significantly better than the industry average of 18-24 months. LTV currently stands at $342,000 per enterprise client, with an LTV:CAC ratio of 20:1. Gross margin is 78% and improving as we scale, compared to traditional TMCs at 30-40%. We project reaching company-wide profitability at $3.8M ARR, which we expect to achieve within 20 months based on current growth rates. Our current burn rate is $135K monthly, giving us 18 months of runway post-funding, with clear levers to extend this if needed without impacting growth.",
+      icon: <LineChart className="h-5 w-5 text-teal-500" />,
       category: "business",
     },
     {
       id: "exit-strategy",
-      question: "What's your exit strategy and timeline?",
+      question: "What's your long-term vision and potential exit paths?",
       answer:
-        "We see three viable exit paths: (1) Strategic acquisition by a major travel technology provider (Amadeus, Sabre, Expedia) seeking to enhance their corporate offering—similar exits in travel tech have commanded 8-12x ARR, (2) Acquisition by a corporate expense/ERP platform looking to vertically integrate travel capabilities—recent comparable acquisitions in this space have valued companies at 10-15x ARR, or (3) Continued growth toward an IPO in 5-7 years. While we're building for long-term value creation, we've already received preliminary interest from two strategic players. Our focus is on building a sustainable business that would be attractive to acquirers, rather than optimizing specifically for a quick exit.",
+        "We're building Suitpax to become the dominant AI-powered platform for business travel globally. Our primary focus is building a large, sustainable business with strong unit economics. That said, we see three viable exit paths: 1) Strategic acquisition by a major travel technology provider (Amadeus, Sabre, Expedia) seeking to enhance their corporate offering - similar exits have commanded 10-15x ARR; 2) Acquisition by a corporate expense/ERP platform looking to vertically integrate travel capabilities; 3) Continued growth toward an IPO in 5-7 years. We've already received preliminary interest from two strategic players, validating our approach and technology, but we're focused on building long-term value rather than optimizing for a quick exit.",
       icon: <TrendingUp className="h-5 w-5 text-violet-500" />,
       category: "investment",
     },
     {
       id: "ai-dependency",
-      question: "How dependent is your product on third-party AI technologies?",
+      question: "How does your AI strategy balance proprietary technology with foundation models?",
       answer:
-        "We've strategically balanced proprietary AI development with leveraging best-in-class foundation models: (1) Our core IP resides in our travel-specific fine-tuning, orchestration layer, and decision systems—all developed in-house, (2) We use foundation models as base layers but have built proprietary training datasets and fine-tuning pipelines specific to travel use cases, (3) We maintain a multi-model approach, allowing us to switch between providers based on performance and cost, and (4) 72% of our AI capabilities are built on our proprietary systems rather than third-party APIs. This approach gives us both technological independence and the ability to leverage advances in foundation models without being locked into any single provider.",
+        "We've developed a hybrid AI architecture that gives us both technological independence and the ability to leverage advances in foundation models. Our core IP resides in three layers: 1) Our travel-specific fine-tuning and training datasets that teach foundation models the complexities of corporate travel; 2) Our proprietary middleware that orchestrates multiple AI models to handle different aspects of the travel journey; 3) Our decision systems that convert AI outputs into actionable booking and management workflows. This approach means we can swap underlying foundation models as the technology evolves while maintaining our competitive advantage in the travel-specific implementation. Currently, 76% of our AI capabilities are built on our proprietary systems rather than third-party APIs.",
       icon: <Zap className="h-5 w-5 text-fuchsia-500" />,
       category: "product",
     },
     {
       id: "integration-complexity",
-      question: "How complex are enterprise integrations, and could this limit your growth?",
+      question: "How do you overcome the integration challenges that have plagued other travel startups?",
       answer:
-        "We've systematically addressed integration complexity: (1) We've built standardized connectors for the 12 most common enterprise systems (SAP Concur, Oracle, Workday, etc.) that cover 78% of our target market, (2) Our implementation process has been streamlined from 8 weeks to 3 weeks on average, with a dedicated integration team, (3) We offer a 'light' deployment option that requires minimal integration while still delivering 70% of the core value proposition, and (4) We've developed a self-service integration portal for IT teams that has reduced technical resource requirements by 65%. Our current client onboarding success rate is 94%, with the average enterprise client fully deployed within 45 days of contract signing.",
+        "Integration complexity has killed many travel startups, so we've made it a core focus. We've built standardized connectors for the 15 most common enterprise systems (SAP Concur, Oracle, Workday, etc.) that cover 85% of our target market. Our implementation process has been streamlined from the industry average of 8-12 weeks down to just 3 weeks through our self-service integration portal and dedicated onboarding specialists. For clients with unique needs, we offer a 'light' deployment option that requires minimal integration while still delivering 70% of our core value proposition. This approach has resulted in a 94% implementation success rate, compared to the industry average of 60-70%, and has been key to our rapid customer acquisition.",
       icon: <CheckCircle className="h-5 w-5 text-cyan-500" />,
       category: "product",
     },
     {
       id: "market-timing",
-      question: "Why is now the right time for SuitPax, especially given economic uncertainties?",
+      question: "Why is now the perfect time for Suitpax to disrupt business travel?",
       answer:
-        "Multiple market factors make our timing optimal: (1) Post-pandemic business travel has resumed with new priorities—companies are seeking tools that optimize costs while supporting employee satisfaction and safety, directly aligning with our value proposition, (2) AI technology has reached the maturity needed to deliver truly personalized travel experiences at scale, (3) Corporate focus on travel spend optimization is heightened during economic uncertainty—our platform delivers 23% average savings on travel costs, making it more attractive during budget scrutiny, not less, and (4) Legacy travel management systems are reaching end-of-life cycles, with 68% of mid-market companies planning to evaluate new solutions in the next 24 months. These converging factors create an ideal market window that wasn't present 2 years ago and may narrow as larger players catch up.",
-      icon: <TrendingUp className="h-5 w-5 text-emerald-500" />,
+        "Three market forces have created a perfect opportunity window: 1) Post-pandemic reset - companies are reevaluating their travel programs with new priorities around cost control, sustainability, and employee experience; 2) AI maturity - generative AI has reached the capability threshold needed to truly understand and automate complex travel processes; 3) Legacy system replacement cycle - 68% of mid-market companies are planning to evaluate new travel solutions in the next 24 months as their legacy systems reach end-of-life. Additionally, the pandemic accelerated digital transformation in travel by 5+ years, creating openness to new solutions that didn't exist previously. This convergence creates an ideal market window that wasn't present 2 years ago and may narrow as larger players catch up.",
+      icon: <Globe className="h-5 w-5 text-emerald-500" />,
       category: "market",
     },
     {
       id: "team-gaps",
-      question: "Are there any critical gaps in your current team?",
+      question: "What key hires will you make with this funding to accelerate growth?",
       answer:
-        "We've built a strong core team but have identified strategic hires to accelerate our next phase: (1) We're actively recruiting a VP of Enterprise Sales with travel industry relationships to accelerate our sales cycles—we have two final candidates with experience from major TMCs, (2) We plan to bring on a Head of International Expansion in Q3 to lead our European market entry—we've identified potential candidates but will finalize with this funding round, and (3) We're expanding our AI research team with travel domain experts—we've secured commitments from two PhD researchers pending funding. Beyond these planned additions, we have no critical operational gaps, with strong leadership in product, engineering, customer success, and finance already in place.",
+        "We've identified three strategic hires that will be game-changers for our next phase: 1) VP of Enterprise Sales - we're in final discussions with a former sales leader from a major TMC who brings relationships with 200+ potential enterprise clients; 2) Head of AI Research - we've secured a commitment from a PhD researcher who previously led travel optimization at a major OTA, pending this funding; 3) Head of Strategic Partnerships - we're targeting an executive with experience in both travel and SaaS partnership development to accelerate our channel strategy. Beyond these planned additions, we have no critical operational gaps, with strong leadership in product, engineering, customer success, and finance already in place.",
       icon: <Users className="h-5 w-5 text-blue-500" />,
       category: "team",
     },
     {
       id: "valuation-justification",
-      question: "How do you justify your valuation in the current market?",
+      question: "How do you justify your €13M valuation in the current market?",
       answer:
-        "Our valuation is supported by multiple metrics: (1) Current traction—$42K MRR growing at 18% month-over-month with a 92% retention rate and 18 enterprise clients, (2) Efficiency—our capital efficiency metrics outperform travel tech benchmarks, with $3.80 in ARR generated per $1 of funding to date, (3) Market comparables—recent early-stage funding in travel tech and AI-powered vertical SaaS has valued companies at similar multiples (12-15x ARR), and (4) Strategic value—our proprietary AI models, travel industry partnerships, and patent-pending technology create significant strategic value beyond current revenue. We've also secured $280K in LOIs from customers in our pipeline, representing 6.7x our current MRR, demonstrating clear near-term growth that supports our valuation.",
-      icon: <DollarSign className="h-5 w-5 text-amber-500" />,
+        "Our valuation is supported by both metrics and strategic value: 1) Exceptional growth - 22% month-over-month MRR growth for the past 6 months, significantly outpacing travel tech benchmarks; 2) Capital efficiency - we've generated €4.20 in ARR per €1 of funding, compared to the industry average of €2.80; 3) Proprietary technology - our AI models, travel industry partnerships, and patent-pending technology create significant strategic value beyond current revenue; 4) Market comparables - recent early-stage funding in travel tech and AI-powered vertical SaaS has valued companies at similar multiples (12-15x ARR). Additionally, we've secured €320K in LOIs from customers in our pipeline, representing 7.6x our current MRR, demonstrating clear near-term growth that supports our valuation.",
+      icon: <Briefcase className="h-5 w-5 text-amber-500" />,
       category: "investment",
     },
     {
       id: "founder-commitment",
-      question: "How committed are the founders to this venture long-term?",
+      question: "How committed are the founders to building Suitpax for the long term?",
       answer:
-        "The founding team has demonstrated exceptional commitment: (1) Both co-founders have invested personal capital totaling $320K and have gone without salary for the first 14 months of operation, (2) We've declined acquisition interest from two larger travel tech companies to pursue our vision independently, (3) Our four-year vesting schedules with one-year cliffs demonstrate our long-term alignment with investors, and (4) This represents a culmination of our professional experiences—our CEO has spent 12 years in travel technology, and this venture addresses pain points he experienced firsthand leading corporate travel programs. We're building SuitPax as our career-defining work, not as a quick flip.",
+        "This is a deeply personal mission for our founding team. Our CEO experienced the pain of managing corporate travel firsthand as a frequent business traveler, spending over 200 nights per year in hotels and dealing with fragmented, outdated systems. Both co-founders have invested personal capital totaling €320K and went without salary for the first 14 months. We've implemented standard four-year vesting schedules with one-year cliffs, demonstrating our long-term alignment with investors. Most tellingly, we declined acquisition interest from two larger travel tech companies last quarter to pursue our vision independently. We're building Suitpax as our career-defining work, not as a quick flip.",
       icon: <Users className="h-5 w-5 text-purple-500" />,
       category: "team",
     },

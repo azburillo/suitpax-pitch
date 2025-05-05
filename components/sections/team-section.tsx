@@ -181,6 +181,60 @@ export default function TeamSection() {
             </div>
           </div>
         </div>
+        {/* Lukas */}
+        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+            <div className="relative w-24 h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 group">
+              <Image
+                src="/software-engineer-headshot.png"
+                alt="Lukas Hartridge"
+                width={96}
+                height={96}
+                className="w-full h-full object-cover transition-opacity group-hover:opacity-90"
+              />
+            </div>
+            <div>
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                <h3 className="text-lg font-medium">Lukas Hartridge</h3>
+                <a
+                  href="#"
+                  className="text-gray-500 hover:text-emerald-950 transition-colors"
+                  aria-label="LinkedIn profile"
+                >
+                  <LinkedinLogo className="h-4 w-4" weight="fill" />
+                </a>
+              </div>
+              <p className="text-sm font-medium text-emerald-950 mb-1 text-center sm:text-left">Engineering Manager</p>
+              <div className="flex items-center gap-2 mb-3 flex-wrap">
+                <div className="flex items-center gap-1">
+                  <span className="text-xs font-light text-gray-600">ex-Cloudbeds</span>
+                  <span className="text-[10px] text-gray-400">|</span>
+                  <span className="text-xs font-light text-gray-600">Travel Tech</span>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-3 rounded-lg mb-2 border-l-2 border-emerald-950">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <Users className="h-3.5 w-3.5 text-emerald-950" />
+                  <span className="text-xs font-medium text-emerald-950">Technical Experience</span>
+                </div>
+                <p className="text-xs font-light text-gray-700">
+                  Led engineering teams at Cloudbeds, the #1 hotel Property Management System in the world, building
+                  scalable hospitality management systems used by thousands of properties worldwide. Winner of the
+                  People Choice Award at Cloudbeds. Expert in distributed systems, API development, and travel industry
+                  integrations.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-3 rounded-lg border-l-2 border-emerald-950">
+                <p className="text-xs font-light italic text-gray-700">
+                  "I've spent years building technology for the travel industry. With Suitpax, we're creating something
+                  truly revolutionary that solves real pain points for business travelers and their companies."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Joint statement */}
@@ -228,11 +282,11 @@ export default function TeamSection() {
         <h3 className="text-lg font-medium mb-3">Hiring plan (2025-2026)</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
           <div className="bg-white p-3 rounded-lg">
-            <p className="text-sm font-medium mb-1">Engineering (8)</p>
+            <p className="text-sm font-medium mb-1">Engineering (7)</p>
             <ul className="text-xs font-light space-y-1">
               <li>• AI/ML Engineers (3)</li>
               <li>• Full-stack Developers (3)</li>
-              <li>• DevOps Engineers (2)</li>
+              <li>• DevOps Engineer (1)</li>
             </ul>
           </div>
           <div className="bg-white p-3 rounded-lg">

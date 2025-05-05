@@ -45,6 +45,7 @@ import FutureHeadlinesSection from "@/components/sections/future-headlines-secti
 import AirlinePartnersSection from "@/components/sections/airline-partners-section"
 import CommunitySection from "@/components/sections/community-section"
 import InvestorFAQSection from "@/components/sections/investor-faq-section"
+import CapTableSection from "@/components/sections/cap-table-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -174,6 +175,7 @@ export default function Home() {
         <CommunitySection />
         <div className="space-y-6">
           <TeamSection />
+          <CapTableSection />
           <FoundersOpenLetter />
         </div>
         <TeamVisionSection />
