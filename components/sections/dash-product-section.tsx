@@ -57,9 +57,9 @@ export default function DashProductSection() {
       </div>
 
       {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <div className="bg-gray-50 p-4 rounded-xl">
-          <div className="flex items-center gap-2 mb-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
+          <div className="flex items-center gap-2 mb-1.5">
             <div className="rounded-full bg-gray-200 p-1.5">
               <svg className="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
@@ -73,11 +73,11 @@ export default function DashProductSection() {
             </div>
             <h3 className="text-sm font-medium">AI Travel Assistant</h3>
           </div>
-          <p className="text-xs text-gray-600">24/7 AI agent for booking, changes, and travel advice</p>
+          <p className="text-xs text-gray-600 pl-7">24/7 AI agent for booking, changes, and travel advice</p>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded-xl">
-          <div className="flex items-center gap-2 mb-2">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
+          <div className="flex items-center gap-2 mb-1.5">
             <div className="rounded-full bg-gray-200 p-1.5">
               <svg className="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
@@ -90,11 +90,11 @@ export default function DashProductSection() {
             </div>
             <h3 className="text-sm font-medium">Budget Tracking</h3>
           </div>
-          <p className="text-xs text-gray-600">Real-time expense monitoring and budget management</p>
+          <p className="text-xs text-gray-600 pl-7">Real-time expense monitoring and budget management</p>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded-xl">
-          <div className="flex items-center gap-2 mb-2">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
+          <div className="flex items-center gap-2 mb-1.5">
             <div className="rounded-full bg-gray-200 p-1.5">
               <svg className="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
@@ -107,11 +107,11 @@ export default function DashProductSection() {
             </div>
             <h3 className="text-sm font-medium">Trip Management</h3>
           </div>
-          <p className="text-xs text-gray-600">Centralized view of all upcoming and past trips</p>
+          <p className="text-xs text-gray-600 pl-7">Centralized view of all upcoming and past trips</p>
         </div>
 
-        <div className="bg-gray-50 p-4 rounded-xl">
-          <div className="flex items-center gap-2 mb-2">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
+          <div className="flex items-center gap-2 mb-1.5">
             <div className="rounded-full bg-gray-200 p-1.5">
               <svg className="h-4 w-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
@@ -124,31 +124,34 @@ export default function DashProductSection() {
             </div>
             <h3 className="text-sm font-medium">Policy Compliance</h3>
           </div>
-          <p className="text-xs text-gray-600">Automatic enforcement of company travel policies</p>
+          <p className="text-xs text-gray-600 pl-7">Automatic enforcement of company travel policies</p>
         </div>
       </div>
 
       {/* Stats Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-        <div className="bg-gray-50 p-3 rounded-xl text-center">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
           <p className="text-2xl font-semibold text-gray-900">35%</p>
           <p className="text-xs font-medium text-gray-500">Average savings</p>
         </div>
-        <div className="bg-gray-50 p-3 rounded-xl text-center">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
           <p className="text-2xl font-semibold text-gray-900">24/7</p>
           <p className="text-xs font-medium text-gray-500">AI assistance</p>
         </div>
-        <div className="bg-gray-50 p-3 rounded-xl text-center">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
           <p className="text-2xl font-semibold text-gray-900">45%</p>
           <p className="text-xs font-medium text-gray-500">Time saved</p>
         </div>
-        <div className="bg-gray-50 p-3 rounded-xl text-center">
+        <div className="bg-gray-50 p-3 rounded-xl border border-gray-100 hover:shadow-sm transition-all">
           <p className="text-2xl font-semibold text-gray-900">92%</p>
-          <p className="text-xs font-medium text-gray-500">User satisfaction</p>
+          <div className="text-xs font-medium text-gray-500">
+            Early-adopters
+            <span className="block text-green-600">98% satisfaction</span>
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-2">
         <a
           href="https://app.suitpax.com/dashboard"
           target="_blank"

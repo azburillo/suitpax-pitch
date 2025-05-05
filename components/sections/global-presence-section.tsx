@@ -112,23 +112,23 @@ const CityBadge = ({ airport, isActive = false }: { airport: (typeof airports)[0
 
   return (
     <div
-      className={`flex items-center gap-2 p-2 rounded-lg transition-all ${
+      className={`flex items-center gap-1 p-1 rounded-lg transition-all ${
         isActive ? "bg-white/20 border border-white/30" : "bg-black/30 border border-white/10 hover:bg-black/40"
       }`}
     >
-      <div className="relative w-10 h-10 rounded-md overflow-hidden flex-shrink-0">
+      <div className="relative w-7 h-7 rounded-md overflow-hidden flex-shrink-0">
         <Image src={airport.image || "/placeholder.svg"} alt={airport.city} fill className="object-cover" />
       </div>
       <div className="flex flex-col">
         <div className="flex items-center gap-1">
-          <span className="text-xs font-medium text-white">{airport.city}</span>
-          <span className="text-[9px] text-white/70">{airport.country}</span>
+          <span className="text-[10px] font-medium text-white">{airport.city}</span>
+          <span className="text-[8px] text-white/70">{airport.country}</span>
         </div>
         <div className="flex items-center gap-1">
-          <Plane className="w-3 h-3 text-white/70" />
-          <span className="text-[9px] text-white/70">{airport.name}</span>
+          <Plane className="w-2 h-2 text-white/70" />
+          <span className="text-[8px] text-white/70">{airport.name}</span>
         </div>
-        <div className="text-[8px] text-white/60 leading-tight max-w-[120px] truncate">
+        <div className="text-[7px] text-white/60 leading-tight max-w-[100px] truncate">
           {airportFullNames[airport.name] || "International Airport"}
         </div>
       </div>
