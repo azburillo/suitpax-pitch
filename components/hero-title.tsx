@@ -36,26 +36,26 @@ export default function HeroTitle() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
-          className="mx-auto mb-6 max-w-md bg-black/40 backdrop-blur-md rounded-full border border-white/10 overflow-hidden shadow-xl"
+          className="mx-auto mb-6 max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
         >
-          <div className="p-2 px-4 flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-white/20 flex-shrink-0">
+          <div className="p-2 px-3 flex items-center gap-2">
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
               <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
             </div>
             <div className="text-left flex-1">
-              <p className="text-xs text-white/90">
-                "When I was 6 years old, I got lost in an airport. Now I'm building the future of travel."
+              <p className="text-[11px] text-white/90">
+                "When I was 6 years old, I got lost in an airport. Now I'm building the future of travel tech."
               </p>
               <div className="flex items-center gap-1 mt-1">
-                <div className="h-1 w-1 rounded-full bg-green-400"></div>
-                <p className="text-[10px] text-green-400">Alberto Zurano, Founder</p>
+                <div className="h-1 w-1 rounded-full bg-white/40"></div>
+                <p className="text-[9px] text-gray-300">Alberto Zurano, Founder & CEO</p>
               </div>
             </div>
           </div>
         </motion.div>
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter leading-none text-white">
-          The next-gen of traveltech
+          The next-gen of traveltech revolution
         </h1>
         <p className="text-sm sm:text-base md:text-lg tracking-tighter text-white/90 max-w-2xl mx-auto font-medium">
           AI-powered business travel platform with superpowers

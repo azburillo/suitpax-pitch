@@ -10,6 +10,11 @@ const MiniChat = () => {
     "AI-powered expense management",
     "The ultimate business travel platform",
     "AI-driven business travel",
+    "AI travel assistant at your service",
+    "Smart AI booking recommendations",
+    "Personalized AI travel planning",
+    "Real-time AI travel updates",
+    "AI expense optimization",
   ])
   const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0)
 
