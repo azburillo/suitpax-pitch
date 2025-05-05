@@ -100,7 +100,7 @@ export default function Home() {
          */}
         <SolutionSection />
         <DashProductSection />
-        <ProductPreviewSection />
+        <ProductPreviewSection videoUrl="/videos/suitpax-dashboard-demo.mp4" />
         <ProductsSection />
 
         {/* ===== 4. VALIDACIÓN Y TRACCIÓN =====

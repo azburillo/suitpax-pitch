@@ -233,7 +233,7 @@ export default function GlobalPresenceSection() {
   return (
     <motion.section
       id="global-presence"
-      className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-xl border border-white/10 shadow-lg my-8"
+      className="bg-black/90 backdrop-blur-md p-3 sm:p-4 rounded-xl border border-white/10 shadow-lg my-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -265,7 +265,7 @@ export default function GlobalPresenceSection() {
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         {/* Globe Container - Taller and with more interaction */}
         <div className="flex-1 backdrop-blur-md p-2 rounded-md overflow-hidden">
-          <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] rounded-md overflow-hidden">
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-md overflow-hidden">
             <canvas
               ref={canvasRef}
               style={{
