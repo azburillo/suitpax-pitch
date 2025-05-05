@@ -46,6 +46,7 @@ import AirlinePartnersSection from "@/components/sections/airline-partners-secti
 import CommunitySection from "@/components/sections/community-section"
 import InvestorFAQSection from "@/components/sections/investor-faq-section"
 import CapTableSection from "@/components/sections/cap-table-section"
+import AITechnologyShowcase from "@/components/sections/ai-technology-showcase"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -121,6 +122,7 @@ export default function Home() {
          */}
         <SolutionSection />
         <AIAgentsSection />
+        <AITechnologyShowcase />
         <ProductsSection />
         <ProductPreviewSection />
         <ApiIntegrationsSection />
