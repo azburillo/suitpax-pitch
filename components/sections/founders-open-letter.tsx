@@ -31,7 +31,7 @@ export default function FoundersOpenLetter() {
   const founders = [
     {
       name: "Alberto Zurano",
-      image: "/alberto-zurano.webp",
+      image: "/founders/alberto.webp", // Updated from "/alberto-zurano.webp"
       role: "Founder and CEO",
       linkedin: "https://linkedin.com/in/alberto-zurano-burillo",
       previousCompany: "Aena",
@@ -44,7 +44,7 @@ export default function FoundersOpenLetter() {
     },
     {
       name: "Alexis Sanz",
-      image: "/alexis-sanz.jpeg",
+      image: "/founders/alexis.webp", // Updated path to match the correct location
       role: "Co-Founder and COO",
       linkedin: "https://linkedin.com/in/alexis-sanz",
       previousCompany: "Factorial",

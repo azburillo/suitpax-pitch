@@ -42,6 +42,7 @@ import IntegrationEcosystemSection from "@/components/sections/integration-ecosy
 import ProductPreviewSection from "@/components/sections/product-preview-section"
 import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
+import FutureHeadlinesSection from "@/components/sections/future-headlines-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -197,6 +198,7 @@ export default function Home() {
         <InvestmentSection />
         <InvestorROISection />
         <InvestorROICalculator />
+        <FutureHeadlinesSection />
 
         {/* ===== CLOSING COMPONENT =====
          * Unique style: Call-to-action focused

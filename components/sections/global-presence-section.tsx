@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Plane, MapPin } from "lucide-react"
+import { Plane, TrendingUp, Globe, Briefcase } from "lucide-react"
 import Image from "next/image"
 import createGlobe from "cobe"
 import { useRef } from "react"
@@ -66,8 +66,8 @@ export default function GlobalPresenceSection() {
 
   // Globe configuration
   const globeConfig = {
-    scale: 1.2,
-    globeColor: "#000000",
+    scale: 1.7, // Aumentado para que el globo sea más grande
+    globeColor: "#4a4a4a", // Gray color for the globe
     markerColor: "#ffffff",
     glowColor: "#ffffff",
     rotationSpeed: 0.005,
@@ -171,20 +171,30 @@ export default function GlobalPresenceSection() {
     >
       <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-serif italic text-white/80">
-          GLOBAL NETWORK
+          GLOBAL MARKET OPPORTUNITY
         </div>
         <div className="h-6 w-6">
           <Image src="/suitpax-white-logo.png" alt="Suitpax" width={24} height={24} className="object-contain" />
         </div>
       </div>
 
-      <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-4 sm:mb-6 text-white">
-        Global Business Travel Network
-      </h2>
+      {/* Enhanced title section */}
+      <div className="mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter text-white mb-2">
+          Connecting Global Business Travel
+        </h2>
+        <p className="text-base md:text-lg font-medium text-white/80 mb-2">
+          Seamlessly integrating with the rapidly growing $1.4T tourism sector
+        </p>
+        <p className="text-sm md:text-base font-light text-white/70">
+          Our technology enables effortless business travel management across continents, tapping into the untapped
+          TravelTech market with unprecedented efficiency and reach.
+        </p>
+      </div>
 
-      {/* Globe Container */}
-      <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm mb-6">
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
+      {/* Globe Container - Ahora ocupa más espacio */}
+      <div className="bg-black/50 backdrop-blur-md p-2 sm:p-3 rounded-xl border border-white/10 shadow-sm mb-6">
+        <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px]">
           <canvas
             ref={canvasRef}
             style={{
@@ -227,20 +237,74 @@ export default function GlobalPresenceSection() {
         </div>
       </div>
 
-      {/* Region filters */}
-      <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm mb-6">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="rounded-full bg-white/10 p-1.5">
-            <MapPin className="h-4 w-4 text-white" />
+      {/* Contenido secundario en grid para mejor organización */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {/* Stats in single card */}
+        <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <p className="text-xs text-white/60 mb-1">Countries</p>
+              <p className="text-lg font-medium text-white">150+</p>
+            </div>
+            <div>
+              <p className="text-xs text-white/60 mb-1">Destinations</p>
+              <p className="text-lg font-medium text-white">10,000+</p>
+            </div>
+            <div>
+              <p className="text-xs text-white/60 mb-1">Market Size</p>
+              <p className="text-lg font-medium text-white">$1.4T</p>
+            </div>
+            <div>
+              <p className="text-xs text-white/60 mb-1">Growth Rate</p>
+              <p className="text-lg font-medium text-white">34%</p>
+            </div>
           </div>
-          <h3 className="text-sm font-medium text-white">Explore Regions</h3>
         </div>
-        <div className="flex flex-wrap gap-2">
+
+        {/* Market opportunity highlights - Condensed */}
+        <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <TrendingUp className="h-4 w-4 text-white" />
+                </div>
+                <h3 className="text-sm font-medium text-white">Booming Tourism</h3>
+              </div>
+              <p className="text-xs text-white/70">Tourism sector growing at 34% annually post-pandemic.</p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <Globe className="h-4 w-4 text-white" />
+                </div>
+                <h3 className="text-sm font-medium text-white">Untapped TravelTech</h3>
+              </div>
+              <p className="text-xs text-white/70">TravelTech remains largely untapped with outdated systems.</p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <Briefcase className="h-4 w-4 text-white" />
+                </div>
+                <h3 className="text-sm font-medium text-white">Business Travel</h3>
+              </div>
+              <p className="text-xs text-white/70">$1.4T market seeking efficient, cost-effective solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Region filters - Más compacto */}
+      <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm mb-6">
+        <div className="flex flex-wrap gap-2 justify-center">
           {regions.map((region) => (
             <button
               key={region.id}
               onClick={() => setActiveRegion(region.id)}
-              className={`px-3 py-1.5 text-sm rounded-full transition-all ${
+              className={`px-3 py-1 text-xs rounded-full transition-all ${
                 activeRegion === region.id
                   ? "bg-white text-black"
                   : "bg-black/30 text-white/70 border border-white/10 hover:bg-white/10"
@@ -252,40 +316,26 @@ export default function GlobalPresenceSection() {
         </div>
       </div>
 
-      {/* Stats in grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
-          <p className="text-xs text-white/60 mb-1">Countries</p>
-          <p className="text-lg font-medium text-white">180+</p>
+      {/* City badges at the bottom - more impactful - limited to 3 lines */}
+      <div className="relative mt-4 mb-2">
+        <div className="max-h-[90px] overflow-hidden flex flex-wrap justify-center gap-1.5">
+          {filteredAirports.map((airport) => (
+            <div
+              key={airport.name}
+              className="flex items-center gap-1 bg-white/5 hover:bg-white/10 backdrop-blur-sm px-1.5 py-0.5 rounded-md border border-white/5 shadow-sm transition-all"
+              onMouseEnter={() => setHighlightedAirport(airport.name)}
+              onMouseLeave={() => setHighlightedAirport(null)}
+            >
+              <Plane className="w-2 h-2 text-white/70" />
+              <span className="text-[9px] font-medium text-white/80">{airport.name}</span>
+            </div>
+          ))}
         </div>
-        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
-          <p className="text-xs text-white/60 mb-1">Destinations</p>
-          <p className="text-lg font-medium text-white">10,000+</p>
-        </div>
-        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
-          <p className="text-xs text-white/60 mb-1">Support</p>
-          <p className="text-lg font-medium text-white">24/7</p>
-        </div>
-        <div className="bg-black/30 p-3 rounded-lg border border-white/10">
-          <p className="text-xs text-white/60 mb-1">Airlines</p>
-          <p className="text-lg font-medium text-white">500+</p>
-        </div>
-      </div>
 
-      {/* City badges at the bottom */}
-      <div className="mt-6 flex flex-wrap justify-center gap-2">
-        {filteredAirports.map((airport) => (
-          <div
-            key={airport.name}
-            className="flex items-center gap-1 bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/10 shadow-sm"
-            onMouseEnter={() => setHighlightedAirport(airport.name)}
-            onMouseLeave={() => setHighlightedAirport(null)}
-          >
-            <Plane className="w-3 h-3 text-white/70" />
-            <span className="text-xs font-medium text-white/80">{airport.name}</span>
-            <span className="text-[10px] text-white/50">({airport.city})</span>
-          </div>
-        ))}
+        {/* Future growth caption */}
+        <div className="mt-3 text-center">
+          <p className="text-xs text-white/50 italic">Projected global expansion 2025-2031</p>
+        </div>
       </div>
     </motion.section>
   )
