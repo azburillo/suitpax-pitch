@@ -123,7 +123,7 @@ export default function AIAgentsInteractiveShowcase() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="grid grid-cols-5 md:grid-cols-7 lg:grid-cols-9 gap-2 md:gap-3"
+              className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-1.5 md:gap-2"
             >
               {agentImages.map((src, index) => (
                 <motion.div
@@ -160,7 +160,7 @@ export default function AIAgentsInteractiveShowcase() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="bg-white/50 backdrop-blur-sm p-4 rounded-2xl border border-gray-200 shadow-sm"
+              className="bg-gradient-to-br from-emerald-50 to-white p-5 rounded-2xl border border-emerald-100 shadow-md"
             >
               {selectedIndex !== null && (
                 <div className="flex flex-col md:flex-row gap-6 items-center">
@@ -179,10 +179,12 @@ export default function AIAgentsInteractiveShowcase() {
                       AI AGENT
                     </div>
                     <h3 className="text-xl font-medium tracking-tighter mb-2">
-                      {agentData[selectedIndex % agentData.length].type}
+                      {selectedIndex === 4 ? "Zia" : agentData[selectedIndex % agentData.length].type}
                     </h3>
                     <p className="text-sm font-light text-gray-700 mb-4">
-                      {agentData[selectedIndex % agentData.length].description}
+                      {selectedIndex === 4
+                        ? "Your personal executive travel assistant"
+                        : agentData[selectedIndex % agentData.length].description}
                     </p>
 
                     <div className="grid grid-cols-2 gap-3 text-sm">
@@ -196,7 +198,7 @@ export default function AIAgentsInteractiveShowcase() {
                       </div>
                       <div className="bg-gray-100 p-2 rounded-lg">
                         <p className="font-medium text-xs">Languages</p>
-                        <p className="font-light text-xs">12 supported</p>
+                        <p className="font-light text-xs">English, Spanish, French</p>
                       </div>
                       <div className="bg-gray-100 p-2 rounded-lg">
                         <p className="font-medium text-xs">Integration</p>

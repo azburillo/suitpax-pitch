@@ -23,23 +23,23 @@ export default function AITechnologyShowcase() {
   }, [conversationStep])
 
   return (
-    <section className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm">
-      <div className="inline-flex items-center rounded-xl bg-blue-950 px-2.5 py-0.5 text-[10px] font-medium text-white mb-3 sm:mb-4">
+    <section className="bg-gray-900 p-4 sm:p-6 rounded-2xl border border-gray-800 shadow-md">
+      <div className="inline-flex items-center rounded-xl bg-gray-800 px-2.5 py-0.5 text-[10px] font-medium text-gray-300 mb-3 sm:mb-4">
         AI TECHNOLOGY
       </div>
 
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-3 sm:mb-4 text-gray-900">
+      <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-3 sm:mb-4 text-white">
         Experience Our AI Travel Assistant in Action
       </h2>
 
-      <p className="text-sm sm:text-base font-light text-gray-700 mb-6">
+      <p className="text-xs sm:text-sm font-light text-gray-400 mb-6">
         See how our AI understands complex travel requests, optimizes for preferences and policies, and delivers
         personalized options in seconds.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* AI Conversation Demo */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-700 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-gray-950 to-gray-900 rounded-2xl p-4 sm:p-5 shadow-lg border border-gray-800 relative overflow-hidden">
           {/* Background pattern */}
           <div className="absolute inset-0 opacity-5">
             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -277,19 +277,19 @@ export default function AITechnologyShowcase() {
         </div>
 
         {/* ML Architecture Visualization */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-200 flex flex-col">
+        <div className="bg-gray-900 rounded-2xl p-4 sm:p-5 shadow-md border border-gray-800 flex flex-col">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-lg sm:text-xl font-medium text-gray-900">Behind The Scenes</h3>
+            <h3 className="text-base sm:text-lg font-medium text-white">Behind The Scenes</h3>
             <div className="flex space-x-2">
               <button
                 onClick={() => setShowArchitecture(false)}
-                className={`px-3 py-1 text-xs rounded-full ${!showArchitecture ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}
+                className={`px-3 py-1 text-xs rounded-full ${!showArchitecture ? "bg-green-900 text-green-400" : "bg-gray-800 text-gray-400"}`}
               >
                 Process Flow
               </button>
               <button
                 onClick={() => setShowArchitecture(true)}
-                className={`px-3 py-1 text-xs rounded-full ${showArchitecture ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-600"}`}
+                className={`px-3 py-1 text-xs rounded-full ${showArchitecture ? "bg-green-900 text-green-400" : "bg-gray-800 text-gray-400"}`}
               >
                 ML Architecture
               </button>
@@ -308,12 +308,12 @@ export default function AITechnologyShowcase() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="flex"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                      <span className="text-blue-700 font-medium">1</span>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-3">
+                      <span className="text-green-400 font-medium text-xs">1</span>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-gray-900 mb-1">Natural Language Understanding</h4>
-                      <p className="text-xs text-gray-600">
+                      <h4 className="text-xs font-medium text-white mb-1">Natural Language Understanding</h4>
+                      <p className="text-[10px] text-gray-400">
                         Our AI parses complex travel requests, identifying destinations, dates, preferences, and
                         constraints.
                       </p>
@@ -321,7 +321,7 @@ export default function AITechnologyShowcase() {
                   </motion.div>
 
                   {/* Connector */}
-                  <div className="w-0.5 h-4 bg-gray-200 ml-5"></div>
+                  <div className="w-0.5 h-4 bg-gray-700 ml-4"></div>
 
                   {/* Step 2 */}
                   <motion.div
@@ -330,12 +330,12 @@ export default function AITechnologyShowcase() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="flex"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                      <span className="text-blue-700 font-medium">2</span>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-3">
+                      <span className="text-green-400 font-medium text-xs">2</span>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-gray-900 mb-1">Policy & Preference Matching</h4>
-                      <p className="text-xs text-gray-600">
+                      <h4 className="text-xs font-medium text-white mb-1">Policy & Preference Matching</h4>
+                      <p className="text-[10px] text-gray-400">
                         The system checks company travel policies and user preferences to ensure compliant
                         recommendations.
                       </p>
@@ -343,7 +343,7 @@ export default function AITechnologyShowcase() {
                   </motion.div>
 
                   {/* Connector */}
-                  <div className="w-0.5 h-4 bg-gray-200 ml-5"></div>
+                  <div className="w-0.5 h-4 bg-gray-700 ml-4"></div>
 
                   {/* Step 3 */}
                   <motion.div
@@ -352,19 +352,19 @@ export default function AITechnologyShowcase() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                      <span className="text-blue-700 font-medium">3</span>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-3">
+                      <span className="text-green-400 font-medium text-xs">3</span>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-gray-900 mb-1">Multi-Source Data Aggregation</h4>
-                      <p className="text-xs text-gray-600">
+                      <h4 className="text-xs font-medium text-white mb-1">Multi-Source Data Aggregation</h4>
+                      <p className="text-[10px] text-gray-400">
                         Our AI searches across multiple providers and APIs to find the best options in real-time.
                       </p>
                     </div>
                   </motion.div>
 
                   {/* Connector */}
-                  <div className="w-0.5 h-4 bg-gray-200 ml-5"></div>
+                  <div className="w-0.5 h-4 bg-gray-700 ml-4"></div>
 
                   {/* Step 4 */}
                   <motion.div
@@ -373,12 +373,12 @@ export default function AITechnologyShowcase() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="flex"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                      <span className="text-blue-700 font-medium">4</span>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center mr-3">
+                      <span className="text-green-400 font-medium text-xs">4</span>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-gray-900 mb-1">Intelligent Ranking & Presentation</h4>
-                      <p className="text-xs text-gray-600">
+                      <h4 className="text-xs font-medium text-white mb-1">Intelligent Ranking & Presentation</h4>
+                      <p className="text-[10px] text-gray-400">
                         Options are ranked based on 20+ factors including price, convenience, sustainability, and past
                         preferences.
                       </p>
@@ -396,15 +396,15 @@ export default function AITechnologyShowcase() {
                 transition={{ duration: 0.5 }}
                 className="w-full max-w-md"
               >
-                <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
                   <div className="flex flex-col items-center">
                     {/* Input Layer */}
                     <div className="mb-4 text-center">
-                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-2">
-                        <BrainCircuit className="w-8 h-8 text-blue-600" />
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 mb-2">
+                        <BrainCircuit className="w-6 h-6 text-green-400" />
                       </div>
-                      <p className="text-xs font-medium text-gray-900">Natural Language Processing</p>
-                      <p className="text-[10px] text-gray-500">BERT-based Intent Recognition</p>
+                      <p className="text-[10px] font-medium text-white">Natural Language Processing</p>
+                      <p className="text-[9px] text-gray-400">BERT-based Intent Recognition</p>
                     </div>
 
                     {/* Arrow */}
@@ -413,22 +413,22 @@ export default function AITechnologyShowcase() {
                     {/* Middle Layer */}
                     <div className="grid grid-cols-3 gap-4 mb-4">
                       <div className="text-center">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 mb-2">
-                          <Database className="w-6 h-6 text-green-600" />
+                        <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-700 mb-2">
+                          <Database className="w-5 h-5 text-green-400" />
                         </div>
-                        <p className="text-[10px] font-medium text-gray-900">Knowledge Graph</p>
+                        <p className="text-[9px] font-medium text-white">Knowledge Graph</p>
                       </div>
                       <div className="text-center">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 mb-2">
-                          <Cpu className="w-6 h-6 text-purple-600" />
+                        <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-700 mb-2">
+                          <Cpu className="w-5 h-5 text-green-400" />
                         </div>
-                        <p className="text-[10px] font-medium text-gray-900">Decision Engine</p>
+                        <p className="text-[9px] font-medium text-white">Decision Engine</p>
                       </div>
                       <div className="text-center">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 mb-2">
-                          <Network className="w-6 h-6 text-orange-600" />
+                        <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-700 mb-2">
+                          <Network className="w-5 h-5 text-green-400" />
                         </div>
-                        <p className="text-[10px] font-medium text-gray-900">API Orchestration</p>
+                        <p className="text-[9px] font-medium text-white">API Orchestration</p>
                       </div>
                     </div>
 
@@ -437,27 +437,27 @@ export default function AITechnologyShowcase() {
 
                     {/* Output Layer */}
                     <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-2">
-                        <BrainCircuit className="w-8 h-8 text-blue-600" />
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 mb-2">
+                        <BrainCircuit className="w-6 h-6 text-green-400" />
                       </div>
-                      <p className="text-xs font-medium text-gray-900">Response Generation</p>
-                      <p className="text-[10px] text-gray-500">GPT-4 Fine-tuned Model</p>
+                      <p className="text-[10px] font-medium text-white">Response Generation</p>
+                      <p className="text-[9px] text-gray-400">GPT-4 Fine-tuned Model</p>
                     </div>
                   </div>
 
                   {/* Key metrics */}
                   <div className="grid grid-cols-3 gap-2 mt-6 text-center">
                     <div>
-                      <p className="text-xs font-medium text-gray-900">98.7%</p>
-                      <p className="text-[10px] text-gray-500">Intent Accuracy</p>
+                      <p className="text-[10px] font-medium text-green-400">98.7%</p>
+                      <p className="text-[8px] text-gray-400">Intent Accuracy</p>
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-900">0.8s</p>
-                      <p className="text-[10px] text-gray-500">Avg. Response Time</p>
+                      <p className="text-[10px] font-medium text-green-400">0.8s</p>
+                      <p className="text-[8px] text-gray-400">Avg. Response Time</p>
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-gray-900">92%</p>
-                      <p className="text-[10px] text-gray-500">User Satisfaction</p>
+                      <p className="text-[10px] font-medium text-green-400">92%</p>
+                      <p className="text-[8px] text-gray-400">User Satisfaction</p>
                     </div>
                   </div>
                 </div>
