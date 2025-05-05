@@ -37,7 +37,6 @@ import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadm
 import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
 import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
 import CrisisManagementSection from "@/components/sections/crisis-management-section"
-import CustomerSuccessSection from "@/components/sections/customer-success-section"
 import ProductPreviewSection from "@/components/sections/product-preview-section"
 import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
@@ -108,7 +107,6 @@ export default function Home() {
          * Establecer credibilidad con resultados y presencia
          */}
         <TractionSection />
-        <CustomerSuccessSection />
         <GlobalPresenceSection />
         <AirlinePartnersSection />
 
