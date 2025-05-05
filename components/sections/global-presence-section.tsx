@@ -57,20 +57,12 @@ const airports = [
     image: "/sydney-opera-house.png",
   },
   {
-    name: "SFO",
-    city: "San Francisco",
-    country: "USA",
-    location: [37.6213, -122.379],
-    region: "north-america",
-    image: "/san-francisco-golden-gate.png",
-  },
-  {
-    name: "LHR",
-    city: "London",
-    country: "UK",
-    location: [51.47, -0.4543],
-    region: "europe",
-    image: "/london-tower-bridge.png",
+    name: "DXB",
+    city: "Dubai",
+    country: "UAE",
+    location: [25.2532, 55.3657],
+    region: "middle-east",
+    image: "/dubai-burj-khalifa.png",
   },
 ]
 
@@ -106,8 +98,7 @@ const CityBadge = ({ airport, isActive = false }: { airport: (typeof airports)[0
     HND: "Tokyo Haneda",
     SIN: "Singapore Changi",
     SYD: "Sydney Kingsford Smith",
-    SFO: "San Francisco International",
-    LHR: "London Heathrow",
+    DXB: "Dubai International",
   }
 
   return (
