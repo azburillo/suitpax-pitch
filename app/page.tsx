@@ -43,6 +43,7 @@ import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
 import FutureHeadlinesSection from "@/components/sections/future-headlines-section"
 import AirlinePartnersSection from "@/components/sections/airline-partners-section"
+import CommunitySection from "@/components/sections/community-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -165,16 +166,11 @@ export default function Home() {
         <MarketExpansionRoadmap />
         <RoadmapSection />
 
-        {/* ===== TEAM & VISION COMPONENTS =====
-         * Different styles within this group:
-         * TeamSection: Professional, corporate style with team structure
-         * FoundersOpenLetter: Personal, narrative style with founder stories
-         * TeamVisionSection: Visionary, aspirational style
-         * MoonshotSection: Bold, ambitious future vision
-         *
-         * Consider unifying the visual language between these components
-         * while maintaining their distinct content approaches
+        {/* ===== COMMUNITY & TEAM COMPONENTS =====
+         * Community section showcases communication channels and Slack community
+         * Team components show the people behind the product
          */}
+        <CommunitySection />
         <div className="space-y-6">
           <TeamSection />
           <FoundersOpenLetter />

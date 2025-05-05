@@ -31,7 +31,7 @@ export default function FoundersOpenLetter() {
   const founders = [
     {
       name: "Alberto Zurano",
-      image: "/founders/alberto.webp",
+      image: "/alberto-zurano.webp", // Updated path to existing image
       role: "Founder and CEO",
       linkedin: "https://linkedin.com/in/alberto-zurano-burillo",
       previousCompany: "Aena",
@@ -51,7 +51,7 @@ export default function FoundersOpenLetter() {
     },
     {
       name: "Alexis Sanz",
-      image: "/founders/alexis.webp",
+      image: "/alexis-sanz.jpeg", // Updated path to existing image
       role: "Co-Founder and COO",
       linkedin: "https://linkedin.com/in/alexis-sanz",
       previousCompany: "Factorial",
@@ -123,12 +123,18 @@ export default function FoundersOpenLetter() {
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 md:p-6">
                     <div className="flex items-start gap-4">
                       <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
-                        <Image
-                          src={founder.image || "/placeholder.svg"}
-                          alt={founder.name}
-                          fill
-                          className="object-cover"
-                        />
+                        {founder.image ? (
+                          <Image
+                            src={founder.image || "/placeholder.svg"}
+                            alt={founder.name}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                            <span className="text-white text-xs">{founder.name.charAt(0)}</span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2">

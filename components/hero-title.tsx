@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import MiniChat from "./mini-chat"
 import Image from "next/image"
+import { LightbulbIcon } from "lucide-react"
 
 export default function HeroTitle() {
   return (
@@ -10,15 +11,15 @@ export default function HeroTitle() {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Image
-          src="/modern-city-skyline.jpg"
-          alt="Modern city skyline"
+          src="/green-gradient-bg.jpeg"
+          alt="Green gradient background"
           fill
           className="object-cover object-center w-full h-full"
           priority
           sizes="100vw"
         />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Subtle overlay to improve text readability */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       <motion.div
@@ -41,6 +42,36 @@ export default function HeroTitle() {
         <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light">
           Transforming business travel with intelligent automation and personalized experiences
         </p>
+
+        {/* Founder mini card */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="absolute top-8 right-8 md:top-12 md:right-12 max-w-[200px] bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
+        >
+          <div className="p-3 space-y-2">
+            <div className="flex items-start gap-3">
+              <div className="relative w-14 h-14 rounded-lg overflow-hidden border-2 border-white/20">
+                <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
+              </div>
+              <div className="text-left">
+                <div className="flex items-center gap-1">
+                  <LightbulbIcon className="w-4 h-4 text-yellow-400" />
+                  <p className="text-xs font-medium text-white">Eureka moment</p>
+                </div>
+                <p className="text-[10px] text-white/70 mt-0.5">Where it all began</p>
+              </div>
+            </div>
+            <p className="text-xs text-white/90 text-left">
+              "When I was 7, I planned my first trip. Now I'm solving the biggest problems in traveltech."
+            </p>
+            <div className="flex items-center gap-1">
+              <div className="h-1 w-1 rounded-full bg-green-400"></div>
+              <p className="text-[10px] text-green-400">Alberto Zurano, Founder</p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* MiniChat centered below subtitle */}
         <div className="flex justify-center mt-8">

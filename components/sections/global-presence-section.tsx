@@ -164,7 +164,7 @@ export default function GlobalPresenceSection() {
   return (
     <motion.section
       id="global-presence"
-      className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/10 shadow-lg my-8"
+      className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-md border border-white/10 shadow-lg my-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -180,8 +180,8 @@ export default function GlobalPresenceSection() {
 
       {/* Enhanced title section */}
       <div className="mb-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter text-white mb-2">
-          Connecting Global Business Travel
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter text-white mb-2 text-center font-serif italic">
+          Revolutionizing Global Business Travel Across Continents
         </h2>
         <p className="text-base md:text-lg font-medium text-white/80 mb-2">
           Seamlessly integrating with the rapidly growing $1.4T tourism sector
