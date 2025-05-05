@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 
 export default function FoundersOpenLetter() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -31,29 +31,43 @@ export default function FoundersOpenLetter() {
   const founders = [
     {
       name: "Alberto Zurano",
-      image: "/founders/alberto.webp", // Updated from "/alberto-zurano.webp"
+      image: "/founders/alberto.webp",
       role: "Founder and CEO",
       linkedin: "https://linkedin.com/in/alberto-zurano-burillo",
       previousCompany: "Aena",
       companyType: "IBEX 35",
       companyLogo: "https://cdn.brandfetch.io/aena.es/w/512/h/250/logo?c=1idU-l8vdm7C5__3dci",
+      experience:
+        "Led digital transformation initiatives at Spain's largest airport operator, managing teams of 50+ across multiple locations",
       quotes: [
         "After experiencing the frustrations of business travel firsthand, I knew there had to be a better way. With Suitpax, we're building the platform I always wished existed.",
         "Our vision goes beyond just another travel platform—we're creating an ecosystem that truly understands the unique needs of business travelers and their companies.",
       ],
+      press: {
+        name: "El Mundo",
+        url: "https://www.elmundo.es/economia/innovadores/2023/05/15/travel-tech-revolution.html",
+        title: "The Travel Tech Revolution",
+      },
     },
     {
       name: "Alexis Sanz",
-      image: "/founders/alexis.webp", // Updated path to match the correct location
+      image: "/founders/alexis.webp",
       role: "Co-Founder and COO",
       linkedin: "https://linkedin.com/in/alexis-sanz",
       previousCompany: "Factorial",
       companyType: "(Spanish Unicorn)",
       companyLogo: "https://cdn.brandfetch.io/factorialhr.com/w/512/h/108/theme/light/logo?c=1idU-l8vdm7C5__3dci",
+      experience:
+        "Former Operations Director at Factorial, where he scaled operations from 50 to 500+ employees and managed international expansion",
       quotes: [
         "My focus is on creating operational excellence in everything we do. At Suitpax, we're building streamlined processes that deliver exceptional experiences at scale.",
         "By optimizing every touchpoint in the business travel journey, we're transforming what was once a logistical burden into a strategic advantage for companies and their travelers.",
       ],
+      press: {
+        name: "Business Insider",
+        url: "https://www.businessinsider.com/spanish-startups-to-watch-2023-04",
+        title: "Spanish Startups to Watch",
+      },
     },
   ]
 
@@ -156,13 +170,33 @@ export default function FoundersOpenLetter() {
                           </div>
                         </div>
 
-                        <div className="space-y-2">
+                        {/* Previous experience - Destacado */}
+                        <div className="mb-4 bg-white/10 p-3 rounded-lg border border-white/5">
+                          <p className="text-sm text-white/90 font-medium">{founder.experience}</p>
+                        </div>
+
+                        <div className="space-y-2 mb-4">
                           {founder.quotes.map((quote, i) => (
                             <p key={i} className="text-xs text-white/70 italic font-serif">
                               "{quote}"
                             </p>
                           ))}
                         </div>
+
+                        {/* Press mention */}
+                        <a
+                          href={founder.press.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 bg-white/10 hover:bg-white/15 transition-colors p-2 rounded-md text-xs text-white/80"
+                        >
+                          <span>
+                            Featured in <span className="font-medium">{founder.press.name}</span>: "
+                            {founder.press.title}"
+                          </span>
+                          <ExternalLink size={12} className="text-white/60" />
+                          <span className="text-[10px] text-white/50 ml-auto">Read article</span>
+                        </a>
                       </div>
                     </div>
                   </div>

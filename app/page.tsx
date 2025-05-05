@@ -38,11 +38,11 @@ import CompetitiveResponseStrategy from "@/components/sections/competitive-respo
 import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
 import CrisisManagementSection from "@/components/sections/crisis-management-section"
 import CustomerSuccessSection from "@/components/sections/customer-success-section"
-import IntegrationEcosystemSection from "@/components/sections/integration-ecosystem-section"
 import ProductPreviewSection from "@/components/sections/product-preview-section"
 import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
 import FutureHeadlinesSection from "@/components/sections/future-headlines-section"
+import AirlinePartnersSection from "@/components/sections/airline-partners-section"
 
 export default function Home() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -109,7 +109,6 @@ export default function Home() {
          * ProductsSection: Product lineup with features
          * ProductPreviewSection: Visual product demonstrations
          * ApiIntegrationsSection: Technical integration diagrams
-         * IntegrationEcosystemSection: Partner/integration ecosystem
          * AdditionalFeaturesSection: Feature highlights with icons
          * CompetitiveAdvantageSection: Advantage comparisons
          *
@@ -122,7 +121,7 @@ export default function Home() {
         <ProductsSection />
         <ProductPreviewSection />
         <ApiIntegrationsSection />
-        <IntegrationEcosystemSection />
+        <AirlinePartnersSection />
         <AdditionalFeaturesSection />
         <CompetitiveAdvantageSection />
         <SustainabilityImpactSection />

@@ -193,7 +193,7 @@ export default function GlobalPresenceSection() {
       </div>
 
       {/* Globe Container - Ahora ocupa más espacio */}
-      <div className="bg-black/50 backdrop-blur-md p-2 sm:p-3 rounded-xl border border-white/10 shadow-sm mb-6">
+      <div className="backdrop-blur-md p-2 sm:p-3 rounded-xl mb-6">
         <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px]">
           <canvas
             ref={canvasRef}

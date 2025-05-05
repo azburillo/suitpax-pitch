@@ -10,14 +10,15 @@ export default function HeroTitle() {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Image
-          src="/city-skyline-bg.jpeg"
-          alt="City skyline"
+          src="/modern-city-skyline.jpg"
+          alt="Modern city skyline"
           fill
           className="object-cover object-center w-full h-full"
           priority
           sizes="100vw"
         />
-        {/* No overlay - city background shows through directly */}
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       <motion.div

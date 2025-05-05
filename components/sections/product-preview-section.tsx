@@ -2,120 +2,190 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useState } from "react"
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react"
+import { useState, useRef } from "react"
+import { Lock, Briefcase, CreditCard, Ticket, CheckSquare, ArrowRight, Play, Pause } from "lucide-react"
 
 export default function ProductPreviewSection() {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
-  const images = [
+  const handlePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
+  const currentProducts = [
     {
-      src: "/suitpax-anthropic-dashboard.png",
-      alt: "Suitpax Anthropic Integration Dashboard",
-      caption: "Anthropic-powered business travel dashboard with AI assistant integration",
+      icon: <Briefcase className="h-5 w-5" />,
+      name: "Business Travel Platform",
+      description: "Comprehensive travel booking and management solution for enterprises",
     },
     {
-      src: "/suitpax-flight-search.png",
-      alt: "Suitpax Flight Search Interface",
-      caption: "Intuitive flight search with policy compliance enforcement",
+      icon: <CreditCard className="h-5 w-5" />,
+      name: "Expense Management",
+      description: "Automated expense tracking and reporting with policy compliance",
+    },
+    {
+      icon: <Ticket className="h-5 w-5" />,
+      name: "Airport VIP Lounge Membership",
+      description: "Global access to premium airport lounges for business travelers",
+    },
+    {
+      icon: <CheckSquare className="h-5 w-5" />,
+      name: "Task Management",
+      description: "Streamlined workflow for travel-related tasks and approvals",
     },
   ]
 
-  const nextImage = () => {
-    setActiveIndex((prev) => (prev + 1) % images.length)
-  }
-
-  const prevImage = () => {
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
+  const upcomingProducts = [
+    {
+      icon: <ArrowRight className="h-5 w-5" />,
+      name: "TRM (Travel Relations Management)",
+      description: "Advanced platform for managing corporate travel relationships",
+      comingSoon: true,
+    },
+    {
+      icon: <ArrowRight className="h-5 w-5" />,
+      name: "Suitpax AI (FIRST SPINOFF)",
+      description: "Standalone AI travel assistant for enterprise integration",
+      comingSoon: true,
+      preview: "/suitpax-ai-preview.png",
+    },
+  ]
 
   return (
     <motion.section
       id="product-preview"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      className="bg-black text-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-5xl mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
-      <div className="flex items-center justify-between mb-3 sm:mb-4">
-        <div className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-          PRODUCT PREVIEW
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center space-x-3">
+          <Lock className="h-5 w-5 text-emerald-400" />
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">Product Suite</h2>
         </div>
-        <div className="h-6 w-6">
-          <Image src="/suitpax-bl-logo.webp" alt="Suitpax" width={24} height={24} className="object-contain" />
+        <div className="h-8 w-8">
+          <Image src="/suitpax-white-logo.png" alt="Suitpax" width={32} height={32} className="object-contain" />
         </div>
       </div>
 
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-6 text-center">
-        A sneak peek at the Suitpax platform
-      </h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="space-y-6">
+          <h3 className="text-lg sm:text-xl font-medium text-emerald-400 mb-4">Suitpax Enterprise Dashboard</h3>
 
-      <div className="relative">
-        <div className="relative rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src={images[activeIndex].src || "/placeholder.svg"}
-            alt={images[activeIndex].alt}
-            width={1200}
-            height={800}
-            className="rounded-xl"
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-
-          <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white p-3 text-sm">
-            {images[activeIndex].caption}
-          </div>
-
-          <button
-            onClick={prevImage}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-            aria-label="Previous image"
-          >
-            <ArrowLeft className="h-5 w-5 text-gray-800" weight="bold" />
-          </button>
-
-          <button
-            onClick={nextImage}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
-            aria-label="Next image"
-          >
-            <ArrowRight className="h-5 w-5 text-gray-800" weight="bold" />
-          </button>
-        </div>
-
-        <div className="flex justify-center mt-4 gap-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`h-1.5 rounded-full transition-all ${
-                activeIndex === index ? "w-6 bg-emerald-950" : "w-3 bg-gray-300"
-              }`}
-              aria-label={`Go to image ${index + 1}`}
+          <div className="relative rounded-xl overflow-hidden bg-gray-900 aspect-video">
+            <video
+              ref={videoRef}
+              src="/videos/suitpax-dashboard-demo.mp4"
+              className="w-full h-full object-cover"
+              loop
+              muted
+              playsInline
             />
-          ))}
+
+            <button
+              onClick={handlePlayPause}
+              className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
+            >
+              {isPlaying ? (
+                <Pause className="h-16 w-16 text-white opacity-80" />
+              ) : (
+                <Play className="h-16 w-16 text-white opacity-80" />
+              )}
+            </button>
+          </div>
+
+          <div className="text-sm text-gray-300">
+            <p>
+              Our intuitive dashboard provides a comprehensive view of all travel activities, expenses, and upcoming
+              trips in one place.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-lg sm:text-xl font-medium text-emerald-400 mb-4">Current Products</h3>
+
+          <div className="space-y-3">
+            {currentProducts.map((product, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-emerald-800 transition-colors"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="bg-emerald-900/50 p-2 rounded-md">{product.icon}</div>
+                  <div>
+                    <h4 className="font-medium">{product.name}</h4>
+                    <p className="text-xs text-gray-400">{product.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="text-lg sm:text-xl font-medium text-emerald-400 mt-6 mb-4">Coming Soon</h3>
+
+          <div className="space-y-3">
+            {upcomingProducts.map((product, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 p-4 rounded-lg border border-gray-700 hover:border-emerald-800 transition-colors"
+              >
+                <div className="flex items-start space-x-3">
+                  <div className="bg-emerald-900/50 p-2 rounded-md">{product.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center">
+                      <h4 className="font-medium">{product.name}</h4>
+                      <span className="ml-2 text-[10px] bg-emerald-900 text-emerald-200 px-2 py-0.5 rounded-full">
+                        SOON
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-400">{product.description}</p>
+
+                    {product.preview && (
+                      <div className="mt-3 grid grid-cols-2 gap-2">
+                        <div className="relative rounded-md overflow-hidden">
+                          <Image
+                            src={product.preview || "/placeholder.svg"}
+                            alt={`${product.name} preview`}
+                            width={200}
+                            height={400}
+                            className="w-full h-auto"
+                          />
+                        </div>
+                        <div className="relative rounded-md overflow-hidden">
+                          <Image
+                            src="/suitpax-ai-menu.png"
+                            alt={`${product.name} menu`}
+                            width={200}
+                            height={400}
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="mt-6 bg-emerald-50 rounded-xl p-4 border border-emerald-100">
-        <h3 className="text-sm font-medium mb-2 text-emerald-950">Key Platform Features</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-            <p className="text-xs font-medium">Anthropic Integration</p>
-            <p className="text-[10px] text-gray-600">AI-powered travel assistant</p>
-          </div>
-          <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-            <p className="text-xs font-medium">Policy Compliance</p>
-            <p className="text-[10px] text-gray-600">Automated enforcement</p>
-          </div>
-          <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-            <p className="text-xs font-medium">Budget Tracking</p>
-            <p className="text-[10px] text-gray-600">Real-time spend analysis</p>
-          </div>
-          <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
-            <p className="text-xs font-medium">Team Management</p>
-            <p className="text-[10px] text-gray-600">Collaborative travel planning</p>
-          </div>
-        </div>
+      <div className="text-center mt-6">
+        <p className="text-xs text-gray-400">
+          All products include 24/7 support, enterprise-grade security, and seamless integration with your existing
+          systems.
+        </p>
       </div>
     </motion.section>
   )
