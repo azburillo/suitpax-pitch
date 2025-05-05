@@ -6,28 +6,27 @@ import { CheckCircle, X, ArrowRight, Lightning, Rocket, Buildings } from "@phosp
 export default function PricingSection() {
   const plans = [
     {
-      name: "Travel",
-      description: "For individuals and small teams",
-      price: "€59",
-      period: "per month",
+      name: "Free",
+      description: "Try before you commit",
+      price: "€0",
+      period: "forever",
       icon: <Lightning className="h-6 w-6 text-gray-600" weight="fill" />,
       color: "bg-gray-100",
       textColor: "text-gray-600",
       borderColor: "border-gray-200",
       features: [
-        "1 AI trip per month (12 yearly)",
-        "Flight and hotel bookings",
-        "Basic AI agents",
-        "Basic reports",
-        "No integrated CRM",
+        "1 AI trip per month",
+        "Basic flight search",
+        "Limited hotel bookings",
+        "Basic AI assistance",
         "Email support",
       ],
-      limitations: ["No financial integrations", "No custom travel policies", "No automatic approvals"],
+      limitations: ["No financial integrations", "No travel policies", "No expense management"],
     },
     {
-      name: "Business",
-      description: "Ideal for growing teams",
-      price: "€89",
+      name: "Scale-up",
+      description: "Perfect for startups",
+      price: "€49",
       period: "per month",
       icon: <Rocket className="h-6 w-6 text-emerald-950" weight="fill" />,
       color: "bg-emerald-50",
@@ -35,21 +34,21 @@ export default function PricingSection() {
       borderColor: "border-emerald-200",
       popular: true,
       features: [
-        "30 AI trips per year (3 per month)",
+        "10 AI trips per month",
         "Unlimited bookings",
         "Advanced AI agents",
-        "Basic integrated CRM",
-        "Customizable travel policies",
-        "Integrations with 3 fintech platforms",
+        "Basic task management",
+        "Simple travel policies",
+        "Basic expense tracking",
         "Priority support",
       ],
       limitations: [],
     },
     {
       name: "Enterprise",
-      description: "For large organizations",
-      price: "Custom",
-      period: "",
+      description: "For growing businesses",
+      price: "$129",
+      period: "per month",
       icon: <Buildings className="h-6 w-6 text-blue-700" weight="fill" />,
       color: "bg-blue-50",
       textColor: "text-blue-700",
@@ -57,11 +56,32 @@ export default function PricingSection() {
       features: [
         "Unlimited AI trips",
         "Complete AI agent suite",
-        "Advanced CRM with automations",
+        "Advanced task management",
         "Multi-level travel policies",
-        "Unlimited integrations",
-        "Advanced expense analysis",
-        "24/7 support with guaranteed response time",
+        "Full expense management",
+        "Financial integrations",
+        "24/7 support",
+        "Dedicated account manager",
+      ],
+      limitations: [],
+    },
+    {
+      name: "Custom",
+      description: "Tailored to your needs",
+      price: "Contact us",
+      period: "",
+      icon: <Buildings className="h-6 w-6 text-purple-700" weight="fill" />,
+      color: "bg-purple-50",
+      textColor: "text-purple-700",
+      borderColor: "border-purple-200",
+      features: [
+        "Everything in Enterprise",
+        "Custom AI development",
+        "White-label options",
+        "API access",
+        "Custom integrations",
+        "Dedicated development team",
+        "SLA guarantees",
         "Personalized onboarding",
       ],
       limitations: [],
@@ -87,7 +107,7 @@ export default function PricingSection() {
         solutions.
       </p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {plans.map((plan, index) => (
           <motion.div
             key={index}
@@ -155,9 +175,9 @@ export default function PricingSection() {
             <tbody>
               <tr className="border-b border-gray-200 bg-emerald-50">
                 <td className="p-2 text-xs font-medium text-emerald-950">Suitpax (Enterprise)</td>
-                <td className="p-2 text-xs">Custom</td>
+                <td className="p-2 text-xs">$129/month</td>
                 <td className="p-2 text-xs">€0</td>
-                <td className="p-2 text-xs font-medium text-emerald-950">Custom</td>
+                <td className="p-2 text-xs font-medium text-emerald-950">$129/month</td>
               </tr>
               <tr className="border-b border-gray-200">
                 <td className="p-2 text-xs font-medium">Navan (TripActions)</td>

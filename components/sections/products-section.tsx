@@ -5,7 +5,6 @@ import {
   Buildings,
   CreditCard,
   Airplane,
-  Briefcase,
   MapPin,
   Bed,
   Ticket,
@@ -13,11 +12,7 @@ import {
   CheckSquare,
   Calendar,
   ChartPieSlice,
-  Microphone,
-  Notepad,
   UsersThree,
-  ChartLine,
-  Handshake,
   Robot,
 } from "@phosphor-icons/react"
 
@@ -40,31 +35,62 @@ export default function ProductsSection() {
       <div className="grid md:grid-cols-3 gap-6 mb-8">
         <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
           <div className="h-12 w-12 rounded-xl bg-emerald-950/10 flex items-center justify-center mb-4">
-            <Buildings className="h-6 w-6 text-emerald-950" weight="fill" />
+            <Airplane className="h-6 w-6 text-emerald-950" weight="fill" />
           </div>
-          <h3 className="text-lg font-medium tracking-tighter mb-2">TRM MANAGEMENT</h3>
+          <h3 className="text-lg font-medium tracking-tighter mb-2">Business Travel Platform</h3>
           <p className="text-sm font-light text-gray-700 mb-4">
-            Advanced customer relationship management system specific to corporate travel. Centralizes all traveler
-            information, preferences, history, and corporate policies in a single intelligent platform.
+            Complete platform where companies and employees manage the entire corporate travel cycle. From booking
+            flights, transfers, and accommodations to exclusive access to VIP lounges in airports worldwide.
           </p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                <Briefcase className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <MapPin className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
-              <p className="text-xs font-light">Traveler profiles with personalized preferences</p>
+              <p className="text-xs font-light">AI-optimized bookings for maximum savings</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                <Briefcase className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <Bed className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
-              <p className="text-xs font-light">Automated corporate policy management</p>
+              <p className="text-xs font-light">Comprehensive management of corporate accommodations</p>
             </li>
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                <Briefcase className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+                <Ticket className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
-              <p className="text-xs font-light">Predictive analysis of travel behavior</p>
+              <p className="text-xs font-light">Exclusive membership for VIP lounge access</p>
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+          <div className="h-12 w-12 rounded-xl bg-emerald-950/10 flex items-center justify-center mb-4">
+            <CheckSquare className="h-6 w-6 text-emerald-950" weight="fill" />
+          </div>
+          <h3 className="text-lg font-medium tracking-tighter mb-2">Task Management</h3>
+          <p className="text-sm font-light text-gray-700 mb-4">
+            Predictive system that automatically generates and manages tasks based on upcoming corporate trips. AI
+            analyzes historical patterns, company policies, and personal preferences to create optimized workflows.
+          </p>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2">
+              <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
+                <Robot className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+              </div>
+              <p className="text-xs font-light">Automatic task generation</p>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
+                <CheckSquare className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+              </div>
+              <p className="text-xs font-light">Intelligent prioritization</p>
+            </li>
+            <li className="flex items-start gap-2">
+              <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
+                <Calendar className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
+              </div>
+              <p className="text-xs font-light">Travel synchronization</p>
             </li>
           </ul>
         </div>
@@ -99,42 +125,11 @@ export default function ProductsSection() {
             </li>
           </ul>
         </div>
-
-        <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-          <div className="h-12 w-12 rounded-xl bg-emerald-950/10 flex items-center justify-center mb-4">
-            <Airplane className="h-6 w-6 text-emerald-950" weight="fill" />
-          </div>
-          <h3 className="text-lg font-medium tracking-tighter mb-2">Business Travel Platform</h3>
-          <p className="text-sm font-light text-gray-700 mb-4">
-            Complete platform where companies and employees manage the entire corporate travel cycle. From booking
-            flights, transfers, and accommodations to exclusive access to VIP lounges in airports worldwide.
-          </p>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                <MapPin className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
-              </div>
-              <p className="text-xs font-light">AI-optimized bookings for maximum savings</p>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                <Bed className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
-              </div>
-              <p className="text-xs font-light">Comprehensive management of corporate accommodations</p>
-            </li>
-            <li className="flex items-start gap-2">
-              <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
-                <Ticket className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
-              </div>
-              <p className="text-xs font-light">Exclusive membership for VIP lounge access</p>
-            </li>
-          </ul>
-        </div>
       </div>
 
       <div className="mb-4">
         <div className="inline-flex items-center rounded-xl bg-emerald-950/10 px-2.5 py-0.5 text-[10px] font-medium text-emerald-950 mb-3 sm:mb-4">
-          UPCOMING RELEASES
+          UPCOMING FEATURES
         </div>
         <h3 className="text-xl font-medium tracking-tighter mb-4">Innovations in development (Q3 2025 - Q2 2026)</h3>
       </div>
@@ -171,82 +166,27 @@ export default function ProductsSection() {
         <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
           <div className="flex items-start gap-3 mb-3">
             <div className="h-10 w-10 rounded-xl bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-              <CheckSquare className="h-5 w-5 text-emerald-950" weight="fill" />
+              <Buildings className="h-5 w-5 text-emerald-950" weight="fill" />
             </div>
             <div>
-              <h3 className="text-lg font-medium tracking-tighter">Intelligent Task Management</h3>
+              <h3 className="text-lg font-medium tracking-tighter">Advanced Analytics</h3>
               <p className="text-xs font-light text-gray-500">Expected launch: Q4 2025</p>
             </div>
           </div>
           <p className="text-sm font-light text-gray-700 mb-3">
-            Predictive system that automatically generates and manages tasks based on upcoming corporate trips. AI
-            analyzes historical patterns, company policies, and personal preferences to create optimized workflows.
+            Comprehensive analytics platform that provides deep insights into travel spending, patterns, and
+            optimization opportunities. Helps businesses make data-driven decisions to improve travel efficiency and
+            reduce costs.
           </p>
           <div className="flex flex-wrap gap-2">
             <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <Robot className="h-3 w-3 mr-1" weight="fill" /> Automatic task generation
+              <ChartPieSlice className="h-3 w-3 mr-1" weight="fill" /> Spending analysis
             </span>
             <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <CheckSquare className="h-3 w-3 mr-1" weight="fill" /> Intelligent prioritization
+              <Robot className="h-3 w-3 mr-1" weight="fill" /> AI recommendations
             </span>
             <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <Calendar className="h-3 w-3 mr-1" weight="fill" /> Travel synchronization
-            </span>
-          </div>
-        </div>
-
-        <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="h-10 w-10 rounded-xl bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-              <Calendar className="h-5 w-5 text-emerald-950" weight="fill" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium tracking-tighter">Suitpax AI Cal</h3>
-              <p className="text-xs font-light text-gray-500">Expected launch: Q1 2026</p>
-            </div>
-          </div>
-          <p className="text-sm font-light text-gray-700 mb-3">
-            Comprehensive meeting management center powered by AI. Includes intelligent slot booking, automatic
-            transcription with advanced notetaker, executive summary generation, and communication pattern analysis to
-            optimize productivity.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <Microphone className="h-3 w-3 mr-1" weight="fill" /> Automatic transcription
-            </span>
-            <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <Notepad className="h-3 w-3 mr-1" weight="fill" /> Intelligent notetaker
-            </span>
-            <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <ChartPieSlice className="h-3 w-3 mr-1" weight="fill" /> Meeting analysis
-            </span>
-          </div>
-        </div>
-
-        <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="h-10 w-10 rounded-xl bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-              <Handshake className="h-5 w-5 text-emerald-950" weight="fill" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium tracking-tighter">VC Center Hub</h3>
-              <p className="text-xs font-light text-gray-500">Expected launch: Q2 2026</p>
-            </div>
-          </div>
-          <p className="text-sm font-light text-gray-700 mb-3">
-            Specialized extension of our platform designed specifically for the Venture Capital sector. Facilitates
-            travel management for due diligence, startup meetings, and ecosystem events, integrating portfolio data and
-            market analysis.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <Buildings className="h-3 w-3 mr-1" weight="fill" /> Portfolio management
-            </span>
-            <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <ChartLine className="h-3 w-3 mr-1" weight="fill" /> Market analysis
-            </span>
-            <span className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-              <Handshake className="h-3 w-3 mr-1" weight="fill" /> Due diligence coordination
+              <Calendar className="h-3 w-3 mr-1" weight="fill" /> Travel forecasting
             </span>
           </div>
         </div>

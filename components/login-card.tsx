@@ -24,7 +24,7 @@ export default function LoginCard({ onUnlock }: LoginCardProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    if (!acceptedTerms) {
+    if (!acceptedTerms || !company.trim()) {
       return
     }
 
@@ -106,6 +106,7 @@ export default function LoginCard({ onUnlock }: LoginCardProps) {
               onChange={(e) => setCompany(e.target.value)}
               className="w-full py-2.5 sm:py-3 pl-3 sm:pl-4 pr-3 sm:pr-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-xl focus:ring-1 focus:ring-white/30 focus:border-transparent outline-none transition text-white text-sm sm:text-base"
               placeholder="Enter your company name"
+              required
             />
 
             <div className="relative">
@@ -152,7 +153,7 @@ export default function LoginCard({ onUnlock }: LoginCardProps) {
         <div className="flex">
           <button
             type="submit"
-            disabled={!acceptedTerms}
+            disabled={!acceptedTerms || !company.trim()}
             className="w-full py-2.5 sm:py-3 bg-black/50 backdrop-blur-md border border-white/20 text-white rounded-xl transition flex items-center justify-center text-sm sm:text-base font-medium hover:bg-black/60 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(255,255,255,0.1),0_0_5px_rgba(56,189,248,0.2)] hover:shadow-[0_0_15px_rgba(255,255,255,0.2),0_0_10px_rgba(56,189,248,0.3)]"
           >
             <span>Access to startup deck</span>
