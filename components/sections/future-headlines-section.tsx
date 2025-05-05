@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Plane, CreditCard, Globe } from "lucide-react"
+import Image from "next/image"
 
 const headlines = [
   {
@@ -80,17 +81,22 @@ export default function FutureHeadlinesSection() {
   const IconComponent = currentHeadline.icon
 
   return (
-    <section className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-black/90 backdrop-blur-md p-6 md:p-8">
-      <div className="absolute top-3 left-3 text-xs italic text-white/60">Future Potential</div>
-
-      <div className="mb-6 text-center">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-2 text-white">
-          Future Exit Scenarios
-        </h2>
-        <p className="text-sm text-white/70 max-w-2xl mx-auto">
-          Visualizing potential acquisition headlines that could define Suitpax's future success
-        </p>
+    <section className="bg-black/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-white/10 shadow-lg my-8">
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <div className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-serif italic text-white/80">
+          FUTURE POTENTIAL
+        </div>
+        <div className="h-6 w-6">
+          <Image src="/suitpax-white-logo.png" alt="Suitpax" width={24} height={24} className="object-contain" />
+        </div>
       </div>
+
+      <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-4 sm:mb-6 text-white">
+        Future Exit Scenarios
+      </h2>
+      <p className="text-sm text-white/70 max-w-2xl mx-auto mb-6">
+        Visualizing potential acquisition headlines that could define Suitpax's future success
+      </p>
 
       <div className="relative min-h-[400px] md:min-h-[450px] w-full">
         <motion.div
@@ -101,75 +107,58 @@ export default function FutureHeadlinesSection() {
           transition={{ duration: 0.5 }}
           className="w-full"
         >
-          <div
-            className={`rounded-lg border border-white/10 bg-gradient-to-br ${currentHeadline.color} backdrop-blur-md p-6 md:p-8`}
-          >
-            <div className="flex items-center justify-between mb-6">
+          <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm">
+            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center space-x-3">
-                <div className="h-10 w-10 flex items-center justify-center bg-white/10 rounded-full">
-                  <IconComponent className="h-6 w-6 text-white" />
+                <div className="bg-white/10 p-2 rounded-md text-white/80">
+                  <IconComponent className="h-5 w-5" />
                 </div>
                 <div className="flex flex-col">
-                  <div className="text-sm font-medium text-white">{currentHeadline.companyName}</div>
-                  <div className="text-xs text-white/60">{currentHeadline.source}</div>
+                  <div className="font-medium text-white/90 font-serif">{currentHeadline.companyName}</div>
+                  <div className="text-xs text-white/60">
+                    {currentHeadline.source} · {currentHeadline.date}
+                  </div>
                 </div>
               </div>
-              <div className="text-sm text-white/60">{currentHeadline.date}</div>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight">{currentHeadline.title}</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-3 leading-tight font-serif">
+              {currentHeadline.title}
+            </h3>
 
-            <p className="text-white/80 mb-6 text-sm md:text-base">{currentHeadline.excerpt}</p>
+            <p className="text-white/80 mb-4 text-sm">{currentHeadline.excerpt}</p>
 
-            <div className="border-l-4 border-white/30 pl-4 py-2 mb-4">
-              <p className="text-white/90 italic text-sm md:text-base">"{currentHeadline.quote}"</p>
+            <div className="bg-black/30 p-3 rounded-lg border border-white/10 mb-4">
+              <p className="text-white/90 italic text-sm font-serif">"{currentHeadline.quote}"</p>
               <p className="text-white/60 text-xs mt-2">— {currentHeadline.quoteAuthor}</p>
-            </div>
-
-            <div className="flex justify-between items-center mt-6">
-              <div className="text-xs text-white/40">Este es un escenario futuro ficticio con fines ilustrativos</div>
-              <div className="flex items-center space-x-1">
-                <span className="text-xs text-white/60 mr-2">
-                  {currentIndex + 1}/{headlines.length}
-                </span>
-              </div>
             </div>
           </div>
         </motion.div>
       </div>
 
-      <div className="flex justify-center mt-6 space-x-4">
-        <button
-          onClick={prevSlide}
-          className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-          aria-label="Previous headline"
-        >
-          <ChevronLeft className="h-5 w-5 text-white" />
-        </button>
-        <div className="flex space-x-2 items-center">
-          {headlines.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (isAnimating) return
-                setIsAnimating(true)
-                setCurrentIndex(index)
-                setTimeout(() => setIsAnimating(false), 500)
-              }}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-white w-4" : "bg-white/30"
-              }`}
-              aria-label={`Go to headline ${index + 1}`}
-            />
-          ))}
+      <div className="flex justify-between items-center mt-6">
+        <div className="text-xs font-medium bg-white/10 px-2 py-1 rounded-md text-white/80 font-serif italic uppercase tracking-wide">
+          Fictional scenario for illustrative purposes
         </div>
-        <button
-          onClick={nextSlide}
-          className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-          aria-label="Next headline"
-        >
-          <ChevronRight className="h-5 w-5 text-white" />
-        </button>
+        <div className="flex items-center space-x-2">
+          <button
+            onClick={prevSlide}
+            className="p-1.5 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+            aria-label="Previous headline"
+          >
+            <ChevronLeft className="h-4 w-4 text-white" />
+          </button>
+          <span className="text-xs text-white/60">
+            {currentIndex + 1}/{headlines.length}
+          </span>
+          <button
+            onClick={nextSlide}
+            className="p-1.5 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+            aria-label="Next headline"
+          >
+            <ChevronRight className="h-4 w-4 text-white" />
+          </button>
+        </div>
       </div>
     </section>
   )
