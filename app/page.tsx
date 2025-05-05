@@ -62,7 +62,7 @@ export default function Home() {
   }
 
   if (!isAuthenticated) {
-    return <PasswordProtection onAuthenticate={handleAuthentication} />
+    return <PasswordProtection onUnlock={handleAuthentication} />
   }
 
   return (

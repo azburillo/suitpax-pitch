@@ -22,19 +22,18 @@ export default function InvestorFAQSection() {
   // FAQ data
   const faqs = [
     {
-      question: "¿Cuál es vuestra ventaja competitiva sostenible frente a competidores establecidos?",
+      question: "What is your sustainable competitive advantage against established competitors?",
       answer: (
         <div className="space-y-2">
-          <p>Nuestra ventaja competitiva se basa en tres pilares fundamentales:</p>
+          <p>Our competitive advantage is built on three fundamental pillars:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Tecnología propietaria:</span> Nuestros modelos de IA están
-                específicamente entrenados para viajes corporativos, con algoritmos de optimización que generan un 27%
-                de ahorro promedio.
+                <span className="font-medium">Proprietary technology:</span> Our AI models are specifically trained for
+                corporate travel, with optimization algorithms that generate an average 27% cost savings.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -42,8 +41,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Integración completa:</span> A diferencia de soluciones fragmentadas,
-                ofrecemos una plataforma unificada que conecta viajes, finanzas y experiencia del viajero.
+                <span className="font-medium">Complete integration:</span> Unlike fragmented solutions, we offer a
+                unified platform that connects travel, finance, and traveler experience.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -51,8 +50,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Modelo de precios disruptivo:</span> Nuestra estructura de precios es
-                hasta un 70% más económica que los competidores tradicionales, eliminando las comisiones por usuario.
+                <span className="font-medium">Disruptive pricing model:</span> Our pricing structure is up to 70% more
+                economical than traditional competitors, eliminating per-user commissions.
               </p>
             </li>
           </ul>
@@ -61,12 +60,12 @@ export default function InvestorFAQSection() {
       icon: <Rocket className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cómo pensáis adquirir clientes de manera rentable?",
+      question: "How do you plan to acquire customers profitably?",
       answer: (
         <div className="space-y-2">
           <p>
-            Nuestra estrategia de adquisición de clientes se basa en un enfoque multicanal con un CAC objetivo de €2,500
-            y un LTV de €15,000+:
+            Our customer acquisition strategy is based on a multi-channel approach with a target CAC of €2,500 and an
+            LTV of €15,000+:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -74,8 +73,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Marketing de contenidos especializado:</span> Generación de leads
-                cualificados mediante contenido de alto valor sobre optimización de viajes corporativos.
+                <span className="font-medium">Specialized content marketing:</span> Generation of qualified leads
+                through high-value content on corporate travel optimization.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -83,8 +82,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Partnerships estratégicos:</span> Alianzas con despachos de contabilidad,
-                consultoras y asociaciones empresariales que nos recomiendan a sus clientes.
+                <span className="font-medium">Strategic partnerships:</span> Alliances with accounting firms,
+                consultancies, and business associations that recommend us to their clients.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -92,8 +91,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Modelo freemium:</span> Nuestra versión gratuita permite a los usuarios
-                experimentar el valor antes de convertirse en clientes de pago.
+                <span className="font-medium">Freemium model:</span> Our free version allows users to experience the
+                value before becoming paying customers.
               </p>
             </li>
           </ul>
@@ -102,18 +101,18 @@ export default function InvestorFAQSection() {
       icon: <Rocket className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cuál es vuestro plan para escalar si conseguís la financiación?",
+      question: "What is your scaling plan if you secure funding?",
       answer: (
         <div className="space-y-2">
-          <p>La financiación se destinará a tres áreas principales para impulsar nuestro crecimiento:</p>
+          <p>The funding will be allocated to three main areas to drive our growth:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Desarrollo de producto (45%):</span> Ampliar nuestro equipo de ingeniería
-                para acelerar el desarrollo de funcionalidades avanzadas de IA y automatización.
+                <span className="font-medium">Product development (45%):</span> Expand our engineering team to
+                accelerate the development of advanced AI features and automation.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -121,8 +120,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Ventas y marketing (35%):</span> Expandir nuestro equipo comercial y
-                aumentar la inversión en marketing digital para acelerar la adquisición de clientes.
+                <span className="font-medium">Sales and marketing (35%):</span> Expand our sales team and increase
+                investment in digital marketing to accelerate customer acquisition.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -130,8 +129,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Expansión internacional (20%):</span> Establecer presencia en mercados
-                clave de Europa y Norteamérica para capturar oportunidades globales.
+                <span className="font-medium">International expansion (20%):</span> Establish presence in key markets in
+                Europe and North America to capture global opportunities.
               </p>
             </li>
           </ul>
@@ -140,12 +139,12 @@ export default function InvestorFAQSection() {
       icon: <Rocket className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cuánto tiempo tenéis de runway con la inversión solicitada?",
+      question: "How much runway do you have with the requested investment?",
       answer: (
         <div className="space-y-2">
           <p>
-            La inversión de €1.2M nos proporciona un runway de 24 meses con un burn rate mensual promedio de €50K,
-            permitiéndonos alcanzar los siguientes hitos:
+            The €1.2M investment provides us with a 24-month runway with an average monthly burn rate of €50K, allowing
+            us to achieve the following milestones:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -153,8 +152,7 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Mes 6:</span> Lanzamiento completo del producto con todas las
-                funcionalidades core.
+                <span className="font-medium">Month 6:</span> Full product launch with all core features.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -162,7 +160,7 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Mes 12:</span> Alcanzar 50+ clientes activos y €500K ARR.
+                <span className="font-medium">Month 12:</span> Reach 50+ active customers and €500K ARR.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -170,7 +168,7 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Mes 18:</span> Expansión a 3 mercados europeos clave.
+                <span className="font-medium">Month 18:</span> Expansion to 3 key European markets.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -178,31 +176,30 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Mes 24:</span> Alcanzar €1.5M ARR y preparar Serie A.
+                <span className="font-medium">Month 24:</span> Reach €1.5M ARR and prepare for Series A.
               </p>
             </li>
           </ul>
           <p className="text-sm font-light mt-2">
-            Además, contamos con un plan de contingencia que podría extender el runway hasta 30 meses si fuera
-            necesario.
+            Additionally, we have a contingency plan that could extend the runway to 30 months if necessary.
           </p>
         </div>
       ),
       icon: <Warning className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cómo habéis validado el product-market fit?",
+      question: "How have you validated product-market fit?",
       answer: (
         <div className="space-y-2">
-          <p>Hemos validado nuestro product-market fit a través de múltiples indicadores:</p>
+          <p>We have validated our product-market fit through multiple indicators:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">18 clientes activos</span> que utilizan nuestra versión beta, con una tasa
-                de retención del 92% a 12 meses.
+                <span className="font-medium">18 active customers</span> using our beta version, with a 92% retention
+                rate at 12 months.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -210,8 +207,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">NPS de 72</span> entre nuestros usuarios actuales, significativamente
-                superior al promedio del sector (45).
+                <span className="font-medium">NPS of 72</span> among our current users, significantly higher than the
+                industry average (45).
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -219,8 +216,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">27% de ahorro promedio</span> documentado para nuestros clientes en sus
-                costes de viaje corporativo.
+                <span className="font-medium">27% average savings</span> documented for our customers in their corporate
+                travel costs.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -228,8 +225,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Lista de espera de 200+ empresas</span> interesadas en acceder a nuestra
-                plataforma tras el lanzamiento oficial.
+                <span className="font-medium">Waitlist of 200+ companies</span> interested in accessing our platform
+                after the official launch.
               </p>
             </li>
           </ul>
@@ -238,18 +235,18 @@ export default function InvestorFAQSection() {
       icon: <CheckCircle className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cuál es vuestra estrategia de monetización y modelo de ingresos?",
+      question: "What is your monetization strategy and revenue model?",
       answer: (
         <div className="space-y-2">
-          <p>Nuestro modelo de ingresos se basa en un enfoque SaaS por niveles:</p>
+          <p>Our revenue model is based on a tiered SaaS approach:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Plan Free:</span> Funcionalidades básicas gratuitas para atraer usuarios y
-                generar leads cualificados.
+                <span className="font-medium">Free Plan:</span> Basic free features to attract users and generate
+                qualified leads.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -257,8 +254,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Plan Scale-up (€49/mes):</span> Para startups y pequeñas empresas, con
-                funcionalidades esenciales y límites de uso generosos.
+                <span className="font-medium">Scale-up Plan (€49/month):</span> For startups and small businesses, with
+                essential features and generous usage limits.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -266,8 +263,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Plan Enterprise ($129/mes):</span> Para empresas medianas, con
-                funcionalidades avanzadas y sin límites de uso.
+                <span className="font-medium">Enterprise Plan ($129/month):</span> For medium-sized businesses, with
+                advanced features and no usage limits.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -275,32 +272,32 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Plan Custom:</span> Para grandes corporaciones, con integraciones
-                personalizadas y soporte dedicado.
+                <span className="font-medium">Custom Plan:</span> For large corporations, with custom integrations and
+                dedicated support.
               </p>
             </li>
           </ul>
           <p className="text-sm font-light mt-2">
-            Este modelo nos permite un LTV promedio de €15,000 por cliente, con un margen bruto del 85% y un payback
-            period de 6 meses.
+            This model allows us an average LTV of €15,000 per customer, with an 85% gross margin and a 6-month payback
+            period.
           </p>
         </div>
       ),
       icon: <CheckCircle className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Qué métricas clave estáis siguiendo?",
+      question: "What key metrics are you tracking?",
       answer: (
         <div className="space-y-2">
-          <p>Monitorizamos un conjunto de KPIs críticos para evaluar nuestro crecimiento y salud del negocio:</p>
+          <p>We monitor a set of critical KPIs to evaluate our growth and business health:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">ARR y MRR:</span> Ingresos anuales y mensuales recurrentes, con un
-                objetivo de €1.5M ARR para finales de 2026.
+                <span className="font-medium">ARR and MRR:</span> Annual and monthly recurring revenue, with a target of
+                €1.5M ARR by the end of 2026.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -308,8 +305,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">CAC y LTV:</span> Coste de adquisición de clientes y valor del ciclo de
-                vida, manteniendo un ratio LTV:CAC &gt; 5:1.
+                <span className="font-medium">CAC and LTV:</span> Customer acquisition cost and lifetime value,
+                maintaining an LTV:CAC ratio &gt; 5:1.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -317,8 +314,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Retención y churn:</span> Actualmente 92% de retención anual, con objetivo
-                de mantenerla por encima del 90%.
+                <span className="font-medium">Retention and churn:</span> Currently 92% annual retention, with a goal to
+                maintain it above 90%.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -326,8 +323,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">NPS y CSAT:</span> Net Promoter Score y satisfacción del cliente,
-                actualmente en 72 y 4.8/5 respectivamente.
+                <span className="font-medium">NPS and CSAT:</span> Net Promoter Score and customer satisfaction,
+                currently at 72 and 4.8/5 respectively.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -335,8 +332,8 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Ahorro generado:</span> Promedio de 27% de ahorro en costes de viaje para
-                nuestros clientes.
+                <span className="font-medium">Generated savings:</span> Average 27% savings in travel costs for our
+                customers.
               </p>
             </li>
           </ul>
@@ -345,12 +342,12 @@ export default function InvestorFAQSection() {
       icon: <CheckCircle className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cuál es vuestra estrategia de salida a largo plazo?",
+      question: "What is your long-term exit strategy?",
       answer: (
         <div className="space-y-2">
           <p>
-            Aunque nuestro enfoque principal es construir un negocio sostenible y rentable, vemos dos caminos
-            potenciales de salida en un horizonte de 5-7 años:
+            While our primary focus is building a sustainable and profitable business, we see two potential exit paths
+            in a 5-7 year horizon:
           </p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -358,9 +355,9 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Adquisición estratégica:</span> Por parte de grandes actores del sector
-                travel como Expedia, Booking Holdings o American Express GBT, que buscan tecnología avanzada de IA para
-                viajes corporativos.
+                <span className="font-medium">Strategic acquisition:</span> By major players in the travel sector such
+                as Expedia, Booking Holdings, or American Express GBT, who are seeking advanced AI technology for
+                corporate travel.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -368,32 +365,32 @@ export default function InvestorFAQSection() {
                 <CheckCircle className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">IPO:</span> Salida a bolsa una vez alcanzados los €100M+ ARR, siguiendo el
-                camino de empresas como TripActions/Navan.
+                <span className="font-medium">IPO:</span> Going public once we reach €100M+ ARR, following the path of
+                companies like TripActions/Navan.
               </p>
             </li>
           </ul>
           <p className="text-sm font-light mt-2">
-            Basándonos en múltiplos actuales del sector (7-10x ARR), proyectamos una valoración de salida entre €700M y
-            €1B+ para 2031.
+            Based on current industry multiples (7-10x ARR), we project an exit valuation between €700M and €1B+ by
+            2031.
           </p>
         </div>
       ),
       icon: <Rocket className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Cómo protegéis vuestra propiedad intelectual?",
+      question: "How do you protect your intellectual property?",
       answer: (
         <div className="space-y-2">
-          <p>Nuestra estrategia de protección de IP se basa en múltiples capas:</p>
+          <p>Our IP protection strategy is based on multiple layers:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Patentes:</span> 2 patentes presentadas para algoritmos de optimización de
-                viajes basados en IA y 1 patente para nuestro sistema de recomendación multimodal.
+                <span className="font-medium">Patents:</span> 2 patents filed for AI-based travel optimization
+                algorithms and 1 patent for our multimodal recommendation system.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -401,8 +398,8 @@ export default function InvestorFAQSection() {
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Secretos comerciales:</span> Metodologías propietarias de entrenamiento de
-                IA y pipelines de procesamiento de datos protegidos mediante acuerdos de confidencialidad.
+                <span className="font-medium">Trade secrets:</span> Proprietary AI training methodologies and data
+                processing pipelines protected through confidentiality agreements.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -410,8 +407,8 @@ export default function InvestorFAQSection() {
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Marca registrada:</span> Nombre y logo de Suitpax registrados en la UE y
-                en proceso en EE.UU.
+                <span className="font-medium">Trademark:</span> Suitpax name and logo registered in the EU and in
+                process in the US.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -419,8 +416,8 @@ export default function InvestorFAQSection() {
                 <ShieldCheck className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Contratos:</span> Acuerdos robustos con empleados y proveedores que
-                protegen nuestra IP y previenen la competencia desleal.
+                <span className="font-medium">Contracts:</span> Robust agreements with employees and suppliers that
+                protect our IP and prevent unfair competition.
               </p>
             </li>
           </ul>
@@ -429,19 +426,19 @@ export default function InvestorFAQSection() {
       icon: <ShieldCheck className="h-5 w-5 text-emerald-950" weight="fill" />,
     },
     {
-      question: "¿Qué riesgos principales veis en el negocio?",
+      question: "What main risks do you see in the business?",
       answer: (
         <div className="space-y-2">
-          <p>Identificamos y gestionamos proactivamente los siguientes riesgos clave:</p>
+          <p>We proactively identify and manage the following key risks:</p>
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <div className="mt-1 rounded-full bg-emerald-950/10 p-1">
                 <Warning className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Competencia:</span> Grandes actores como TripActions/Navan podrían
-                desarrollar capacidades similares. <span className="italic">Mitigación:</span> Mantener nuestra ventaja
-                tecnológica mediante innovación continua y enfoque en segmentos desatendidos.
+                <span className="font-medium">Competition:</span> Large players like TripActions/Navan could develop
+                similar capabilities. <span className="italic">Mitigation:</span> Maintain our technological advantage
+                through continuous innovation and focus on underserved segments.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -449,9 +446,9 @@ export default function InvestorFAQSection() {
                 <Warning className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Adopción tecnológica:</span> Resistencia al cambio en empresas
-                tradicionales. <span className="italic">Mitigación:</span> Proceso de onboarding simplificado y
-                migración asistida desde sistemas legacy.
+                <span className="font-medium">Technology adoption:</span> Resistance to change in traditional companies.{" "}
+                <span className="italic">Mitigation:</span> Simplified onboarding process and assisted migration from
+                legacy systems.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -459,9 +456,9 @@ export default function InvestorFAQSection() {
                 <Warning className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Regulación:</span> Cambios en normativas de privacidad o IA.{" "}
-                <span className="italic">Mitigación:</span> Diseño cumpliendo GDPR y estándares emergentes de IA
-                responsable.
+                <span className="font-medium">Regulation:</span> Changes in privacy or AI regulations.{" "}
+                <span className="italic">Mitigation:</span> Design complying with GDPR and emerging responsible AI
+                standards.
               </p>
             </li>
             <li className="flex items-start gap-2">
@@ -469,9 +466,9 @@ export default function InvestorFAQSection() {
                 <Warning className="h-3.5 w-3.5 text-emerald-950" weight="fill" />
               </div>
               <p>
-                <span className="font-medium">Ciclo económico:</span> Recesiones que afecten al gasto en viajes
-                corporativos. <span className="italic">Mitigación:</span> Posicionamiento como solución de ahorro de
-                costes, más valiosa en tiempos económicos difíciles.
+                <span className="font-medium">Economic cycle:</span> Recessions affecting corporate travel spending.
+                <span className="italic">Mitigation:</span> Positioning as a cost-saving solution, more valuable in
+                difficult economic times.
               </p>
             </li>
           </ul>
@@ -491,7 +488,7 @@ export default function InvestorFAQSection() {
     >
       <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-          PREGUNTAS FRECUENTES
+          FREQUENTLY ASKED QUESTIONS
         </div>
         <div className="h-6 w-6">
           <Image src="/suitpax-bl-logo.webp" alt="Suitpax" width={24} height={24} className="object-contain" />
@@ -499,10 +496,10 @@ export default function InvestorFAQSection() {
       </div>
 
       <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-3 sm:mb-4">
-        Anticipando preguntas de inversores
+        Anticipating Investor Questions
       </h2>
       <p className="text-sm sm:text-base font-light text-gray-700 mb-6">
-        Abordamos proactivamente las objeciones y preguntas más comunes que los inversores suelen plantear.
+        We proactively address the most common objections and questions that investors typically raise.
       </p>
 
       <div className="space-y-4">
@@ -550,10 +547,10 @@ export default function InvestorFAQSection() {
       </div>
 
       <div className="mt-6 bg-gray-100 p-4 rounded-xl">
-        <h3 className="text-lg font-medium mb-3">¿Tienes más preguntas?</h3>
+        <h3 className="text-lg font-medium mb-3">Have more questions?</h3>
         <p className="text-sm font-light text-gray-700 mb-3">
-          Estamos comprometidos con la transparencia total. Si tienes preguntas adicionales sobre nuestro modelo de
-          negocio, tecnología o proyecciones financieras, no dudes en contactarnos.
+          We are committed to full transparency. If you have additional questions about our business model, technology,
+          or financial projections, please don't hesitate to contact us.
         </p>
         <div className="flex items-center gap-2 text-emerald-950">
           <p className="text-sm font-medium">investors@suitpax.com</p>
