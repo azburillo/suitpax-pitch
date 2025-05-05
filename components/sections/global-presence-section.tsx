@@ -56,14 +56,6 @@ const airports = [
     region: "oceania",
     image: "/sydney-opera-house.png",
   },
-  {
-    name: "DXB",
-    city: "Dubai",
-    country: "UAE",
-    location: [25.2532, 55.3657],
-    region: "middle-east",
-    image: "/dubai-burj-khalifa.png",
-  },
 ]
 
 // Hex to RGB conversion for globe colors

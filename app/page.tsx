@@ -82,130 +82,85 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8 space-y-6">
-        {/* ===== HERO & INTRODUCTION COMPONENTS =====
-         * Similar style: Modern, bold, high-impact visuals
-         * HeroTitle: Large text, brand colors, main value proposition
-         * GlobalPresenceSection: Interactive 3D globe, dark theme with glowing elements
-         * DashProductSection: Product showcase with screenshots, modern UI
-         * ExecutiveSummarySection: Clean layout, concise text blocks
+        {/* ===== 1. IMPACTO INICIAL =====
+         * Captar atención inmediata con visión y resumen
          */}
         <HeroTitle />
-        <GlobalPresenceSection />
-        <DashProductSection />
         <ExecutiveSummarySection />
+        <FutureHeadlinesSection />
 
-        {/* ===== PROBLEM & MARKET ANALYSIS COMPONENTS =====
-         * Similar style: Data-driven, analytical presentation
-         * CompetitiveResponseStrategy: Strategic positioning charts
-         * ProblemSolutionSection: Problem statements with solution mapping
-         * MarketSection: Market size visualizations, TAM/SAM/SOM breakdown
-         * CompetitionSection: Competitor comparison tables/matrices
+        {/* ===== 2. PROBLEMA Y OPORTUNIDAD =====
+         * Establecer el contexto del mercado y la necesidad
          */}
-        <CompetitiveResponseStrategy />
         <ProblemSolutionSection />
         <MarketSection />
         <CompetitionSection />
 
-        {/* ===== PRODUCT & FEATURES COMPONENTS =====
-         * Similar style: Product-focused, visual demonstrations
-         * SolutionSection: Solution overview with benefits
-         * AIAgentsSection: AI capabilities showcase, modern tech feel
-         * ProductsSection: Product lineup with features
-         * ProductPreviewSection: Visual product demonstrations
-         * ApiIntegrationsSection: Technical integration diagrams
-         * AdditionalFeaturesSection: Feature highlights with icons
-         * CompetitiveAdvantageSection: Advantage comparisons
-         *
-         * Different style: SustainabilityImpactSection & CrisisManagementSection
-         * These have a more corporate/governance focus compared to the
-         * product-centric components above
+        {/* ===== 3. SOLUCIÓN Y PRODUCTO =====
+         * Mostrar cómo el producto resuelve el problema
          */}
         <SolutionSection />
-        <AIAgentsSection />
-        <AITechnologyShowcase />
-        <ProductsSection />
+        <DashProductSection />
         <ProductPreviewSection />
-        <ApiIntegrationsSection />
-        <AirlinePartnersSection />
-        <AdditionalFeaturesSection />
-        <CompetitiveAdvantageSection />
-        <SustainabilityImpactSection />
-        <CrisisManagementSection />
+        <ProductsSection />
 
-        {/* ===== TECHNOLOGY COMPONENTS =====
-         * Similar style: Technical, architecture-focused
-         * TechnologySection: Tech overview with architecture diagrams
-         * TechStackSection: Technology stack visualization
-         * SecurityComplianceSection: Security features and compliance
-         */}
-        <TechnologySection />
-        <TechStackSection />
-        <SecurityComplianceSection />
-
-        {/* ===== BUSINESS & TRACTION COMPONENTS =====
-         * Similar style: Business metrics, growth charts
-         * TractionSection: Growth metrics, user acquisition
-         * CustomerSuccessSection: Customer testimonials, case studies
-         * NetworkEffectSection: Network effect visualization
-         * UnitEconomicsSection: Financial metrics, unit economics
-         * BusinessSection: Business model overview
-         * BusinessDefensibilitySection: Moat strategy, defensibility
+        {/* ===== 4. VALIDACIÓN Y TRACCIÓN =====
+         * Establecer credibilidad con resultados y presencia
          */}
         <TractionSection />
         <CustomerSuccessSection />
-        <NetworkEffectSection />
-        <UnitEconomicsSection />
-        <BusinessSection />
-        <BusinessDefensibilitySection />
+        <GlobalPresenceSection />
+        <AirlinePartnersSection />
 
-        {/* ===== GROWTH STRATEGY COMPONENTS =====
-         * Similar style: Forward-looking, strategic planning
-         * GoToMarketSection: GTM strategy visualization
-         * GlobalExpansionSection: Global expansion plans
-         * MarketExpansionRoadmap: Market expansion timeline
-         * RoadmapSection: Product/company roadmap
+        {/* ===== 5. EQUIPO Y VISIÓN =====
+         * Humanizar la empresa y mostrar liderazgo
          */}
+        <TeamSection />
+        <CapTableSection />
+        <TeamVisionSection />
+        <FoundersOpenLetter />
+
+        {/* ===== 6. TECNOLOGÍA Y EJECUCIÓN =====
+         * Demostrar capacidad técnica y diferenciación
+         */}
+        <AIAgentsSection />
+        <AITechnologyShowcase />
+        <ApiIntegrationsSection />
+        <TechnologySection />
+        <TechStackSection />
+        <SecurityComplianceSection />
+        <AdditionalFeaturesSection />
+
+        {/* ===== 7. ESTRATEGIA DE CRECIMIENTO =====
+         * Mostrar cómo la empresa escalará
+         */}
+        <BusinessSection />
+        <UnitEconomicsSection />
+        <NetworkEffectSection />
+        <BusinessDefensibilitySection />
+        <CompetitiveAdvantageSection />
+        <CompetitiveResponseStrategy />
         <GoToMarketSection />
         <GlobalExpansionSection />
         <MarketExpansionRoadmap />
         <RoadmapSection />
-
-        {/* ===== COMMUNITY & TEAM COMPONENTS =====
-         * Community section showcases communication channels and Slack community
-         * Team components show the people behind the product
-         */}
         <CommunitySection />
-        <div className="space-y-6">
-          <TeamSection />
-          <CapTableSection />
-          <FoundersOpenLetter />
-        </div>
-        <TeamVisionSection />
-        <MoonshotSection />
 
-        {/* ===== INVESTMENT COMPONENTS =====
-         * Similar style: Financial, ROI-focused
-         * FundingUseSection: Use of funds breakdown
-         * InvestmentSection: Investment opportunity overview
-         * InvestorROISection: ROI projections
-         * InvestorROICalculator: Interactive ROI calculator
-         * InvestorFAQSection: Addressing investor questions
-         *
-         * These components share a financial focus but
-         * InvestorROICalculator has a more interactive style
-         * that could be extended to the other investment components
+        {/* ===== 8. OPORTUNIDAD DE INVERSIÓN =====
+         * Hacer el pitch financiero
          */}
         <FundingUseSection />
         <InvestmentSection />
         <InvestorROISection />
         <InvestorROICalculator />
         <InvestorFAQSection />
-        <FutureHeadlinesSection />
 
-        {/* ===== CLOSING COMPONENT =====
-         * Unique style: Call-to-action focused
-         * ClosingSection: Final pitch, contact information
+        {/* ===== 9. CIERRE IMPACTANTE =====
+         * Dejar una impresión duradera y llamada a la acción
          */}
+        <MoonshotSection />
+        <SustainabilityImpactSection />
+        <CrisisManagementSection />
         <ClosingSection />
       </div>
     </main>
