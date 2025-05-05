@@ -137,7 +137,7 @@ export default function FutureHeadlinesSection() {
       </div>
 
       <div className="flex justify-between items-center mt-6">
-        <div className="text-xs font-medium bg-white/10 px-2 py-1 rounded-md text-white/80 font-serif italic uppercase tracking-wide">
+        <div className="text-[10px] font-medium bg-white/10 px-1.5 py-0.5 rounded-sm text-white/70 font-serif italic uppercase tracking-tight">
           Fictional scenario for illustrative purposes
         </div>
         <div className="flex items-center space-x-2">
