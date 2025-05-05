@@ -79,7 +79,7 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-sm font-medium text-white">The Ask</h3>
           </div>
           <p className="text-xs font-light text-white/70">
-            €1.2M seed investment for 9% equity at €13M valuation to accelerate growth and capture market leadership.
+            €1.8M pre-seed investment for 9%-11% equity at €13M valuation to accelerate growth and capture market leadership.
           </p>
           <div className="mt-2 flex items-center gap-2">
             <div className="flex-1 h-1 bg-white/10 rounded-full">
@@ -110,7 +110,7 @@ export default function ExecutiveSummarySection() {
           </div>
           <p className="text-[10px] font-light text-white/70">
             Founded by Alberto Zurano (ex-Aena) and Alexis Sanz (ex-Factorial) with 5+ years entrepreneurial experience
-            in travel tech
+            in travel-tech & business development.
           </p>
         </div>
 
@@ -120,7 +120,7 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-xs font-medium text-white">Traction</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
-            18 active enterprise clients with 92% retention rate and 27% average cost savings
+            40+ enterprise clients are waiting to try the platform.
           </p>
         </div>
 
@@ -130,7 +130,7 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-xs font-medium text-white">IP & Defensibility</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
-            3 pending patents on AI travel optimization algorithms and proprietary data processing
+            1 pending patents on AI travel optimization algorithms and proprietary data processing
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-xs font-medium text-white">Global Expansion</h3>
           </div>
           <p className="text-[10px] font-light text-white/70">
-            Phased rollout across all continents by 2026, starting with Europe, North America, and Asia-Pacific markets
+            Phased rollout across all continents by 2027, starting with Europe, North America, and Asia-Pacific markets
           </p>
         </div>
       </div>
