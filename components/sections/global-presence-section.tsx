@@ -193,8 +193,8 @@ export default function GlobalPresenceSection() {
       </div>
 
       {/* Globe Container - Ahora ocupa más espacio */}
-      <div className="backdrop-blur-md p-2 sm:p-3 rounded-md mb-6">
-        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px]">
+      <div className="backdrop-blur-md p-2 sm:p-3 rounded-md mb-6 overflow-hidden">
+        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[650px] rounded-md overflow-hidden">
           <canvas
             ref={canvasRef}
             style={{
@@ -238,10 +238,10 @@ export default function GlobalPresenceSection() {
       </div>
 
       {/* Contenido secundario en grid para mejor organización */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-4">
         {/* Stats in single card */}
-        <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm">
+          <div className="grid grid-cols-2 gap-2">
             <div>
               <p className="text-xs text-white/60 mb-1">Countries</p>
               <p className="text-lg font-medium text-white">150+</p>
@@ -262,8 +262,8 @@ export default function GlobalPresenceSection() {
         </div>
 
         {/* Market opportunity highlights - Condensed */}
-        <div className="bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm col-span-2">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm col-span-1 sm:col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="rounded-full bg-white/10 p-1.5">
@@ -298,7 +298,7 @@ export default function GlobalPresenceSection() {
       </div>
 
       {/* Region filters - Más compacto */}
-      <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-sm mb-6">
+      <div className="bg-black/50 backdrop-blur-md p-2 rounded-xl border border-white/10 shadow-sm mb-4">
         <div className="flex flex-wrap gap-2 justify-center">
           {regions.map((region) => (
             <button
