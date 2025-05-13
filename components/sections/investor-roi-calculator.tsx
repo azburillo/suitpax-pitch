@@ -9,35 +9,15 @@ import { EuroIcon } from "lucide-react"
 import Image from "next/image"
 
 export default function InvestorROICalculator() {
-  const [investment, setInvestment] = useState(1200000)
-  const [sliderValue, setSliderValue] = useState(60)
-  const [equityPercentage, setEquityPercentage] = useState(9)
-  const [selectedEquity, setSelectedEquity] = useState(9)
-  const [valuation, setValuation] = useState(13333333)
+  // Available equity options - updated to range from 3% to 6%
+  const equityOptions = [3, 3.5, 4, 4.5, 5, 5.5, 6]
+
+  const [investment, setInvestment] = useState(650000)
+  const [sliderValue, setSliderValue] = useState(50)
+  const [equityPercentage, setEquityPercentage] = useState(4.5)
+  const [selectedEquity, setSelectedEquity] = useState(4.5)
+  const [valuation, setValuation] = useState(5500000)
   const [years, setYears] = useState(5)
-
-  // Available equity options - updated to max 10%
-  const equityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-  // Update equity percentage based on investment amount
-  useEffect(() => {
-    if (investment <= 600000) {
-      setEquityPercentage(1)
-    } else if (investment <= 800000) {
-      setEquityPercentage(3)
-    } else if (investment <= 1000000) {
-      setEquityPercentage(5)
-    } else if (investment <= 1200000) {
-      setEquityPercentage(7)
-    } else if (investment <= 1400000) {
-      setEquityPercentage(9)
-    } else {
-      setEquityPercentage(10)
-    }
-
-    setSelectedEquity(equityPercentage)
-    updateValuation(investment, equityPercentage)
-  }, [investment, equityPercentage])
 
   // Update valuation when equity changes
   const updateValuation = (amount: number, equity: number) => {
@@ -105,7 +85,7 @@ export default function InvestorROICalculator() {
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number.parseInt(e.target.value)
     setSliderValue(value)
-    setInvestment(600000 + value * 20000) // Scale from €600K to €1.8M
+    setInvestment(500000 + value * 5000) // Scale from €500K to €800K
   }
 
   // Handle direct input change
@@ -135,6 +115,17 @@ export default function InvestorROICalculator() {
     { name: "Navan (TripActions)", multiplier: 40, color: "bg-white/70" },
     { name: "Suitpax Projection", multiplier: 25, color: "bg-white/90" },
   ]
+
+  // Update equity percentage based on investment amount
+  useEffect(() => {
+    // Linear scale: 500k = 3%, 800k = 6%
+    const percentage = 3 + ((investment - 500000) / 300000) * 3
+    // Round to nearest 0.5
+    setEquityPercentage(Math.round(percentage * 2) / 2)
+
+    setSelectedEquity(equityPercentage)
+    updateValuation(investment, equityPercentage)
+  }, [investment, equityPercentage])
 
   return (
     <motion.section
@@ -187,11 +178,9 @@ export default function InvestorROICalculator() {
             className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-white"
           />
           <div className="flex justify-between mt-2 text-white/60 text-xs">
-            <span>€600K</span>
-            <span>€900K</span>
-            <span>€1.2M</span>
-            <span>€1.5M</span>
-            <span>€1.8M</span>
+            <span>€500K (3%)</span>
+            <span>€650K (4.5%)</span>
+            <span>€800K (6%)</span>
           </div>
         </div>
 
@@ -214,7 +203,7 @@ export default function InvestorROICalculator() {
             ))}
           </div>
           <p className="text-xs text-white/50 mt-2 text-center">
-            Recommended: {equityPercentage}% for €{(investment / 1000000).toFixed(1)}M investment
+            Recomendado: {equityPercentage}% por €{(investment / 1000).toFixed(0)}K de inversión
           </p>
         </div>
 
@@ -328,13 +317,13 @@ export default function InvestorROICalculator() {
               <p className="flex items-start gap-1.5">
                 <span className="text-white/40 mt-0.5">•</span>
                 <span>
-                  At {formatPercentage(selectedEquity)} equity, your stake would be worth{" "}
-                  {formatCurrency(calculateROI(investment, 5, selectedEquity))} in 5 years
+                  Con {formatPercentage(selectedEquity)} de equity, tu participación valdría{" "}
+                  {formatCurrency(calculateROI(investment, 5, selectedEquity))} en 5 años
                 </span>
               </p>
               <p className="flex items-start gap-1.5">
                 <span className="text-white/40 mt-0.5">•</span>
-                <span>Strategic investors at €1.2M+ receive board observer rights</span>
+                <span>Inversores estratégicos con €750K+ reciben derechos de observador en el consejo</span>
               </p>
             </div>
           </div>

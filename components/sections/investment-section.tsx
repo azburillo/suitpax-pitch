@@ -110,7 +110,7 @@ export default function InvestmentSection() {
                 <Trophy className="h-6 w-6 text-gray-400" weight="fill" />
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter">Valuation</h2>
               </div>
-              <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter text-gray-300">€13M</p>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter text-gray-300">€5.5M</p>
             </div>
             <p className="text-sm text-gray-400 mb-6">Pre-money · Seed Round</p>
 
@@ -119,7 +119,7 @@ export default function InvestmentSection() {
                 <Star className="h-6 w-6 text-gray-400" weight="fill" />
                 <h3 className="text-xl sm:text-2xl font-medium tracking-tighter">Accepting from</h3>
               </div>
-              <p className="text-2xl sm:text-3xl font-semibold tracking-tighter text-gray-300">€1.2M</p>
+              <p className="text-2xl sm:text-3xl font-semibold tracking-tighter text-gray-300">€500K</p>
             </div>
             <p className="text-sm text-gray-400">For 9% equity</p>
           </div>
@@ -174,7 +174,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2025:</span> €13M valuation (€1.2M for 9% equity)
+                <span className="font-medium">2025:</span> €5.5M valuation (€500K for 9% equity)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -182,7 +182,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2026:</span> €120M valuation (€12M round for 10% equity)
+                <span className="font-medium">2026:</span> €50M valuation (€5M round for 10% equity)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -190,7 +190,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2027:</span> €400M valuation (€40M round for 10% equity)
+                <span className="font-medium">2027:</span> €200M valuation (€20M round for 10% equity)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -198,7 +198,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2028:</span> €850M valuation (Series C)
+                <span className="font-medium">2028:</span> €450M valuation (Series C)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -206,7 +206,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2029-2030:</span> €1.5B valuation (Pre-IPO round)
+                <span className="font-medium">2029-2030:</span> €800M valuation (Pre-IPO round)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -214,7 +214,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2031:</span> €3.2B market cap (IPO)
+                <span className="font-medium">2031:</span> €1.5B market cap (IPO)
               </p>
             </div>
           </div>
