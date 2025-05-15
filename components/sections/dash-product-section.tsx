@@ -5,6 +5,24 @@ import Image from "next/image"
 import { ArrowRight, ExternalLink } from "lucide-react"
 
 export default function DashProductSection() {
+  function ArcadeEmbed() {
+    return (
+      <div
+        style={{ position: "relative", paddingBottom: "calc(56.388888888888886% + 41px)", height: 0, width: "100%" }}
+      >
+        <iframe
+          src="https://demo.arcade.software/VhzxkuqfFTrz34iuM9cy?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+          title="Suitpax - The next-gen of AI traveltech"
+          frameBorder="0"
+          loading="lazy"
+          allowFullScreen
+          allow="clipboard-write"
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light" }}
+        />
+      </div>
+    )
+  }
+
   return (
     <motion.section
       id="product"
@@ -38,15 +56,9 @@ export default function DashProductSection() {
           href="https://app.suitpax.com/dashboard"
           target="_blank"
           rel="noopener noreferrer"
-          className="block relative aspect-[16/9] w-full"
+          className="block relative"
         >
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7cbc0366f6a1e8b6ed59dfd0d881e94aa32593361388e25f6d65cc82bade8303-etaKF65Y1OWMKULoADlMDaAQghrGaa.jpeg"
-            alt="Suitpax AI Travel Platform Dashboard"
-            fill
-            className="object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
-            priority
-          />
+          <ArcadeEmbed />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
             <span className="inline-flex items-center rounded-full bg-black/70 px-4 py-1.5 text-sm font-medium text-white backdrop-blur-sm">
               Explore the dashboard

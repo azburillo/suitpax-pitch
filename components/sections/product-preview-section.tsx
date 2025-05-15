@@ -3,11 +3,29 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useState, useRef } from "react"
-import { Briefcase, CreditCard, Ticket, CheckSquare, ArrowRight, Play, Pause } from "lucide-react"
+import { Briefcase, CreditCard, Ticket, CheckSquare, ArrowRight } from "lucide-react"
 
 export default function ProductPreviewSection() {
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  function ArcadeEmbed() {
+    return (
+      <div
+        style={{ position: "relative", paddingBottom: "calc(56.388888888888886% + 41px)", height: 0, width: "100%" }}
+      >
+        <iframe
+          src="https://demo.arcade.software/VhzxkuqfFTrz34iuM9cy?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+          title="Suitpax - The next-gen of AI traveltech"
+          frameBorder="0"
+          loading="lazy"
+          allowFullScreen
+          allow="clipboard-write"
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light" }}
+        />
+      </div>
+    )
+  }
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -84,23 +102,8 @@ export default function ProductPreviewSection() {
         <div className="space-y-4 bg-black/50 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-sm">
           <h3 className="text-base sm:text-lg font-medium text-white/90 mb-2">Suitpax Enterprise Dashboard</h3>
 
-          <div className="relative rounded-xl overflow-hidden bg-black/30 aspect-video">
-            <video
-              ref={videoRef}
-              src="/videos/suitpax-dashboard-demo.mp4"
-              className="w-full h-full object-cover"
-              loop
-              muted
-              playsInline
-            />
-
-            <button
-              onClick={handlePlayPause}
-              className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/60 transition-colors"
-              aria-label={isPlaying ? "Pause video" : "Play video"}
-            >
-              {isPlaying ? <Pause className="h-12 w-12 text-white/80" /> : <Play className="h-12 w-12 text-white/80" />}
-            </button>
+          <div className="relative rounded-xl overflow-hidden bg-black/30">
+            <ArcadeEmbed />
           </div>
 
           <div className="text-sm text-white/70">
