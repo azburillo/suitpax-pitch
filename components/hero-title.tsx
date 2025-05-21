@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import MiniChat from "./mini-chat"
-import Image from "next/image"
+impoThe next-gen of AI traveltech  from "next/image"
 
 export default function HeroTitle() {
   return (

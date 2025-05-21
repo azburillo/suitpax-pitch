@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import HeroTitle from "@/components/hero-title"
 import DashProductSection from "@/components/sections/dash-product-section"
 import ProblemSolutionSection from "@/components/sections/problem-solution-section"
@@ -30,7 +30,6 @@ import ExecutiveSummarySection from "@/components/sections/executive-summary-sec
 import CompetitiveAdvantageSection from "@/components/sections/competitive-advantage-section"
 import InvestmentSection from "@/components/sections/investment-section"
 import ClosingSection from "@/components/sections/closing-section"
-import PasswordProtection from "@/components/password-protection"
 import ApiIntegrationsSection from "@/components/sections/api-integrations-section"
 import InvestorROICalculator from "@/components/sections/investor-roi-calculator"
 import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadmap"
@@ -48,35 +47,10 @@ import CapTableSection from "@/components/sections/cap-table-section"
 import AITechnologyShowcase from "@/components/sections/ai-technology-showcase"
 
 export default function Home() {
-  const [isUnlocked, setIsUnlocked] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-
-  // Check if we're in the browser and if the user has already unlocked the deck
+  // Ensure the page starts at the top when loaded
   useEffect(() => {
-    const unlocked = localStorage.getItem("suitpax_deck_unlocked")
-    if (unlocked === "true") {
-      setIsUnlocked(true)
-    }
-    setIsLoading(false)
-
-    // Ensure the page starts at the top when loaded
     window.scrollTo(0, 0)
   }, [])
-
-  const handleUnlock = () => {
-    localStorage.setItem("suitpax_deck_unlocked", "true")
-    setIsUnlocked(true)
-    // Ensure the page starts at the top when unlocked
-    window.scrollTo(0, 0)
-  }
-
-  if (isLoading) {
-    return null // Return nothing while checking localStorage to avoid flash
-  }
-
-  if (!isUnlocked) {
-    return <PasswordProtection onUnlock={handleUnlock} />
-  }
 
   return (
     <main className="min-h-screen bg-transparent backdrop-blur-sm">
