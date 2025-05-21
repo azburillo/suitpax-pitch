@@ -46,12 +46,17 @@ import InvestorFAQSection from "@/components/sections/investor-faq-section"
 import CapTableSection from "@/components/sections/cap-table-section"
 import AITechnologyShowcase from "@/components/sections/ai-technology-showcase"
 
+// Modificar la función Home para eliminar la protección por contraseña
+// pero manteniendo el archivo de protección
+
+// Reemplazar toda la función Home con esta versión:
 export default function Home() {
   // Ensure the page starts at the top when loaded
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  // Ya no verificamos si está desbloqueado, simplemente mostramos el contenido
   return (
     <main className="min-h-screen bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8 space-y-6">
