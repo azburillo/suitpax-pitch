@@ -10,10 +10,38 @@ interface FAQItem {
 }
 
 interface InvestorFAQSectionProps {
-  faqData: FAQItem[]
+  faqData?: FAQItem[]
 }
 
-const InvestorFAQSection: React.FC<InvestorFAQSectionProps> = ({ faqData }) => {
+const defaultFAQs: FAQItem[] = [
+  {
+    question: "What makes Suitpax's revenue model more attractive than competitors?",
+    answer:
+      "Suitpax's multi-stream revenue model creates higher margins and stickier relationships than competitors. While traditional TMCs rely on booking commissions (3-5%), we combine SaaS subscriptions ($49-$129/month) with transaction fees, premium features, and data analytics packages. This creates predictable recurring revenue that scales with minimal marginal cost.",
+  },
+  {
+    question: "How defensible is Suitpax's AI advantage against tech giants entering the space?",
+    answer:
+      "Our defensibility comes from three moats: 1) Proprietary data - we've built specialized datasets combining 12M+ business travel itineraries with corporate policy parameters; 2) Domain expertise - our team combines 47+ years of travel industry experience with AI expertise; 3) Network effects - each new corporate client adds unique travel patterns and policy data, continuously improving our AI models.",
+  },
+  {
+    question: "What are your unit economics, and when will you reach profitability?",
+    answer:
+      "Our unit economics are exceptional for the industry: CAC for mid-market enterprises averages $16,800 with a 12-month payback period. LTV currently stands at $342,000 per enterprise client, with an LTV:CAC ratio of 20:1. Gross margin is 78% and improving as we scale. We project reaching company-wide profitability at $3.8M ARR, which we expect to achieve within 20 months.",
+  },
+  {
+    question: "What's your strategy for overcoming the notorious scaling challenges in travel tech?",
+    answer:
+      "We've designed our architecture specifically to avoid the scaling pitfalls that have plagued travel startups. We're API-agnostic, connecting to multiple GDSs and direct supplier APIs. We've built a hybrid booking model that combines direct connections for major suppliers with aggregator partnerships for long-tail inventory, ensuring 98.7% booking success rates.",
+  },
+  {
+    question: "How will this funding accelerate your path to market leadership?",
+    answer:
+      "This funding will be strategically deployed to achieve three critical milestones: 1) Product Development (40%): Enhancing our AI capabilities and expanding our integration ecosystem; 2) Go-to-Market (35%): Building our enterprise sales team and implementing our channel partner program; 3) Team Expansion (25%): Adding key hires in AI research, enterprise sales, and customer success.",
+  },
+]
+
+const InvestorFAQSection: React.FC<InvestorFAQSectionProps> = ({ faqData = defaultFAQs }) => {
   const [searchTerm, setSearchTerm] = useState("")
   const [expandedItems, setExpandedItems] = useState<string[]>([])
 

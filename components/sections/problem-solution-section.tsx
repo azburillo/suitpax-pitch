@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Warning, CheckCircle, Clock, CreditCard, FileSearch, User, X, Rocket } from "@phosphor-icons/react"
+import { Warning, CheckCircle, Clock, CreditCard, Files, User, X, Rocket } from "@phosphor-icons/react"
 
 export default function ProblemSolutionSection() {
   return (
@@ -212,7 +212,7 @@ export default function ProblemSolutionSection() {
 
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <FileSearch className="h-4 w-4 text-white/70" />
+                  <Files className="h-4 w-4 text-white/70" />
                 </div>
                 <div>
                   <p className="text-xs font-medium text-white">11:30 AM</p>
@@ -248,7 +248,7 @@ export default function ProblemSolutionSection() {
 
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <FileSearch className="h-4 w-4 text-white/70" />
+                  <Files className="h-4 w-4 text-white/70" />
                 </div>
                 <div>
                   <p className="text-xs font-medium text-white">5:45 PM</p>
@@ -305,7 +305,7 @@ export default function ProblemSolutionSection() {
 
               <div className="flex items-start gap-2">
                 <div className="mt-0.5 flex-shrink-0">
-                  <FileSearch className="h-4 w-4 text-emerald-400" />
+                  <Files className="h-4 w-4 text-emerald-400" />
                 </div>
                 <div>
                   <p className="text-xs font-medium text-white">9:30 AM</p>
