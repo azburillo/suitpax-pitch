@@ -22,41 +22,26 @@ import GlobalExpansionSection from "@/components/sections/global-expansion-secti
 import RoadmapSection from "@/components/sections/roadmap-section"
 import TeamSection from "@/components/sections/team-section"
 import TeamVisionSection from "@/components/sections/team-vision-section"
-import MoonshotSection from "@/components/sections/moonshot-section"
 import FundingUseSection from "@/components/sections/funding-use-section"
 import InvestorROISection from "@/components/sections/investor-roi-section"
-import AdditionalFeaturesSection from "@/components/sections/additional-features-section"
 import ExecutiveSummarySection from "@/components/sections/executive-summary-section"
 import CompetitiveAdvantageSection from "@/components/sections/competitive-advantage-section"
 import InvestmentSection from "@/components/sections/investment-section"
 import ClosingSection from "@/components/sections/closing-section"
 import ApiIntegrationsSection from "@/components/sections/api-integrations-section"
 import InvestorROICalculator from "@/components/sections/investor-roi-calculator"
-import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadmap"
-import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
-import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
-import CrisisManagementSection from "@/components/sections/crisis-management-section"
 import ProductPreviewSection from "@/components/sections/product-preview-section"
-import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
-import FutureHeadlinesSection from "@/components/sections/future-headlines-section"
 import AirlinePartnersSection from "@/components/sections/airline-partners-section"
 import CommunitySection from "@/components/sections/community-section"
-import InvestorFAQSection from "@/components/sections/investor-faq-section"
 import CapTableSection from "@/components/sections/cap-table-section"
-import AITechnologyShowcase from "@/components/sections/ai-technology-showcase"
 
-// Modificar la función Home para eliminar la protección por contraseña
-// pero manteniendo el archivo de protección
-
-// Reemplazar toda la función Home con esta versión:
 export default function Home() {
   // Ensure the page starts at the top when loaded
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  // Ya no verificamos si está desbloqueado, simplemente mostramos el contenido
   return (
     <main className="min-h-screen bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8 space-y-6">
@@ -65,7 +50,6 @@ export default function Home() {
          */}
         <HeroTitle />
         <ExecutiveSummarySection />
-        <FutureHeadlinesSection />
 
         {/* ===== 2. PROBLEMA Y OPORTUNIDAD =====
          * Establecer el contexto del mercado y la necesidad
@@ -95,18 +79,15 @@ export default function Home() {
         <TeamSection />
         <CapTableSection />
         <TeamVisionSection />
-        <FoundersOpenLetter />
 
         {/* ===== 6. TECNOLOGÍA Y EJECUCIÓN =====
          * Demostrar capacidad técnica y diferenciación
          */}
         <AIAgentsSection />
-        <AITechnologyShowcase />
         <ApiIntegrationsSection />
         <TechnologySection />
         <TechStackSection />
         <SecurityComplianceSection />
-        <AdditionalFeaturesSection />
 
         {/* ===== 7. ESTRATEGIA DE CRECIMIENTO =====
          * Mostrar cómo la empresa escalará
@@ -116,10 +97,8 @@ export default function Home() {
         <NetworkEffectSection />
         <BusinessDefensibilitySection />
         <CompetitiveAdvantageSection />
-        <CompetitiveResponseStrategy />
         <GoToMarketSection />
         <GlobalExpansionSection />
-        <MarketExpansionRoadmap />
         <RoadmapSection />
         <CommunitySection />
 
@@ -130,14 +109,10 @@ export default function Home() {
         <InvestmentSection />
         <InvestorROISection />
         <InvestorROICalculator />
-        <InvestorFAQSection />
 
         {/* ===== 9. CIERRE IMPACTANTE =====
          * Dejar una impresión duradera y llamada a la acción
          */}
-        <MoonshotSection />
-        <SustainabilityImpactSection />
-        <CrisisManagementSection />
         <ClosingSection />
       </div>
     </main>
