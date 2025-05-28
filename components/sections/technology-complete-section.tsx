@@ -4,18 +4,18 @@ import { motion } from "framer-motion"
 import { Code, Database, Lightning } from "@phosphor-icons/react"
 import Image from "next/image"
 
-export default function TechStackSection() {
+export default function TechnologyCompleteSection() {
   return (
     <motion.section
-      id="tech-stack"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
+      id="technology-complete"
+      className="bg-white backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.75 }}
+      transition={{ duration: 0.5, delay: 0.7 }}
     >
       <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-          TECH STACK
+          TECHNOLOGY & INFRASTRUCTURE
         </div>
         <div className="h-6 w-6">
           <Image src="/suitpax-bl-logo.webp" alt="Suitpax" width={24} height={24} className="object-contain" />
@@ -23,9 +23,31 @@ export default function TechStackSection() {
       </div>
 
       <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-4 sm:mb-6">
-        Cutting-edge infrastructure
+        Powered by cutting-edge technology
       </h2>
 
+      {/* Technology Partners */}
+      <div className="grid grid-cols-3 gap-2 xs:gap-4 sm:gap-8 items-center justify-items-center mb-6">
+        <div className="bg-black p-2 xs:p-3 sm:p-4 rounded-xl flex items-center justify-center w-full max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[150px] aspect-square">
+          <Image src="/logo-triangle.png" alt="Technology Partner" width={100} height={100} className="w-full h-auto" />
+        </div>
+        <div className="bg-[#052e22] p-2 xs:p-3 sm:p-4 rounded-xl flex items-center justify-center w-full max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[150px] aspect-square">
+          <Image src="/logo-diamond.png" alt="Technology Partner" width={100} height={100} className="w-full h-auto" />
+        </div>
+        <div className="bg-black p-2 xs:p-3 sm:p-4 rounded-xl flex items-center justify-center w-full max-w-[80px] xs:max-w-[100px] sm:max-w-[120px] md:max-w-[150px] aspect-square">
+          <Image src="/logo-s.png" alt="Technology Partner" width={100} height={100} className="w-full h-auto" />
+        </div>
+      </div>
+
+      <div className="text-center mb-6">
+        <p className="text-sm font-medium">Integrations with industry leaders</p>
+        <p className="text-xs font-light text-gray-700 mt-1">
+          We connect with +500 global providers, including airlines, hotels, car rentals, and payment platforms to offer
+          a complete and frictionless experience.
+        </p>
+      </div>
+
+      {/* Tech Stack Details */}
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">

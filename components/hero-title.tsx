@@ -43,26 +43,43 @@ export default function HeroTitle() {
               <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
             </div>
             <div className="text-left flex-1">
-              <p className="text-[11px] text-white/90">
-                "When I was 6 years old, I got lost in an airport. Now I'm building the future of travel tech."
+              <p className="text-[11px] text-white/90 font-medium">
+                "At 6, I got lost in an airport. Today, I'm ensuring no business traveler ever feels lost again."
               </p>
               <div className="flex items-center gap-1 mt-1">
-                <div className="h-1 w-1 rounded-full bg-white/40"></div>
-                <p className="text-[9px] text-gray-300">Alberto Zurano, Founder & CEO</p>
+                <div className="h-1 w-1 rounded-full bg-emerald-400"></div>
+                <p className="text-[9px] text-gray-300">Alberto Zurano • Founder & CEO</p>
               </div>
             </div>
           </div>
         </motion.div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-none text-white">
-          The next-gen of traveltech revolution
-        </h1>
-        <p className="text-sm sm:text-base md:text-lg tracking-tighter text-white/90 max-w-2xl mx-auto font-medium">
-          AI-powered business travel platform with superpowers
-        </p>
-        <p className="text-xs sm:text-sm text-white/70 max-w-xl mx-auto font-light">
-          Transforming business travel with intelligent automation and personalized experiences
-        </p>
+        <div className="space-y-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tighter leading-none text-white">
+            From lost kid to travel tech visionary
+          </h1>
+          <div className="space-y-2">
+            <p className="text-lg sm:text-xl md:text-2xl tracking-tighter text-white/95 max-w-2xl mx-auto font-medium">
+              Building the $847B business travel industry's first AI-native platform
+            </p>
+            <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto font-light">
+              Where every business trip becomes effortless, intelligent, and profitable
+            </p>
+          </div>
+
+          {/* Badges de visión y dirección */}
+          <div className="flex flex-wrap justify-center gap-2 mt-6">
+            <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+              <span className="text-xs text-white/90 font-medium">🌍 Global business travel reimagined</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+              <span className="text-xs text-white/90 font-medium">🤖 AI-first travel intelligence</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+              <span className="text-xs text-white/90 font-medium">✈️ Zero-friction corporate journeys</span>
+            </div>
+          </div>
+        </div>
 
         {/* MiniChat centered below subtitle */}
         <div className="flex justify-center mt-8">

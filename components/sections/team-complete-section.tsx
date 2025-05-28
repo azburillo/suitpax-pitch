@@ -2,19 +2,19 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { LinkedinLogo } from "@phosphor-icons/react"
+import { LinkedinLogo, Rocket, Lightning, Code } from "@phosphor-icons/react"
 
-export default function TeamSection() {
+export default function TeamCompleteSection() {
   return (
     <motion.section
-      id="team"
+      id="team-complete"
       className="bg-white/50 backdrop-blur-sm p-3 sm:p-4 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
       <div className="inline-flex items-center rounded-xl bg-gray-200 px-2 py-0.5 text-[9px] font-medium text-gray-700 mb-2">
-        TEAM
+        TEAM & VISION
       </div>
 
       <h2 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tighter mb-2">Why we built Suitpax?</h2>
@@ -124,6 +124,75 @@ export default function TeamSection() {
         </div>
       </div>
 
+      {/* Strategic Vision Section */}
+      <div className="bg-black/90 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-lg mb-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="inline-flex items-center rounded-xl bg-white/10 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-serif italic text-white/80">
+            STRATEGIC VISION
+          </div>
+          <div className="h-6 w-6">
+            <Image src="/suitpax-white-logo.png" alt="Suitpax" width={24} height={24} className="object-contain" />
+          </div>
+        </div>
+
+        <h3 className="text-lg sm:text-xl font-medium tracking-tighter mb-4 text-white">
+          Redefining the future of corporate travel
+        </h3>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-full bg-white/10 p-1.5">
+                <Lightning className="h-4 w-4 text-white" weight="fill" />
+              </div>
+              <h4 className="text-sm font-medium text-white">Our mission</h4>
+            </div>
+            <p className="text-xs font-light text-white/70">
+              Radically transform the corporate travel industry through cutting-edge technology that eliminates the
+              inefficiency, complexity, and fragmentation that have characterized the sector for decades.
+            </p>
+          </div>
+
+          <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-full bg-white/10 p-1.5">
+                <Code className="h-4 w-4 text-white" weight="fill" />
+              </div>
+              <h4 className="text-sm font-medium text-white">Technological advantage</h4>
+            </div>
+            <p className="text-xs font-light text-white/70">
+              Our proprietary generative AI technology specialized in corporate travel represents an insurmountable
+              competitive advantage. Unlike solutions that simply integrate generic models, our AI agents are
+              specifically trained to understand and optimize every aspect of corporate travel.
+            </p>
+          </div>
+
+          <div className="bg-black/50 backdrop-blur-md p-3 rounded-xl border border-white/10">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-full bg-white/10 p-1.5">
+                <Rocket className="h-4 w-4 text-white" weight="fill" />
+              </div>
+              <h4 className="text-sm font-medium text-white">Catalysts for change</h4>
+            </div>
+            <p className="text-xs font-light text-white/70">
+              The corporate travel sector has remained stuck in obsolete paradigms for too long. Suitpax doesn't simply
+              seek to improve what exists, but to completely reimagine how companies manage, optimize, and experience
+              business travel.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-4 bg-emerald-950/30 backdrop-blur-md p-3 rounded-xl border border-emerald-900/30">
+          <h4 className="text-sm font-medium text-white mb-2">The future is now</h4>
+          <p className="text-xs font-light text-white/70">
+            In a global market of $1.9T, Suitpax is positioned to lead the most significant transformation the sector
+            has experienced in decades. Our technology not only solves current problems but opens possibilities that the
+            industry hasn't even begun to imagine.
+          </p>
+        </div>
+      </div>
+
+      {/* Hiring Plan */}
       <div className="bg-gray-100 p-3 rounded-xl">
         <h3 className="text-sm font-medium mb-2">Hiring plan (2025-2026)</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
