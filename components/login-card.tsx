@@ -19,7 +19,7 @@ export default function LoginCard({ onUnlock }: LoginCardProps) {
   const [showPassword, setShowPassword] = useState(false)
   const [acceptedTerms, setAcceptedTerms] = useState(false)
 
-  const correctPassword = "mission2065"
+  const correctPassword = "daddytravel"
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

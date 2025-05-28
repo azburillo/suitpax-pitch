@@ -9,14 +9,14 @@ import { EuroIcon } from "lucide-react"
 import Image from "next/image"
 
 export default function InvestorROICalculator() {
-  // Available equity options - updated to range from 6% to 9%
-  const equityOptions = [6, 6.5, 7, 7.5, 8, 8.5, 9]
+  // Available equity options - updated to range from 3% to 6%
+  const equityOptions = [3, 3.5, 4, 4.5, 5, 5.5, 6]
 
-  const [investment, setInvestment] = useState(500000)
-  const [sliderValue, setSliderValue] = useState(0)
-  const [equityPercentage, setEquityPercentage] = useState(6)
-  const [selectedEquity, setSelectedEquity] = useState(6)
-  const [valuation, setValuation] = useState(8333333)
+  const [investment, setInvestment] = useState(650000)
+  const [sliderValue, setSliderValue] = useState(50)
+  const [equityPercentage, setEquityPercentage] = useState(4.5)
+  const [selectedEquity, setSelectedEquity] = useState(4.5)
+  const [valuation, setValuation] = useState(5500000)
   const [years, setYears] = useState(5)
 
   // Update valuation when equity changes
@@ -34,17 +34,17 @@ export default function InvestorROICalculator() {
   const calculateROI = (amount: number, years: number, equity: number) => {
     // Base multipliers adjusted by equity percentage
     const baseMultipliers = {
-      1: 1.5,
-      2: 3.5,
-      3: 7.5,
-      4: 14,
-      5: 20,
-      6: 30,
+      1: 1.8,
+      2: 4.5,
+      3: 9.2,
+      4: 16.5,
+      5: 25,
+      6: 38,
     }
 
     // Adjust multiplier based on equity percentage
     // Higher equity gets slightly better returns (incentive for larger investment)
-    const equityFactor = 1 + (equity - 6) * 0.03
+    const equityFactor = 1 + (equity - 1) * 0.05
 
     // @ts-ignore - TypeScript doesn't know we're checking for valid keys
     const baseMultiplier = baseMultipliers[years] || baseMultipliers[5]
@@ -56,11 +56,11 @@ export default function InvestorROICalculator() {
   // Calculate multiple based on equity percentage
   const calculateMultiple = (years: number, equity: number) => {
     // Base multiples for 5 years
-    const baseMultiple = 20
+    const baseMultiple = 25
 
     // Adjust multiple based on equity percentage
     // Higher equity gets slightly better multiple (incentive for larger investment)
-    const equityFactor = 1 + (equity - 6) * 0.03
+    const equityFactor = 1 + (equity - 1) * 0.05
 
     return baseMultiple * equityFactor
   }
@@ -93,7 +93,7 @@ export default function InvestorROICalculator() {
     const value = e.target.value === "" ? 0 : Number.parseInt(e.target.value.replace(/[^0-9]/g, ""))
     if (!isNaN(value)) {
       setInvestment(value)
-      const newSliderValue = Math.min(Math.round((value - 500000) / 5000), 60)
+      const newSliderValue = Math.min(Math.round((value - 600000) / 20000), 60)
       setSliderValue(Math.max(0, newSliderValue))
     }
   }
@@ -112,14 +112,14 @@ export default function InvestorROICalculator() {
   const benchmarks = [
     { name: "Average SaaS", multiplier: 8, color: "bg-white/30" },
     { name: "Top TravelTech", multiplier: 15, color: "bg-white/50" },
-    { name: "Navan (TripActions)", multiplier: 35, color: "bg-white/70" },
-    { name: "Suitpax Projection", multiplier: 20, color: "bg-white/90" },
+    { name: "Navan (TripActions)", multiplier: 40, color: "bg-white/70" },
+    { name: "Suitpax Projection", multiplier: 25, color: "bg-white/90" },
   ]
 
   // Update equity percentage based on investment amount
   useEffect(() => {
-    // Linear scale: 500k = 6%, 800k = 9%
-    const percentage = 6 + ((investment - 500000) / 300000) * 3
+    // Linear scale: 500k = 3%, 800k = 6%
+    const percentage = 3 + ((investment - 500000) / 300000) * 3
     // Round to nearest 0.5
     setEquityPercentage(Math.round(percentage * 2) / 2)
 
@@ -178,9 +178,9 @@ export default function InvestorROICalculator() {
             className="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-white"
           />
           <div className="flex justify-between mt-2 text-white/60 text-xs">
-            <span>€500K (6%)</span>
-            <span>€650K (7.5%)</span>
-            <span>€800K (9%)</span>
+            <span>€500K (3%)</span>
+            <span>€650K (4.5%)</span>
+            <span>€800K (6%)</span>
           </div>
         </div>
 
@@ -251,7 +251,7 @@ export default function InvestorROICalculator() {
                   <div
                     className="h-full bg-gradient-to-r from-white/40 to-white/80 rounded-full"
                     style={{
-                      width: `${Math.min((calculateROI(investment, year, selectedEquity) / (investment * 30)) * 100, 100)}%`,
+                      width: `${Math.min((calculateROI(investment, year, selectedEquity) / (investment * 40)) * 100, 100)}%`,
                     }}
                   ></div>
                 </div>
@@ -272,7 +272,7 @@ export default function InvestorROICalculator() {
                 {formatCurrency(calculateROI(investment, 5, selectedEquity))}
               </span>
             </div>
-            <div className="text-[10px] text-white/50">Based on projected company valuation of €1.2B+ by 2029</div>
+            <div className="text-[10px] text-white/50">Based on projected company valuation of €1B+ by 2029</div>
           </div>
         </div>
 
@@ -296,7 +296,7 @@ export default function InvestorROICalculator() {
                 <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                   <div
                     className={`h-full ${benchmark.color} rounded-full`}
-                    style={{ width: `${Math.min((benchmark.multiplier / 35) * 100, 100)}%` }}
+                    style={{ width: `${Math.min((benchmark.multiplier / 40) * 100, 100)}%` }}
                   ></div>
                 </div>
                 <div className="mt-1 text-[10px] text-white/50 font-medium">
@@ -323,7 +323,7 @@ export default function InvestorROICalculator() {
               </p>
               <p className="flex items-start gap-1.5">
                 <span className="text-white/40 mt-0.5">•</span>
-                <span>Inversores estratégicos con €650K+ reciben derechos de observador en el consejo</span>
+                <span>Inversores estratégicos con €750K+ reciben derechos de observador en el consejo</span>
               </p>
             </div>
           </div>

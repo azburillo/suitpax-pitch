@@ -1,8 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import PasswordProtection from "@/components/password-protection"
+import { useEffect } from "react"
 import HeroTitle from "@/components/hero-title"
+import DashProductSection from "@/components/sections/dash-product-section"
 import ProblemSolutionSection from "@/components/sections/problem-solution-section"
 import MarketSection from "@/components/sections/market-section"
 import CompetitionSection from "@/components/sections/competition-section"
@@ -36,6 +36,7 @@ import MarketExpansionRoadmap from "@/components/sections/market-expansion-roadm
 import CompetitiveResponseStrategy from "@/components/sections/competitive-response-strategy"
 import SustainabilityImpactSection from "@/components/sections/sustainability-impact-section"
 import CrisisManagementSection from "@/components/sections/crisis-management-section"
+import ProductPreviewSection from "@/components/sections/product-preview-section"
 import FoundersOpenLetter from "@/components/sections/founders-open-letter"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
 import FutureHeadlinesSection from "@/components/sections/future-headlines-section"
@@ -45,19 +46,17 @@ import InvestorFAQSection from "@/components/sections/investor-faq-section"
 import CapTableSection from "@/components/sections/cap-table-section"
 import AITechnologyShowcase from "@/components/sections/ai-technology-showcase"
 
-export default function Home() {
-  const [isUnlocked, setIsUnlocked] = useState(false)
+// Modificar la función Home para eliminar la protección por contraseña
+// pero manteniendo el archivo de protección
 
+// Reemplazar toda la función Home con esta versión:
+export default function Home() {
   // Ensure the page starts at the top when loaded
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  // Si no está desbloqueado, mostrar la protección por contraseña
-  if (!isUnlocked) {
-    return <PasswordProtection onUnlock={() => setIsUnlocked(true)} />
-  }
-
+  // Ya no verificamos si está desbloqueado, simplemente mostramos el contenido
   return (
     <main className="min-h-screen bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-8 space-y-6">
@@ -79,6 +78,8 @@ export default function Home() {
          * Mostrar cómo el producto resuelve el problema
          */}
         <SolutionSection />
+        <DashProductSection />
+        <ProductPreviewSection videoUrl="/videos/suitpax-dashboard-demo.mp4" />
         <ProductsSection />
 
         {/* ===== 4. VALIDACIÓN Y TRACCIÓN =====

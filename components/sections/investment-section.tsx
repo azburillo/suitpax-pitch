@@ -103,25 +103,25 @@ export default function InvestmentSection() {
         </div>
 
         <div>
-          {/* Featured valuation and round section - Updated for 500K round */}
+          {/* Featured valuation and round section - Redesigned to black/gray */}
           <div className="bg-gradient-to-r from-gray-900 to-black p-5 rounded-xl mb-6 text-white shadow-lg border border-gray-800">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Trophy className="h-6 w-6 text-gray-400" weight="fill" />
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter">Valuation</h2>
               </div>
-              <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter text-gray-300">€8.3M</p>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter text-gray-300">€5.5M</p>
             </div>
             <p className="text-sm text-gray-400 mb-6">Pre-money · Seed Round</p>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Star className="h-6 w-6 text-gray-400" weight="fill" />
-                <h3 className="text-xl sm:text-2xl font-medium tracking-tighter">Accepting</h3>
+                <h3 className="text-xl sm:text-2xl font-medium tracking-tighter">Accepting from</h3>
               </div>
               <p className="text-2xl sm:text-3xl font-semibold tracking-tighter text-gray-300">€500K</p>
             </div>
-            <p className="text-sm text-gray-400">For 6% equity</p>
+            <p className="text-sm text-gray-400">For 9% equity</p>
           </div>
 
           <p className="text-sm sm:text-base font-light text-gray-700 mb-4">
@@ -174,7 +174,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2025:</span> €8.3M valuation (€500K for 6% equity)
+                <span className="font-medium">2025:</span> €5.5M valuation (€500K for 9% equity)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -182,7 +182,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2026:</span> €35M valuation (€3.5M round for 10% equity)
+                <span className="font-medium">2026:</span> €50M valuation (€5M round for 10% equity)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -190,7 +190,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2027:</span> €150M valuation (€15M round for 10% equity)
+                <span className="font-medium">2027:</span> €200M valuation (€20M round for 10% equity)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -198,7 +198,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2028:</span> €350M valuation (Series C)
+                <span className="font-medium">2028:</span> €450M valuation (Series C)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -206,7 +206,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2029-2030:</span> €650M valuation (Pre-IPO round)
+                <span className="font-medium">2029-2030:</span> €800M valuation (Pre-IPO round)
               </p>
             </div>
             <div className="flex items-start gap-2">
@@ -214,7 +214,7 @@ export default function InvestmentSection() {
                 <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
               </div>
               <p className="text-sm font-light">
-                <span className="font-medium">2031:</span> €1.2B market cap (IPO)
+                <span className="font-medium">2031:</span> €1.5B market cap (IPO)
               </p>
             </div>
           </div>

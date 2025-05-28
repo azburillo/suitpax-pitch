@@ -95,28 +95,28 @@ export default function InvestorROISection() {
                 <p className="text-xs font-medium text-white">2025</p>
                 <p className="text-sm font-medium text-gray-300">€2.5M</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
-                <p className="text-xs font-medium text-red-500">€8.3M</p>
+                <p className="text-xs font-medium text-red-500">€15M</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
               <div className="bg-gray-900 p-2 rounded-lg text-center">
                 <p className="text-xs font-medium text-white">2026</p>
-                <p className="text-sm font-medium text-gray-300">€6M</p>
+                <p className="text-sm font-medium text-gray-300">€8M</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
-                <p className="text-xs font-medium text-red-500">€35M</p>
+                <p className="text-xs font-medium text-red-500">€60M</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
               <div className="bg-gray-900 p-2 rounded-lg text-center">
                 <p className="text-xs font-medium text-white">2027</p>
-                <p className="text-sm font-medium text-gray-300">€18M</p>
+                <p className="text-sm font-medium text-gray-300">€25M</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
-                <p className="text-xs font-medium text-red-500">€150M</p>
+                <p className="text-xs font-medium text-red-500">€250M</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
               <div className="bg-gray-900 p-2 rounded-lg text-center">
                 <p className="text-xs font-medium text-white">2029</p>
-                <p className="text-sm font-medium text-gray-300">€75M+</p>
+                <p className="text-sm font-medium text-gray-300">€100M+</p>
                 <p className="text-[10px] text-gray-500">ARR</p>
-                <p className="text-xs font-medium text-red-500">€650M+</p>
+                <p className="text-xs font-medium text-red-500">€1B+</p>
                 <p className="text-[10px] text-gray-500">Valuation</p>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function InvestorROISection() {
                   </svg>
                 </div>
                 <p className="text-sm font-light text-gray-400">
-                  <span className="font-medium text-white">Projected ROI for strategic partners:</span> 20-25x in 5
+                  <span className="font-medium text-white">Projected ROI for strategic partners:</span> 25-30x in 5
                   years, based on industry valuation multiples
                 </p>
               </div>
@@ -160,8 +160,8 @@ export default function InvestorROISection() {
                   </svg>
                 </div>
                 <p className="text-sm font-light text-gray-400">
-                  <span className="font-medium text-white">Valuation multiples:</span> 6-8x ARR, consistent with current
-                  valuations in the TravelTech/SaaS sector
+                  <span className="font-medium text-white">Valuation multiples:</span> 7-10x ARR, consistent with
+                  current valuations in the TravelTech/SaaS sector
                 </p>
               </div>
             </div>
@@ -281,17 +281,17 @@ export default function InvestorROISection() {
             <h3 className="text-2xl font-bold mb-4 text-center">Current Valuation</h3>
             <div className="flex justify-center items-center">
               <div className="text-center">
-                <p className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-2">€8.3M</p>
+                <p className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-2">€13M</p>
                 <p className="text-lg font-medium">Pre-money</p>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div className="bg-white/10 p-3 rounded-xl text-center">
-                <p className="text-xl font-medium">€500K</p>
+                <p className="text-xl font-medium">€1.2M - €1.8M</p>
                 <p className="text-sm">Accepting in this round</p>
               </div>
               <div className="bg-white/10 p-3 rounded-xl text-center">
-                <p className="text-xl font-medium">6% Equity</p>
+                <p className="text-xl font-medium">8-11% Equity</p>
                 <p className="text-sm">Expected dilution</p>
               </div>
             </div>
