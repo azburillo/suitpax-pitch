@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CaretRight, ArrowRight, Trophy, Star, ChartLineUp, ChartLine, Rocket } from "@phosphor-icons/react"
+import { CaretRight, ArrowRight, Trophy, Star, ChartLineUp } from "@phosphor-icons/react"
 import Image from "next/image"
 
-export default function InvestmentCompleteSection() {
+export default function InvestmentSection() {
   return (
     <motion.section
-      id="investment-complete"
+      id="investment"
       className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ export default function InvestmentCompleteSection() {
         </div>
 
         <div>
-          {/* Featured valuation and round section */}
+          {/* Featured valuation and round section - Redesigned to black/gray */}
           <div className="bg-gradient-to-r from-gray-900 to-black p-5 rounded-xl mb-6 text-white shadow-lg border border-gray-800">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
@@ -123,6 +123,11 @@ export default function InvestmentCompleteSection() {
             </div>
             <p className="text-sm text-gray-400">For 9% equity</p>
           </div>
+
+          <p className="text-sm sm:text-base font-light text-gray-700 mb-4">
+            Opportunity to participate in our seed round and consolidate our position in the AI-powered corporate travel
+            management market.
+          </p>
 
           <div className="bg-gray-100 p-3 rounded-xl mb-4">
             <h3 className="text-base font-medium tracking-tighter mb-2">Use of funds</h3>
@@ -159,56 +164,6 @@ export default function InvestmentCompleteSection() {
             </div>
           </div>
 
-          {/* ROI Section */}
-          <div className="bg-black/90 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-lg mb-4">
-            <div className="inline-flex items-center rounded-xl bg-white/10 text-white px-2.5 py-0.5 text-[10px] font-medium mb-3">
-              PARTNERSHIP VALUE
-            </div>
-            <h3 className="text-lg font-medium tracking-tighter mb-3 text-white">Why partner with Suitpax</h3>
-
-            <div className="bg-black p-3 rounded-xl border border-gray-800 shadow-sm mb-3">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="h-8 w-8 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0">
-                  <ChartLine className="h-4 w-4 text-gray-300" weight="fill" />
-                </div>
-                <h4 className="text-sm font-medium text-white">Financial projection</h4>
-              </div>
-              <div className="grid grid-cols-2 gap-2 mb-2">
-                <div className="bg-gray-900 p-2 rounded-lg text-center">
-                  <p className="text-xs font-medium text-white">2025</p>
-                  <p className="text-sm font-medium text-red-500">€15M</p>
-                  <p className="text-[10px] text-gray-500">Valuation</p>
-                </div>
-                <div className="bg-gray-900 p-2 rounded-lg text-center">
-                  <p className="text-xs font-medium text-white">2029</p>
-                  <p className="text-sm font-medium text-red-500">€1B+</p>
-                  <p className="text-[10px] text-gray-500">Valuation</p>
-                </div>
-              </div>
-              <p className="text-xs font-light text-gray-400">
-                <span className="font-medium text-white">Projected ROI:</span> 25-30x in 5 years
-              </p>
-            </div>
-
-            <div className="bg-black p-3 rounded-xl border border-gray-800 shadow-sm">
-              <h4 className="text-sm font-medium mb-2 text-white">Strategic partner benefits</h4>
-              <ul className="space-y-1">
-                <li className="flex items-start gap-2">
-                  <div className="mt-1 rounded-full bg-gray-800 p-1">
-                    <Rocket className="h-3 w-3 text-gray-300" weight="fill" />
-                  </div>
-                  <p className="text-xs font-medium text-white">Preferential terms & early liquidity</p>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="mt-1 rounded-full bg-gray-800 p-1">
-                    <Rocket className="h-3 w-3 text-gray-300" weight="fill" />
-                  </div>
-                  <p className="text-xs font-medium text-white">Strategic participation in board</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <ChartLineUp className="h-5 w-5 text-gray-900" weight="fill" />
@@ -228,6 +183,30 @@ export default function InvestmentCompleteSection() {
               </div>
               <p className="text-sm font-light">
                 <span className="font-medium">2026:</span> €50M valuation (€5M round for 10% equity)
+              </p>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="mt-1 rounded-full bg-gray-900/10 p-1">
+                <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
+              </div>
+              <p className="text-sm font-light">
+                <span className="font-medium">2027:</span> €200M valuation (€20M round for 10% equity)
+              </p>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="mt-1 rounded-full bg-gray-900/10 p-1">
+                <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
+              </div>
+              <p className="text-sm font-light">
+                <span className="font-medium">2028:</span> €450M valuation (Series C)
+              </p>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="mt-1 rounded-full bg-gray-900/10 p-1">
+                <CaretRight className="h-3.5 w-3.5 text-gray-900" weight="bold" />
+              </div>
+              <p className="text-sm font-light">
+                <span className="font-medium">2029-2030:</span> €800M valuation (Pre-IPO round)
               </p>
             </div>
             <div className="flex items-start gap-2">
