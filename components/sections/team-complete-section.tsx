@@ -88,6 +88,16 @@ export default function TeamCompleteSection() {
                   for the future of business travel."
                 </p>
               </div>
+
+              <div className="bg-gray-50 p-2 rounded-lg mb-2 border-l-2 border-emerald-950">
+                <h4 className="text-xs font-medium mb-1">Unique industry insights</h4>
+                <ul className="text-[10px] font-light text-gray-700 space-y-0.5">
+                  <li>• Deep understanding of airport operations and travel infrastructure (Aena experience)</li>
+                  <li>• Enterprise software scaling expertise from Spanish unicorn (Factorial)</li>
+                  <li>• Direct access to travel industry decision makers and pain points</li>
+                  <li>• Proven track record in regulated, complex enterprise environments</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -118,6 +128,16 @@ export default function TeamCompleteSection() {
                   Led engineering teams at Cloudbeds, the #1 hotel Property Management System in the world. Expert in
                   distributed systems and travel industry integrations.
                 </p>
+              </div>
+
+              <div className="bg-gray-50 p-2 rounded-lg border-l-2 border-emerald-950">
+                <h4 className="text-xs font-medium mb-1">Travel tech expertise</h4>
+                <ul className="text-[10px] font-light text-gray-700 space-y-0.5">
+                  <li>• 5+ years building travel industry integrations at scale</li>
+                  <li>• Deep knowledge of GDS systems, hotel APIs, and booking flows</li>
+                  <li>• Experience with PCI compliance and financial data security</li>
+                  <li>• Understanding of global travel regulations and requirements</li>
+                </ul>
               </div>
             </div>
           </div>

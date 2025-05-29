@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowUp, Users, Buildings, Globe } from "@phosphor-icons/react"
+import { Users, Buildings, Globe, CheckCircle, Clock } from "@phosphor-icons/react"
 import Image from "next/image"
 
 export default function TractionSection() {
@@ -18,76 +18,179 @@ export default function TractionSection() {
       </div>
 
       <div className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700 mb-3 sm:mb-4">
-        TRACTION
+        EARLY TRACTION & VALIDATION
       </div>
       <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-3 sm:mb-4">
-        Exponential growth trajectory
+        Strong early validation with enterprise demand
       </h2>
+
+      {/* Current Pilot Customers */}
+      <div className="mb-6 bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+        <h3 className="text-lg font-medium mb-3 flex items-center gap-2">
+          <CheckCircle className="h-5 w-5 text-emerald-600" weight="fill" />
+          Active pilot customers
+        </h3>
+        <div className="grid md:grid-cols-3 gap-4 mb-4">
+          <div className="bg-white p-3 rounded-lg border border-emerald-100">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                <Buildings className="h-4 w-4 text-emerald-600" weight="fill" />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium">Actiu</h4>
+                <p className="text-xs text-gray-600">Furniture Manufacturing</p>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs">
+                <span className="font-medium">Size:</span> 1,200+ employees
+              </p>
+              <p className="text-xs">
+                <span className="font-medium">Results:</span> 23% cost reduction
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white p-3 rounded-lg border border-emerald-100">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                <Globe className="h-4 w-4 text-blue-600" weight="fill" />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium">Juniper Networks</h4>
+                <p className="text-xs text-gray-600">Technology/Networking</p>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs">
+                <span className="font-medium">Size:</span> 10,000+ employees
+              </p>
+              <p className="text-xs">
+                <span className="font-medium">Results:</span> 31% time savings
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white p-3 rounded-lg border border-emerald-100">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                <Users className="h-4 w-4 text-purple-600" weight="fill" />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium">Aena</h4>
+                <p className="text-xs text-gray-600">Airport Infrastructure</p>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <p className="text-xs">
+                <span className="font-medium">Size:</span> 8,500+ employees
+              </p>
+              <p className="text-xs">
+                <span className="font-medium">Results:</span> 89% compliance improvement
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-3 rounded-lg border border-emerald-100">
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="text-sm font-medium">Current metrics (4 active pilots)</h4>
+            <div className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">Q1 2025</div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="text-center">
+              <p className="text-lg font-medium text-emerald-600">27%</p>
+              <p className="text-xs text-gray-600">Average cost savings</p>
+            </div>
+            <div className="text-center">
+              <p className="text-lg font-medium text-emerald-600">85%</p>
+              <p className="text-xs text-gray-600">Time efficiency gain</p>
+            </div>
+            <div className="text-center">
+              <p className="text-lg font-medium text-emerald-600">92%</p>
+              <p className="text-xs text-gray-600">User satisfaction</p>
+            </div>
+            <div className="text-center">
+              <p className="text-lg font-medium text-emerald-600">94%</p>
+              <p className="text-xs text-gray-600">Policy compliance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Waiting List */}
+      <div className="mb-6 bg-blue-50 p-4 rounded-xl border border-blue-200">
+        <h3 className="text-lg font-medium mb-3 flex items-center gap-2">
+          <Clock className="h-5 w-5 text-blue-600" weight="fill" />
+          Enterprise waiting list
+        </h3>
+        <div className="bg-white p-3 rounded-lg border border-blue-100">
+          <div className="flex items-center justify-between mb-2">
+            <div>
+              <p className="text-2xl font-medium text-blue-600">25</p>
+              <p className="text-sm text-gray-600">Companies waiting for access</p>
+            </div>
+            <div className="text-right">
+              <p className="text-sm font-medium">Combined potential ARR</p>
+              <p className="text-lg font-medium text-blue-600">€2.1M</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-3 text-xs">
+            <div>
+              <p className="font-medium">Size range:</p>
+              <p className="text-gray-600">500-5,000 employees</p>
+            </div>
+            <div>
+              <p className="font-medium">Industries:</p>
+              <p className="text-gray-600">Tech, Manufacturing, Finance</p>
+            </div>
+            <div>
+              <p className="font-medium">Avg. timeline:</p>
+              <p className="text-gray-600">Q2-Q3 2025 rollout</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-            <h3 className="text-lg font-medium mb-3">Current metrics (Q1 2025)</h3>
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <p className="text-xl font-medium tracking-tighter text-emerald-950 flex items-center">
-                  18 <ArrowUp className="h-4 w-4 text-emerald-600 ml-1" weight="fill" />
-                </p>
-                <p className="text-xs font-medium text-gray-500">Beta customers</p>
-              </div>
-              <div>
-                <p className="text-xl font-medium tracking-tighter text-emerald-950 flex items-center">
-                  92% <ArrowUp className="h-4 w-4 text-emerald-600 ml-1" weight="fill" />
-                </p>
-                <p className="text-xs font-medium text-gray-500">Retention rate</p>
-              </div>
-              <div>
-                <p className="text-xl font-medium tracking-tighter text-emerald-950 flex items-center">
-                  27% <ArrowUp className="h-4 w-4 text-emerald-600 ml-1" weight="fill" />
-                </p>
-                <p className="text-xs font-medium text-gray-500">Average cost savings</p>
-              </div>
-              <div>
-                <p className="text-xl font-medium tracking-tighter text-emerald-950 flex items-center">
-                  85% <ArrowUp className="h-4 w-4 text-emerald-600 ml-1" weight="fill" />
-                </p>
-                <p className="text-xs font-medium text-gray-500">Time efficiency gain</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-            <h3 className="text-lg font-medium mb-3">Customer profile</h3>
+            <h3 className="text-lg font-medium mb-3">Key validation metrics</h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <div className="h-8 w-8 rounded-lg bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-                  <Users className="h-4 w-4 text-emerald-950" weight="fill" />
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <p className="text-sm font-medium">Demo-to-pilot conversion</p>
+                  <p className="text-sm font-medium">67%</p>
                 </div>
-                <div>
-                  <p className="text-sm font-medium">Company size</p>
-                  <p className="text-xs font-light text-gray-700">50-500 employees (72%), 500+ employees (28%)</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="h-8 w-8 rounded-lg bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-                  <Buildings className="h-4 w-4 text-emerald-950" weight="fill" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Industry sectors</p>
-                  <p className="text-xs font-light text-gray-700">
-                    Technology (35%), Professional Services (28%), Manufacturing (22%), Healthcare (15%)
-                  </p>
+                <div className="w-full bg-gray-200 h-1.5 rounded-full">
+                  <div className="bg-emerald-600 h-1.5 rounded-full" style={{ width: "67%" }}></div>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="h-8 w-8 rounded-lg bg-emerald-950/10 flex items-center justify-center flex-shrink-0">
-                  <Globe className="h-4 w-4 text-emerald-950" weight="fill" />
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <p className="text-sm font-medium">Pilot retention rate</p>
+                  <p className="text-sm font-medium">100%</p>
                 </div>
-                <div>
-                  <p className="text-sm font-medium">Geographic distribution</p>
-                  <p className="text-xs font-light text-gray-700">
-                    Europe (65%), North America (25%), Asia-Pacific (10%)
-                  </p>
+                <div className="w-full bg-gray-200 h-1.5 rounded-full">
+                  <div className="bg-emerald-600 h-1.5 rounded-full" style={{ width: "100%" }}></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <p className="text-sm font-medium">Expansion interest</p>
+                  <p className="text-sm font-medium">75%</p>
+                </div>
+                <div className="w-full bg-gray-200 h-1.5 rounded-full">
+                  <div className="bg-blue-600 h-1.5 rounded-full" style={{ width: "75%" }}></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <p className="text-sm font-medium">Referral rate</p>
+                  <p className="text-sm font-medium">50%</p>
+                </div>
+                <div className="w-full bg-gray-200 h-1.5 rounded-full">
+                  <div className="bg-purple-600 h-1.5 rounded-full" style={{ width: "50%" }}></div>
                 </div>
               </div>
             </div>
@@ -96,21 +199,12 @@ export default function TractionSection() {
 
         <div className="space-y-4">
           <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-            <h3 className="text-lg font-medium mb-3">Growth projections to 2031</h3>
+            <h3 className="text-lg font-medium mb-3">Growth trajectory</h3>
             <div className="space-y-3">
               <div>
                 <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Q4 2025</p>
-                  <p className="text-sm font-medium">100+ customers</p>
-                </div>
-                <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                  <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "10%" }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Q2 2027</p>
-                  <p className="text-sm font-medium">500+ customers</p>
+                  <p className="text-sm font-medium">Q2 2025</p>
+                  <p className="text-sm font-medium">12 active customers</p>
                 </div>
                 <div className="w-full bg-gray-200 h-1.5 rounded-full">
                   <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "20%" }}></div>
@@ -118,8 +212,8 @@ export default function TractionSection() {
               </div>
               <div>
                 <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Q4 2028</p>
-                  <p className="text-sm font-medium">1,000+ customers</p>
+                  <p className="text-sm font-medium">Q4 2025</p>
+                  <p className="text-sm font-medium">35 active customers</p>
                 </div>
                 <div className="w-full bg-gray-200 h-1.5 rounded-full">
                   <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "40%" }}></div>
@@ -127,62 +221,29 @@ export default function TractionSection() {
               </div>
               <div>
                 <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Q2 2030</p>
-                  <p className="text-sm font-medium">2,500+ customers</p>
+                  <p className="text-sm font-medium">Q2 2026</p>
+                  <p className="text-sm font-medium">85 active customers</p>
                 </div>
                 <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                  <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "70%" }}></div>
+                  <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "60%" }}></div>
                 </div>
               </div>
               <div>
                 <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Q4 2031</p>
-                  <p className="text-sm font-medium">5,000+ customers</p>
+                  <p className="text-sm font-medium">Q4 2026</p>
+                  <p className="text-sm font-medium">150 active customers</p>
+                </div>
+                <div className="w-full bg-gray-200 h-1.5 rounded-full">
+                  <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "80%" }}></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <p className="text-sm font-medium">Q4 2027</p>
+                  <p className="text-sm font-medium">300+ customers</p>
                 </div>
                 <div className="w-full bg-gray-200 h-1.5 rounded-full">
                   <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "100%" }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-            <h3 className="text-lg font-medium mb-3">Key growth metrics</h3>
-            <div className="space-y-3">
-              <div>
-                <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Annual Recurring Revenue</p>
-                  <p className="text-sm font-medium">$250M by 2031</p>
-                </div>
-                <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                  <div className="bg-emerald-600 h-1.5 rounded-full" style={{ width: "100%" }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Global Market Share</p>
-                  <p className="text-sm font-medium">15% by 2031</p>
-                </div>
-                <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                  <div className="bg-blue-600 h-1.5 rounded-full" style={{ width: "85%" }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Team Growth</p>
-                  <p className="text-sm font-medium">500+ employees by 2031</p>
-                </div>
-                <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                  <div className="bg-purple-600 h-1.5 rounded-full" style={{ width: "90%" }}></div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between items-center mb-1">
-                  <p className="text-sm font-medium">Geographic Expansion</p>
-                  <p className="text-sm font-medium">25+ countries by 2031</p>
-                </div>
-                <div className="w-full bg-gray-200 h-1.5 rounded-full">
-                  <div className="bg-emerald-950 h-1.5 rounded-full" style={{ width: "95%" }}></div>
                 </div>
               </div>
             </div>

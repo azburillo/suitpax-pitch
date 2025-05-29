@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle, X, ArrowRight, Lightning, Rocket, Buildings } from "@phosphor-icons/react"
+import { CheckCircle, X, ArrowRight, Lightning, Rocket, Buildings, Crown } from "@phosphor-icons/react"
 
 export default function PricingSection() {
   const plans = [
@@ -24,7 +24,7 @@ export default function PricingSection() {
       limitations: ["No financial integrations", "No travel policies", "No expense management"],
     },
     {
-      name: "Scale-up",
+      name: "Starter",
       description: "Perfect for startups",
       price: "€49",
       period: "per month",
@@ -45,37 +45,36 @@ export default function PricingSection() {
       limitations: [],
     },
     {
-      name: "Enterprise",
+      name: "Pro",
       description: "For growing businesses",
-      price: "$129",
+      price: "€89",
       period: "per month",
-      icon: <Buildings className="h-6 w-6 text-blue-700" weight="fill" />,
+      icon: <Crown className="h-6 w-6 text-blue-700" weight="fill" />,
       color: "bg-blue-50",
       textColor: "text-blue-700",
       borderColor: "border-blue-200",
       features: [
-        "Unlimited AI trips",
+        "30 AI trips per month",
         "Complete AI agent suite",
         "Advanced task management",
         "Multi-level travel policies",
         "Full expense management",
         "Financial integrations",
         "24/7 support",
-        "Dedicated account manager",
       ],
       limitations: [],
     },
     {
-      name: "Custom",
+      name: "Enterprise",
       description: "Tailored to your needs",
-      price: "Contact us",
+      price: "Custom",
       period: "",
       icon: <Buildings className="h-6 w-6 text-purple-700" weight="fill" />,
       color: "bg-purple-50",
       textColor: "text-purple-700",
       borderColor: "border-purple-200",
       features: [
-        "Everything in Enterprise",
+        "Unlimited AI trips",
         "Custom AI development",
         "White-label options",
         "API access",
@@ -174,10 +173,10 @@ export default function PricingSection() {
             </thead>
             <tbody>
               <tr className="border-b border-gray-200 bg-emerald-50">
-                <td className="p-2 text-xs font-medium text-emerald-950">Suitpax (Enterprise)</td>
-                <td className="p-2 text-xs">$129/month</td>
+                <td className="p-2 text-xs font-medium text-emerald-950">Suitpax (Pro)</td>
+                <td className="p-2 text-xs">€89/month</td>
                 <td className="p-2 text-xs">€0</td>
-                <td className="p-2 text-xs font-medium text-emerald-950">$129/month</td>
+                <td className="p-2 text-xs font-medium text-emerald-950">€89/month</td>
               </tr>
               <tr className="border-b border-gray-200">
                 <td className="p-2 text-xs font-medium">Navan (TripActions)</td>

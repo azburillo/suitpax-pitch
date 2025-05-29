@@ -1,121 +1,69 @@
-"use client"
+import { Shield, Database, Network, Lock, Lightning, TrendUp, Users, Globe } from "@phosphor-icons/react"
 
-import { motion } from "framer-motion"
-import { Rocket, Target, ShieldCheck, Scales, Handshake } from "@phosphor-icons/react"
-import Image from "next/image"
-
-export default function CompetitiveAdvantageSection() {
+const CompetitiveAdvantageSection = () => {
   return (
-    <motion.section
-      id="competitive-advantage"
-      className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-2xl border border-gray-200 shadow-sm"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-    >
-      <div className="flex items-center justify-between mb-3 sm:mb-4">
-        <div className="inline-flex items-center rounded-xl bg-gray-200 px-2.5 py-0.5 text-[10px] font-medium text-gray-700">
-          COMPETITIVE ADVANTAGE
-        </div>
-        <div className="h-6 w-6">
-          <Image src="/suitpax-bl-logo.webp" alt="Suitpax" width={24} height={24} className="object-contain" />
+    <section className="bg-gray-50 py-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">Our Competitive Advantage</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {advantages.map((advantage, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+              <div className="mb-4">{advantage.icon}</div>
+              <h3 className="text-xl font-medium text-gray-700 mb-2">{advantage.title}</h3>
+              <p className="text-gray-600">{advantage.description}</p>
+            </div>
+          ))}
         </div>
       </div>
-
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tighter mb-4 sm:mb-6">
-        Why Suitpax will dominate the market
-      </h2>
-
-      <div className="grid md:grid-cols-2 gap-4">
-        <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-xl border border-emerald-200">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="mt-1 rounded-full bg-emerald-950 p-2 flex-shrink-0">
-              <Rocket className="h-4 w-4 text-white" weight="fill" />
-            </div>
-            <div>
-              <h3 className="text-base font-medium tracking-tighter mb-1">First-mover advantage</h3>
-              <p className="text-xs font-light">
-                Suitpax is the first AI-native corporate travel platform built from the ground up with Anthropic
-                integration, giving us a 16-month head start over competitors still retrofitting legacy systems.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="mt-1 rounded-full bg-emerald-950 p-2 flex-shrink-0">
-              <Target className="h-4 w-4 text-white" weight="fill" />
-            </div>
-            <div>
-              <h3 className="text-base font-medium tracking-tighter mb-1">Proprietary AI training</h3>
-              <p className="text-xs font-light">
-                Our AI models are trained on 8.3 million corporate travel transactions, creating a specialized
-                understanding of business travel that generic AI solutions cannot match.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-200">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="mt-1 rounded-full bg-blue-700 p-2 flex-shrink-0">
-              <ShieldCheck className="h-4 w-4 text-white" weight="fill" />
-            </div>
-            <div>
-              <h3 className="text-base font-medium tracking-tighter mb-1">Enterprise-grade security</h3>
-              <p className="text-xs font-light">
-                SOC 2 Type II certified with ISO 27001 compliance, making Suitpax the most secure option for Fortune 500
-                companies with strict security requirements.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="mt-1 rounded-full bg-blue-700 p-2 flex-shrink-0">
-              <Scales className="h-4 w-4 text-white" weight="fill" />
-            </div>
-            <div>
-              <h3 className="text-base font-medium tracking-tighter mb-1">Regulatory compliance</h3>
-              <p className="text-xs font-light">
-                Built-in compliance with GDPR, CCPA, and industry-specific regulations like SOX for finance and HIPAA
-                for healthcare, reducing legal risk for enterprise clients.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-4 bg-gradient-to-r from-gray-900 to-gray-800 p-4 rounded-xl text-white">
-        <div className="flex items-start gap-3">
-          <div className="mt-1 rounded-full bg-amber-400 p-2 flex-shrink-0">
-            <Handshake className="h-4 w-4 text-gray-900" weight="fill" />
-          </div>
-          <div>
-            <h3 className="text-base font-medium tracking-tighter mb-1">Strategic partnerships</h3>
-            <p className="text-xs font-light text-gray-300">
-              Exclusive partnerships with 3 of the 5 largest global airlines and 2 major hotel chains, providing Suitpax
-              users with preferred rates and priority service unavailable to competitors.
-            </p>
-
-            <div className="mt-3 grid grid-cols-5 gap-2">
-              <div className="bg-white/10 rounded-lg p-2 flex items-center justify-center">
-                <p className="text-[10px] font-medium text-center">Major Airline Partner</p>
-              </div>
-              <div className="bg-white/10 rounded-lg p-2 flex items-center justify-center">
-                <p className="text-[10px] font-medium text-center">Global Hotel Chain</p>
-              </div>
-              <div className="bg-white/10 rounded-lg p-2 flex items-center justify-center">
-                <p className="text-[10px] font-medium text-center">Payment Provider</p>
-              </div>
-              <div className="bg-white/10 rounded-lg p-2 flex items-center justify-center">
-                <p className="text-[10px] font-medium text-center">Car Rental Network</p>
-              </div>
-              <div className="bg-white/10 rounded-lg p-2 flex items-center justify-center">
-                <p className="text-[10px] font-medium text-center">Insurance Partner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.section>
+    </section>
   )
 }
+
+const advantages = [
+  {
+    title: "Security",
+    description: "We prioritize the security of your data with advanced encryption and robust security protocols.",
+    icon: <Shield className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Scalability",
+    description:
+      "Our platform is designed to scale with your business, ensuring seamless performance even during peak times.",
+    icon: <TrendUp className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Reliability",
+    description: "We offer a highly reliable service with minimal downtime, ensuring your operations run smoothly.",
+    icon: <Lock className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Global Reach",
+    description: "Connect with users worldwide through our extensive network and global infrastructure.",
+    icon: <Globe className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Data-Driven Insights",
+    description:
+      "Leverage powerful analytics and data-driven insights to make informed decisions and optimize your strategies.",
+    icon: <Database className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Network Effects",
+    description:
+      "Benefit from our growing network of users and partners, creating valuable connections and opportunities.",
+    icon: <Network className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Speed",
+    description:
+      "Experience lightning-fast performance and quick response times, enhancing user satisfaction and productivity.",
+    icon: <Lightning className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+  {
+    title: "Community",
+    description: "Join our vibrant community of users and experts, fostering collaboration and knowledge sharing.",
+    icon: <Users className="h-8 w-8 text-emerald-400" weight="fill" />,
+  },
+]
+
+export default CompetitiveAdvantageSection

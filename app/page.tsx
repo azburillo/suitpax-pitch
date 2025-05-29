@@ -2,7 +2,6 @@
 
 import { useEffect } from "react"
 import HeroTitle from "@/components/hero-title"
-import DashProductSection from "@/components/sections/dash-product-section"
 import ProblemSolutionSection from "@/components/sections/problem-solution-section"
 import MarketSection from "@/components/sections/market-section"
 import CompetitionSection from "@/components/sections/competition-section"
@@ -22,13 +21,11 @@ import CompetitiveAdvantageSection from "@/components/sections/competitive-advan
 import ClosingSection from "@/components/sections/closing-section"
 import ApiIntegrationsSection from "@/components/sections/api-integrations-section"
 import InvestorROICalculator from "@/components/sections/investor-roi-calculator"
-import ProductPreviewSection from "@/components/sections/product-preview-section"
 import GlobalPresenceSection from "@/components/sections/global-presence-section"
 import AirlinePartnersSection from "@/components/sections/airline-partners-section"
-import CommunitySection from "@/components/sections/community-section"
 import CapTableSection from "@/components/sections/cap-table-section"
 
-// Import new combined sections
+// Import combined sections
 import TeamCompleteSection from "@/components/sections/team-complete-section"
 import InvestmentCompleteSection from "@/components/sections/investment-complete-section"
 import TechnologyCompleteSection from "@/components/sections/technology-complete-section"
@@ -60,8 +57,6 @@ export default function Home() {
          * Mostrar cómo el producto resuelve el problema
          */}
         <SolutionSection />
-        <DashProductSection />
-        <ProductPreviewSection videoUrl="/videos/suitpax-dashboard-demo.mp4" />
         <ProductsSection />
 
         {/* ===== 4. VALIDACIÓN Y TRACCIÓN =====
@@ -95,7 +90,6 @@ export default function Home() {
         <GoToMarketSection />
         <GlobalExpansionSection />
         <RoadmapSection />
-        <CommunitySection />
 
         {/* ===== 8. OPORTUNIDAD DE INVERSIÓN =====
          * Hacer el pitch financiero
