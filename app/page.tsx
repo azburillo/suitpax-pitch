@@ -56,7 +56,7 @@ export default function Home() {
         <GlobalExpansionSection />
 
         {/* 8. FINANCIACIÓN */}
-        <InvestmentCompleteSection />
+
 
         {/* 9. CIERRE */}
         <ClosingSection />
