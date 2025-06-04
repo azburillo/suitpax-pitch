@@ -1,3 +1,4 @@
+
 "use client"
 
 import { motion } from "framer-motion"
@@ -6,7 +7,7 @@ import MiniChat from "./mini-chat"
 
 export default function HeroTitle() {
   return (
-    <div className="relative h-[60vh] min-h-[500px] md:h-[70vh] lg:h-[80vh] text-center overflow-hidden flex items-center justify-center w-full rounded-xl">
+    <div className="relative h-[70vh] min-h-[550px] md:h-[80vh] lg:h-[90vh] text-center overflow-hidden flex items-center justify-center w-full rounded-xl">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Image
@@ -17,7 +18,6 @@ export default function HeroTitle() {
           priority
           sizes="100vw"
         />
-        {/* Subtle overlay to improve text readability */}
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
@@ -29,7 +29,7 @@ export default function HeroTitle() {
       >
         <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
           <Image src="/suitpax-white-logo.png" alt="Suitpax" width={28} height={28} />
-          <span className="font-serif italic text-white/80 text-xs">Open-world of business travel</span>
+          <span className="font-serif italic text-white/80 text-xs sm:text-sm">Open-world of business travel</span>
         </div>
 
         {/* Founder Cards */}
@@ -39,19 +39,19 @@ export default function HeroTitle() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="mx-auto mb-6 max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
+            className="mx-auto mb-6 max-w-xs sm:max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
           >
-            <div className="p-2 px-3 flex items-center gap-2">
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
+            <div className="p-3 flex items-center gap-3">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
                 <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
               </div>
               <div className="text-left flex-1">
-                <p className="text-[11px] text-white/90 font-medium">
+                <p className="text-[12px] sm:text-[13px] text-white/90 font-medium">
                   "At 6, I got lost in an airport. Today, I'm ensuring no business traveler ever feels lost again."
                 </p>
                 <div className="flex items-center gap-1 mt-1">
                   <div className="h-1 w-1 rounded-full bg-emerald-400"></div>
-                  <p className="text-[9px] text-gray-300">Alberto Zurano • Founder & CEO</p>
+                  <p className="text-[10px] sm:text-[11px] text-gray-300">Alberto Zurano • Founder & CEO</p>
                 </div>
               </div>
             </div>
@@ -62,19 +62,19 @@ export default function HeroTitle() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="mx-auto mb-6 max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
+            className="mx-auto mb-6 max-w-xs sm:max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
           >
-            <div className="p-2 px-3 flex items-center gap-2">
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
+            <div className="p-3 flex items-center gap-3">
+              <div className="relative w-14 h-14 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
                 <Image src="/alexis-childhood.jpeg" alt="Young Alexis" fill className="object-cover" />
               </div>
               <div className="text-left flex-1">
-                <p className="text-[11px] text-white/90 font-medium">
+                <p className="text-[12px] sm:text-[13px] text-white/90 font-medium">
                   "A frustrated pilot sets out to reinvent the future of corporate travel - what better outcome could you ask for?"
                 </p>
                 <div className="flex items-center gap-1 mt-1">
                   <div className="h-1 w-1 rounded-full bg-blue-400"></div>
-                  <p className="text-[9px] text-gray-300">Alexis Sanz • Co-Founder & COO</p>
+                  <p className="text-[10px] sm:text-[11px] text-gray-300">Alexis Sanz • Co-Founder & COO</p>
                 </div>
               </div>
             </div>
@@ -89,21 +89,21 @@ export default function HeroTitle() {
             <p className="text-base sm:text-lg md:text-xl tracking-tighter text-white/95 max-w-2xl mx-auto font-medium">
               The intelligent platform that makes business travel seamless, compliant, and cost-effective
             </p>
-            <p className="text-sm text-white/80 max-w-xl mx-auto font-light">
+            <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto font-light">
               Transforming how enterprises manage travel from booking to expense reporting
             </p>
           </div>
 
           {/* Vision statements - smaller */}
           <div className="flex flex-wrap justify-center gap-2 mt-4 max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/20">
-              <span className="text-[10px] text-white/90 font-medium">AI-First Platform</span>
+            <div className="bg-white/10 backdrop-blur-md px-3 py-2 rounded-md border border-white/20">
+              <span className="text-[11px] text-white/90 font-medium">AI-First Platform</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/20">
-              <span className="text-[10px] text-white/90 font-medium">Enterprise Security</span>
+            <div className="bg-white/10 backdrop-blur-md px-3 py-2 rounded-md border border-white/20">
+              <span className="text-[11px] text-white/90 font-medium">Enterprise Security</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/20">
-              <span className="text-[10px] text-white/90 font-medium">Global Ready</span>
+            <div className="bg-white/10 backdrop-blur-md px-3 py-2 rounded-md border border-white/20">
+              <span className="text-[11px] text-white/90 font-medium">Global Ready</span>
             </div>
           </div>
         </div>
@@ -119,10 +119,10 @@ export default function HeroTitle() {
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 hover:bg-black/40 transition-colors"
+            className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-md px-3 py-2 rounded-xl border border-white/10 hover:bg-black/40 transition-colors"
           >
             <Image src="/suitpax-white-logo.png" alt="Suitpax" width={28} height={28} />
-            <span className="font-serif italic text-white/80 text-xs">Visit open-world</span>
+            <span className="font-serif italic text-white/80 text-sm">Visit open-world</span>
           </a>
         </div>
       </motion.div>
