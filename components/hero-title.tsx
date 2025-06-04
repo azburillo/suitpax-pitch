@@ -32,27 +32,54 @@ export default function HeroTitle() {
           <span className="font-serif italic text-white/80 text-xs">Open-world of business travel</span>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="mx-auto mb-6 max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
-        >
-          <div className="p-2 px-3 flex items-center gap-2">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
-              <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
-            </div>
-            <div className="text-left flex-1">
-              <p className="text-[11px] text-white/90 font-medium">
-                "At 6, I got lost in an airport. Today, I'm ensuring no business traveler ever feels lost again."
-              </p>
-              <div className="flex items-center gap-1 mt-1">
-                <div className="h-1 w-1 rounded-full bg-emerald-400"></div>
-                <p className="text-[9px] text-gray-300">Alberto Zurano • Founder & CEO</p>
+        {/* Founder Cards */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* Alberto's Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mx-auto mb-6 max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
+          >
+            <div className="p-2 px-3 flex items-center gap-2">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
+                <Image src="/alberto-childhood.jpeg" alt="Young Alberto" fill className="object-cover" />
+              </div>
+              <div className="text-left flex-1">
+                <p className="text-[11px] text-white/90 font-medium">
+                  "At 6, I got lost in an airport. Today, I'm ensuring no business traveler ever feels lost again."
+                </p>
+                <div className="flex items-center gap-1 mt-1">
+                  <div className="h-1 w-1 rounded-full bg-emerald-400"></div>
+                  <p className="text-[9px] text-gray-300">Alberto Zurano • Founder & CEO</p>
+                </div>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Alexis's Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="mx-auto mb-6 max-w-sm bg-black/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-xl"
+          >
+            <div className="p-2 px-3 flex items-center gap-2">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-white/20 flex-shrink-0">
+                <Image src="/alexis-childhood.jpeg" alt="Young Alexis" fill className="object-cover" />
+              </div>
+              <div className="text-left flex-1">
+                <p className="text-[11px] text-white/90 font-medium">
+                  "From playing with toy cars to optimizing global travel operations. The journey continues."
+                </p>
+                <div className="flex items-center gap-1 mt-1">
+                  <div className="h-1 w-1 rounded-full bg-blue-400"></div>
+                  <p className="text-[9px] text-gray-300">Alexis Sanz • Co-Founder & COO</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         <div className="space-y-3">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tighter leading-none text-white">
