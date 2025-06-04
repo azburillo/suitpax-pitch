@@ -70,7 +70,7 @@ export default function HeroTitle() {
               </div>
               <div className="text-left flex-1">
                 <p className="text-[11px] text-white/90 font-medium">
-                  "From playing with toy cars to optimizing global travel operations. The journey continues."
+                  "A frustrated pilot sets out to reinvent the future of corporate travel - what better outcome could you ask for?"
                 </p>
                 <div className="flex items-center gap-1 mt-1">
                   <div className="h-1 w-1 rounded-full bg-blue-400"></div>
