@@ -16,7 +16,7 @@ import GlobalPresenceSection from "@/components/sections/global-presence-section
 import AirlinePartnersSection from "@/components/sections/airline-partners-section"
 import TeamCompleteSection from "@/components/sections/team-complete-section"
 import TechnologyCompleteSection from "@/components/sections/technology-complete-section"
-import InvestmentCompleteSection from "@/components/sections/investment-complete-section"
+
 
 export default function Home() {
   // Ensure the page starts at the top when loaded
@@ -56,7 +56,7 @@ export default function Home() {
         <GlobalExpansionSection />
 
         {/* 8. FINANCIACIÓN */}
-        <InvestmentCompleteSection />
+       
 
         {/* 9. CIERRE */}
         <ClosingSection />
