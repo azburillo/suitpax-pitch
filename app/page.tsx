@@ -5,7 +5,6 @@ import HeroTitle from "@/components/hero-title"
 import OpportunitySection from "@/components/sections/opportunity-section"
 import CompetitionSection from "@/components/sections/competition-section"
 import ValuePropositionSection from "@/components/sections/value-proposition-section"
-import BetaCustomersSection from "@/components/sections/beta-customers-section"
 import AIAgentsSection from "@/components/sections/ai-agents-section"
 import GoToMarketSection from "@/components/sections/go-to-market-section"
 import GlobalExpansionSection from "@/components/sections/global-expansion-section"
@@ -37,7 +36,6 @@ export default function Home() {
 
         {/* 3. PROPUESTA DE VALOR */}
         <ValuePropositionSection />
-        <BetaCustomersSection />
         <AIAgentsSection />
 
         {/* 4. VALIDACIÓN Y PRESENCIA */}
