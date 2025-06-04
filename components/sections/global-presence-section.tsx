@@ -14,7 +14,7 @@ const airports = [
     country: "USA",
     location: [40.6413, -73.7781],
     region: "north-america",
-    image: "/nyc-skyline.png",
+    image: "/placeholder.svg?height=200&width=300",
   },
   {
     name: "CDG",
