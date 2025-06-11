@@ -79,7 +79,7 @@ export default function ExecutiveSummarySection() {
             <h3 className="text-sm font-medium text-white">The Ask</h3>
           </div>
           <p className="text-xs font-light text-white/70">
-            €1.8M pre-seed investment for 9%-11% equity at €13M valuation to accelerate growth and capture market leadership.
+            €1.2M pre-seed investment for 9%-12% equity at €10M valuation to accelerate growth and capture market leadership.
           </p>
           <div className="mt-2 flex items-center gap-2">
             <div className="flex-1 h-1 bg-white/10 rounded-full">
